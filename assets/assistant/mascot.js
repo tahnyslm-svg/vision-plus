@@ -201,12 +201,18 @@ function listen(){
   if(!listen.on){listen.on=true;(MQ_M.matches?EVTS_M:EVTS).forEach(function(t){document.addEventListener(t,onFirst,true);});}}
 function unlisten(){waiting=false;root.classList.remove("is-waiting");if(listen.on){listen.on=false;EVTS_ALL.forEach(function(t){document.removeEventListener(t,onFirst,true);});}}
 var fired=0;
+function versAutrePage(t){var a=t&&t.closest&&t.closest("a[href]");if(!a)return false;
+  try{var u=new URL(a.getAttribute("href"),location.href);return u.origin!==location.origin||u.pathname!==location.pathname;}catch(err){return false;}}
+/* départ vers une autre page pendant que Tyna parle : sa voix se coupe tout de suite, sans attendre le chargement de la page suivante */
+document.addEventListener("click",function(e){if(playing&&versAutrePage(e.target))halt();},true);
 function onFirst(e){
   if(!pend||playing)return;
   if(Date.now()-fired<1200)return;          /* un appui déclenche plusieurs évènements (touchend puis click) : une seule lecture */
   if(st.muted){pend=false;unlisten();tools();return;}
   if(e.type==="keydown"&&e.key==="Escape")return;
   if(e.target&&e.target.closest&&e.target.closest(".ax-tools,.ax-dock,.ax-more,.ax-char"))return;
+  /* un clic sur un lien vers une autre page (« Offre sur mesure », « Votre offre »…) n’est pas une demande d’écoute : Tyna ne démarre pas */
+  if(versAutrePage(e.target))return;
   fired=Date.now();
   if(isOpen()){speak();return;}
   /* bulle rangée : elle ne se rouvre que si le son démarre vraiment (un défilement ne la rouvre jamais) */

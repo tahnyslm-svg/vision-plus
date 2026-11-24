@@ -146,6 +146,9 @@ function accueillir(i){courant=i;var el=bandes[i];if(!el||(actif&&actif.el===el)
   prevu={el:el,t:setTimeout(function(){prevu=null;
     /* priorité à la vidéo : aucune présentation pendant une lecture, ni dans une rubrique dont la vidéo a été lancée */
     if(VV.lecture||muets[i])return;
+    /* « Offre sur mesure » (2026-11-24, demande de l’utilisatrice) : Tina reste visible dans sa banderole mais ne se présente pas
+       d’elle-même ; un appui sur son portrait la fait toujours parler */
+    if(page==="offre")return;
     if(R[i][3]==="seq"){stop();try{el.dispatchEvent(new CustomEvent("vp:seq"));}catch(e){}return;}parler(R[i][1],el);},RM.matches?0:700)};}
 
 /* rubrique d’un lecteur : la plus proche ancre de la rubrique qui le contient, sinon la rubrique de l’arrivée sans ancre */
