@@ -26,7 +26,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Vision Plus">
 <link rel="apple-touch-icon" href="assets/brand/icon-180.png">
-<script src="assets/mobile.js" defer></script>
+<script src="assets/mobile.js?v=tyna3" defer></script>
+<link rel="stylesheet" href="assets/pages/scene-agent.css">
 <style>
 /* ---------- vue présentation : « Votre activité, vue de l’intérieur » ----------
    Visuel 3D de la simulation (assets/demo/simulation-3d-*.webp, original dans outils/simulation) à la place de l’ancien lecteur vidéo.
@@ -41,7 +42,8 @@
 #g-feat .feat-other{margin:14px 0 0}
 #g-feat .feat-other textarea{min-height:64px}
 .group .pt-hint{margin-inline-start:6px;color:var(--mut);font-size:.84rem;font-weight:400}
-.sim-visual{order:10;position:relative;width:100%;margin:clamp(10px,2vw,26px) 0 0;isolation:isolate}
+.sim-visual{order:10;position:relative;width:100%;margin:0;isolation:isolate}
+.sim-sec{padding-top:clamp(28px,4vw,48px)}
 .sim-visual::before{content:"";position:absolute;z-index:-1;left:6%;right:6%;top:8%;bottom:-6%;border-radius:50%;pointer-events:none;
   background:radial-gradient(50% 50% at 50% 50%,rgba(30,120,255,.34),rgba(20,80,200,.12) 55%,transparent 72%);filter:blur(28px)}
 .sim-frame{position:relative;border-radius:22px;overflow:hidden;background:#050B17;
@@ -67,7 +69,7 @@
 @media (max-width:760px){
   .d-hero-txt{align-items:stretch;text-align:start}
   .d-hero-txt .actions{justify-content:flex-start}
-  .sim-visual{order:0;margin:2px calc(-1 * var(--m-gap,18px)) 0;width:calc(100% + 2 * var(--m-gap,18px))}
+  .sim-visual{order:0;margin:0 calc(-1 * var(--m-gap,18px));width:calc(100% + 2 * var(--m-gap,18px))}
   .sim-visual::before{left:0;right:0;top:4%;bottom:-2%;filter:blur(20px)}
   .sim-frame{border-radius:0;border-left:0;border-right:0}
   .sim-cap{justify-content:space-between;margin:8px var(--m-gap,18px) 0}
@@ -207,21 +209,27 @@
 <main id="contenu">
   <!-- ===== Vue présentation ===== -->
   <div id="v-intro">
-    <section class="page-hero d-hero" aria-labelledby="t-intro">
-      <div class="wrap">
-        <div class="d-hero-txt">
+    <!-- bandeau de la rubrique « Simulation » (2026-11-24) : Soren présente l’interface de simulation, comme Iris sur « Votre secrétaire IA » ;
+         sa banderole animée suit (assets/agent-accueil.js), puis le visuel 3D de la simulation et le parcours -->
+    <section class="ag-hero" data-agent="soren" aria-labelledby="t-intro">
+      <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/soren-banniere-1536.webp" srcset="assets/equipe/soren-banniere-960.webp 960w, assets/equipe/soren-banniere-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 84vw" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Soren, le conseiller Vision Plus, présente l’interface de simulation : le formulaire « Votre simulation personnalisée » en quatre étapes, Vous, Votre projet, Vos besoins et Envoi, puis votre simulation vidéo."></div>
+      <div class="wrap ag-hero-in"><div class="ag-hero-txt">
           <span class="eyebrow">Simulation</span>
           <h1 id="t-intro" class="h-xl" tabindex="-1">Votre activité, vue de l’intérieur</h1>
-          <figure class="sim-visual">
-            <div class="sim-frame"><img src="assets/demo/simulation-3d-1536.webp" srcset="assets/demo/simulation-3d-768.webp 768w, assets/demo/simulation-3d-1152.webp 1152w, assets/demo/simulation-3d-1536.webp 1536w" sizes="(max-width: 760px) 100vw, min(1200px, 100vw)" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Simulation Vision Plus en 3D : autour de l’emblème Vision Plus, une publicité Instagram, une fiche Google, un agenda, un e-mail envoyé, un colis en livraison et le robot au casque du secrétariat téléphonique."></div>
-            <figcaption class="sim-cap"><span>Démonstration illustrative</span><button type="button" class="sim-zoom" id="sim-zoom" aria-haspopup="dialog" aria-controls="sim-lb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Agrandir le visuel</button></figcaption>
-          </figure>
+          <p class="ag-qui"><img src="assets/equipe/soren-400.webp" alt="" width="400" height="600" decoding="async"><b>Soren</b><span>Simulation et conseiller</span></p>
           <p class="lead">Présentez votre activité. Recevez une simulation qui montre Vision Plus appliqué à votre projet.</p>
           <div class="actions">
             <button class="btn btn-cyan" type="button" id="open-form" aria-controls="v-form">Demander ma simulation personnalisée <i data-ico="arrow" data-cls="arrow"></i></button>
           </div>
           <p class="resume" id="resume" hidden>Une demande est en cours de saisie. <button class="btn-txt" type="button" id="resume-btn">Reprendre mon brouillon</button></p>
-        </div>
+      </div></div>
+    </section>
+    <section class="section tight sim-sec" aria-label="Visuel de la simulation">
+      <div class="wrap">
+        <figure class="sim-visual">
+          <div class="sim-frame"><img src="assets/demo/simulation-3d-1536.webp" srcset="assets/demo/simulation-3d-768.webp 768w, assets/demo/simulation-3d-1152.webp 1152w, assets/demo/simulation-3d-1536.webp 1536w" sizes="(max-width: 760px) 100vw, min(1200px, 100vw)" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Simulation Vision Plus en 3D : autour de l’emblème Vision Plus, une publicité Instagram, une fiche Google, un agenda, un e-mail envoyé, un colis en livraison et Naya, l’agente du secrétariat téléphonique, avec son micro-casque."></div>
+          <figcaption class="sim-cap"><span>Démonstration illustrative</span><button type="button" class="sim-zoom" id="sim-zoom" aria-haspopup="dialog" aria-controls="sim-lb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Agrandir le visuel</button></figcaption>
+        </figure>
       </div>
     </section>
     <section class="section tight" aria-labelledby="t-path">
@@ -338,7 +346,7 @@
   </section>
 </main>
 <div data-vp="footer"></div>
-<script src="assets/config.js"></script><script src="assets/data.js"></script><script src="assets/site.js"></script>
+<script src="assets/config.js"></script><script src="assets/data.js"></script><script src="assets/site.js?v=tyna3"></script>
 <script>
 (function(){
 "use strict";

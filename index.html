@@ -6,11 +6,11 @@
 <meta property="og:site_name" content="Vision Plus">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vision Plus">
-<meta property="og:description" content="Vision Plus réunit une web app sur mesure et trois agents IA pour connecter toute votre activité.">
+<meta property="og:description" content="Une équipe d’agents IA pour faire grandir votre entreprise : accueil téléphonique, secrétariat, marketing, site internet, publicité et gestion du bâtiment.">
 <meta property="og:image" content="assets/brand/vision-plus-partage.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Vision Plus réunit une web app sur mesure et trois agents IA pour connecter toute votre activité.">
+<meta name="description" content="Une équipe d’agents IA pour faire grandir votre entreprise : accueil téléphonique, secrétariat, marketing, site internet, publicité et gestion du bâtiment.">
 <meta name="vp-page" content="home">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="themes/p1.css">
@@ -24,491 +24,339 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Vision Plus">
 <link rel="apple-touch-icon" href="assets/brand/icon-180.png">
-<script src="assets/mobile.js" defer></script>
+<script src="assets/mobile.js?v=tyna3" defer></script>
 <link rel="stylesheet" href="assets/assistant/mascot.css">
-<style>
-/* Accueil vitrine : Présentation, Pourquoi Vision Plus, Le service (agents et réseaux sociaux), Notre technologie, Rejoindre Vision Plus. Le détail est sur decouvrir.html. */
-.hero{position:relative;overflow:hidden;padding-block:clamp(40px,7vw,96px) clamp(64px,9vw,120px)}
-.hero::before{content:"";position:absolute;inset:auto -10% -40% -10%;height:80%;background:radial-gradient(45% 55% at 62% 30%,rgba(25,116,232,.12),transparent 70%);pointer-events:none}
-.hero-grid{position:relative;display:grid;gap:clamp(36px,5vw,56px);align-items:center}
-@media (min-width:1000px){.hero-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
-.hero-text{display:grid;gap:26px;min-width:0;justify-items:start}
-.hero-text .actions{margin-top:8px}
-.scene{position:relative;margin:0;min-width:0}
-.stack{position:relative;-webkit-mask-image:radial-gradient(120% 110% at 55% 45%,#000 62%,transparent 100%);mask-image:radial-gradient(120% 110% at 55% 45%,#000 62%,transparent 100%);animation:float 8s ease-in-out infinite}
-.stack img{display:block;width:100%;height:auto}
-.fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen}
-.fx .cable{fill:none;stroke:#BCD9FB;stroke-width:5;stroke-linecap:round;stroke-dasharray:40 400;stroke-dashoffset:440;filter:url(#blur);animation:run 6s cubic-bezier(.5,0,.5,1) infinite}
-.fx .ai-core{stroke-width:2;filter:none;stroke:#fff}
-.fx .c2{animation-delay:2s}.fx .c3{animation-delay:4s}
-.fx .panel{fill:rgba(25,116,232,.06);stroke:#6FAEF6;stroke-width:2;opacity:0;filter:url(#blur2);animation:lit 6s ease-out infinite}
-.fx .p1{animation-delay:1.2s}.fx .p2{animation-delay:3.2s}.fx .p3{animation-delay:5.2s}
-.fx .base{fill:url(#baseglow);animation:pulse 3s ease-in-out infinite}
-.scene figcaption{text-align:right;font-size:.82rem;font-style:italic;color:var(--mut);margin-top:6px}
-@keyframes float{50%{transform:translateY(-8px)}}
-@keyframes pulse{50%{opacity:.55}}
-@keyframes run{0%{stroke-dashoffset:440}35%,100%{stroke-dashoffset:0}}
-@keyframes lit{0%{opacity:0}5%{opacity:1}28%,100%{opacity:0}}
-
-
-/* le service : onglets + simulations */
-.agents-tabs{margin-bottom:clamp(28px,4vw,44px)}
-.pane{display:grid;gap:clamp(28px,4vw,56px);align-items:start}
-@media (min-width:980px){.pane{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}
-.pane-txt{display:grid;gap:18px;min-width:0;align-content:start}
-.pane-txt h3{font-size:clamp(1.5rem,2.6vw,2rem)}
-.pane-txt>p{color:var(--mut);max-width:42ch}
-.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px;color:var(--soft)}
-.ticks li{position:relative;padding-left:28px}
-.ticks li::before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:6px;border-left:2px solid var(--cyan);border-bottom:2px solid var(--cyan);transform:rotate(-45deg)}
-.fict{font-size:.82rem;color:var(--mut);font-style:italic}
-.state{display:inline-flex;align-items:center;gap:8px;font-size:.86rem;font-weight:600;color:var(--ok)}
-.state::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 4px rgba(91,227,154,.18)}
-.state.busy{color:var(--cyan)}
-.device{border-radius:16px;border:1px solid var(--edge);background:#13181F;box-shadow:0 40px 80px -40px rgba(0,0,0,.9);overflow:hidden;min-width:0}
-.brief-in{min-height:96px}
-.posts{display:grid;gap:14px;padding:16px;min-width:0}
-@media (min-width:640px){.posts{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.post{display:flex;flex-direction:column;border-radius:12px;overflow:hidden;background:#1B222C;border:1px solid rgba(170,183,199,.12);min-width:0;transition:opacity .35s var(--ease),transform .35s var(--ease)}
-.post.fade{opacity:0;transform:translateY(8px)}
-.post-h{display:flex;align-items:center;gap:8px;padding:10px 12px;font-weight:700;font-size:.85rem}
-.net{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font:700 .7rem/1 var(--f-display);color:#fff}
-.net.ig{background:linear-gradient(135deg,#F9A13A,#E1306C 55%,#7B3FE4)}.net.fb{background:#1877F2}.net.li{background:#0A66C2}
-.post-v{aspect-ratio:4/3;display:flex;align-items:flex-end;padding:14px;color:#fff;font:600 1.1rem/1.15 var(--f-display);background:radial-gradient(60% 70% at 30% 20%,rgba(255,200,120,.45),transparent 70%),radial-gradient(60% 60% at 80% 90%,rgba(25,116,232,.35),transparent 70%),linear-gradient(160deg,#2A1F18,#151A20)}
-.post-v.v2{background:radial-gradient(60% 70% at 70% 25%,rgba(255,170,90,.5),transparent 70%),radial-gradient(60% 60% at 20% 90%,rgba(140,110,255,.35),transparent 70%),linear-gradient(160deg,#1C1A24,#151A20)}
-.post-v.v3{background:radial-gradient(60% 70% at 50% 30%,rgba(255,220,160,.45),transparent 70%),radial-gradient(60% 60% at 90% 80%,rgba(25,116,232,.3),transparent 70%),linear-gradient(160deg,#1F2620,#151A20)}
-.post-c{padding:12px;font-size:.9rem;color:var(--soft);display:grid;gap:6px}
-.post-c em{font-style:normal;color:var(--cyan);font-size:.82rem}
-.dev-f{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px solid rgba(170,183,199,.1)}
-.call-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid rgba(170,183,199,.1);font-size:.9rem}
-.call-h b{font-family:var(--f-display);font-weight:600}
-.wave{display:flex;align-items:center;gap:3px;height:24px}
-.wave i{width:3px;border-radius:2px;background:var(--cyan);height:20%;opacity:.45}
-.device.on .wave i{animation:bar .9s ease-in-out infinite;opacity:1}
-.wave i:nth-child(2n){animation-delay:.15s}.wave i:nth-child(3n){animation-delay:.3s}.wave i:nth-child(5n){animation-delay:.45s}
-@keyframes bar{0%,100%{height:20%}50%{height:100%}}
-.convo{list-style:none;margin:0;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:320px}
-.msg{max-width:86%;padding:.65em .95em;border-radius:14px;font-size:.95rem;line-height:1.45;overflow-wrap:anywhere}
-.msg small{display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.75;margin-bottom:2px}
-.msg.ai{align-self:flex-start;background:rgba(25,116,232,.08);border:1px solid rgba(25,116,232,.28);border-bottom-left-radius:4px}
-.msg.cl{align-self:flex-end;background:#262C36;border-bottom-right-radius:4px}
-.msg.sys{align-self:stretch;max-width:none;background:rgba(91,227,154,.07);border:1px dashed rgba(91,227,154,.5);font-size:.9rem}
-.msg.new{animation:pop .35s var(--ease)}
-@keyframes pop{from{opacity:0;transform:translateY(6px)}}
-.reqs{display:flex;flex-wrap:wrap;gap:8px}
-.req{padding:.6em 1em;border-radius:999px;border:1px solid var(--edge);background:transparent;cursor:pointer;font-size:.9rem;font-weight:600;text-align:left;color:var(--soft)}
-.req[aria-pressed="true"]{border-color:var(--cyan);color:var(--ink)}
-.flow3{display:flex;gap:6px;font-size:.8rem;font-weight:600;flex-wrap:wrap}
-.flow3 span{padding:.35em .8em;border-radius:999px;border:1px solid var(--edge);color:var(--mut);transition:background-color .25s,color .25s,border-color .25s}
-.flow3 span.on{border-color:var(--cyan);color:var(--cyan-ink);background:var(--cyan)}
-.mini{background:#F6F3EE;color:#1B1714}
-.mini-nav{display:flex;align-items:center;gap:14px;padding:10px 14px;background:#141110;color:#EDE6DD;font-size:.8rem;flex-wrap:wrap}
-.mini-nav b{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;font-size:1.05rem;margin-right:auto}
-.mini-nav span:last-child{background:var(--cyan);color:var(--cyan-ink);padding:.3em .7em;border-radius:5px;font-weight:700}
-.mini-hero{padding:26px 16px;color:#fff;background:radial-gradient(60% 80% at 75% 30%,rgba(255,190,110,.5),transparent 70%),linear-gradient(160deg,#3B2A1E,#121010);transition:background .4s}
-.mini-hero.alt{background:radial-gradient(60% 80% at 30% 30%,rgba(130,200,140,.45),transparent 70%),linear-gradient(160deg,#20301F,#0F1310)}
-.mini-hero h4{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;font-size:1.5rem;letter-spacing:0}
-.mini-hero p{font-size:.85rem;opacity:.85;margin-top:6px}
-.mini-b{padding:14px 16px 18px;display:grid;gap:10px;font-size:.88rem}
-.mini-b h5{margin:0;font:700 .72rem/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:#6E6156}
-.ev{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:8px;background:#fff;border:1px solid #E7E0D7}
-.ev b{display:block}
-.hours{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#4A4038}
-.flash{animation:flash 1.6s ease}
-@keyframes flash{0%{box-shadow:0 0 0 3px var(--cyan);background:#BCD9FB}100%{box-shadow:0 0 0 0 transparent}}
-
-
-/* 2. Pourquoi Vision Plus : quatre icônes, un mot-clé chacune */
-.why{display:grid;gap:40px 28px;grid-template-columns:repeat(2,minmax(0,1fr))}
-@media (min-width:960px){.why{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.why li{display:grid;justify-items:center;text-align:center;gap:16px}
-.why .ico{box-sizing:content-box;width:34px;height:34px;padding:20px;border-radius:22px;color:var(--cyan-hi,#B9D7FA);stroke-width:1.4;
-  background:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.22),rgba(255,255,255,0) 45%),radial-gradient(90% 90% at 50% 100%,rgba(30,106,233,.35),rgba(7,87,184,.08) 70%),linear-gradient(160deg,rgba(46,58,76,.95),rgba(17,21,28,.95));
-  border:1px solid rgba(170,183,199,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -6px 12px rgba(0,0,0,.55),0 0 22px rgba(31,119,233,.4),0 0 50px rgba(30,106,233,.15),0 16px 26px -12px rgba(0,0,0,.95);transition:transform .45s var(--ease),box-shadow .5s var(--ease)}
-@media (hover:hover){.why li:hover .ico{transform:translateY(-4px);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -6px 12px rgba(0,0,0,.5),0 0 0 1px rgba(185,215,250,.9),0 0 30px rgba(31,119,233,.7),0 0 70px rgba(30,106,233,.3),0 20px 30px -12px rgba(0,0,0,.95)}}
-.why b{font:500 1.1rem/1.25 var(--f-display)}
-.why span{color:var(--mut);font-size:.92rem;max-width:22ch}
-
-/* 3. Notre technologie : noyau IA relié aux trois agents */
-.tech{display:grid;gap:clamp(36px,5vw,64px);align-items:center}
-@media (min-width:980px){.tech{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}
-.tech-txt{display:grid;gap:22px;justify-items:start;min-width:0}
-.ai-core{position:relative;width:100%;max-width:620px;aspect-ratio:1.25;margin-inline:auto}
-.ai-core>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.ai-core .wire{fill:none;stroke:rgba(170,183,199,.35);stroke-width:1.5}
-.ai-core .pulse{fill:none;stroke:#BCD9FB;stroke-width:3;stroke-linecap:round;stroke-dasharray:18 400;stroke-dashoffset:418;filter:drop-shadow(0 0 6px #1F77E9);animation:flow 3.6s linear infinite}
-.ai-core .pulse.b{animation-delay:1.2s}.ai-core .pulse.c{animation-delay:2.4s}
-@keyframes flow{to{stroke-dashoffset:0}}
-.ai-orb{position:absolute;left:50%;top:50%;width:30%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;display:grid;place-items:center;
-  background:radial-gradient(60% 60% at 35% 30%,rgba(255,255,255,.55),rgba(31,119,233,.35) 35%,rgba(7,87,184,.55) 70%,rgba(3,20,40,.9));
-  box-shadow:0 0 0 1px rgba(185,215,250,.6),0 0 40px rgba(31,119,233,.55),0 0 110px rgba(30,106,233,.3),inset 0 -12px 30px rgba(0,0,0,.45);animation:breath 4s ease-in-out infinite}
-.ai-orb img{width:42%;height:auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6))}
-.ai-orb::before,.ai-orb::after{content:"";position:absolute;inset:-14%;border-radius:50%;border:1px solid rgba(170,183,199,.35);animation:spin 14s linear infinite}
-.ai-orb::after{inset:-28%;border-style:dashed;border-color:rgba(170,183,199,.2);animation-duration:26s;animation-direction:reverse}
-@keyframes breath{50%{box-shadow:0 0 0 1px rgba(185,215,250,.8),0 0 60px rgba(31,119,233,.75),0 0 140px rgba(30,106,233,.4),inset 0 -12px 30px rgba(0,0,0,.45)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-.ai-node{position:absolute;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;width:34%;transform:translate(-50%,-25px)}
-.ai-node .ico{box-sizing:content-box;width:24px;height:24px;padding:13px;border-radius:16px;color:#B9D7FA;border:1px solid rgba(170,183,199,.6);background:linear-gradient(160deg,rgba(46,58,76,.95),rgba(17,21,28,.95));box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 0 18px rgba(31,119,233,.45)}
-.ai-node b{font:500 .98rem/1.2 var(--f-display);margin-top:6px}
-.ai-node small{color:var(--mut);font-size:.8rem}
-.n1{left:50%;top:6%}.n2{left:13%;top:84%}.n3{left:87%;top:84%}
-@media (max-width:520px){.ai-node small{display:none}.ai-node b{font-size:.85rem}}
-
-
-/* 3. Notre technologie : visuel de référence + lumière animée + zones cliquables */
-html.theme-p1 #technologie,#technologie{background:radial-gradient(60% 50% at 50% 55%,rgba(10,60,120,.25),transparent 70%),#01050D}
-.tech-head{display:grid;gap:18px;justify-items:start;margin-bottom:clamp(24px,4vw,40px)}
-.tech-visual{position:relative;margin:0 auto;width:min(880px,100%);aspect-ratio:1623/1602;max-width:100%}
-.tech-visual img{display:block;width:100%;height:100%;border-radius:18px;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 7%,#000 88%,transparent 100%),radial-gradient(80% 75% at 50% 48%,#000 64%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(180deg,transparent 0,#000 7%,#000 88%,transparent 100%),radial-gradient(80% 75% at 50% 48%,#000 64%,transparent 100%);mask-composite:intersect}
-.tv-fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen}
-.tv-halo{animation:tvb 4s ease-in-out infinite;transform-origin:548px 415px}
-@keyframes tvb{0%,100%{opacity:.25;transform:scale(.96)}50%{opacity:.7;transform:scale(1.04)}}
-.tv-p{fill:none;stroke:#BCD9FB;stroke-width:7;stroke-linecap:round;stroke-dasharray:6 100;stroke-dashoffset:106;filter:drop-shadow(0 0 6px #1F77E9) drop-shadow(0 0 14px #1E6AE9);animation:tvf 2.8s cubic-bezier(.5,0,.5,1) infinite}
-.tv-p.b{animation-delay:.9s}.tv-p.c{animation-delay:1.8s}
-@keyframes tvf{0%{stroke-dashoffset:106;opacity:0}10%{opacity:1}80%{opacity:1}100%{stroke-dashoffset:0;opacity:0}}
-.tv-hot{position:absolute;border:0;border-radius:22px;background:transparent;cursor:pointer;transition:box-shadow .45s var(--ease),background-color .3s}
-.tv-hot.h1{left:40%;top:1%;width:20%;height:19%}
-.tv-hot.h2{left:7%;top:51%;width:30%;height:41%}
-.tv-hot.h3{left:59%;top:51%;width:38%;height:41%}
-@media (hover:hover){.tv-hot:hover{background:radial-gradient(60% 60% at 50% 40%,rgba(31,119,233,.14),transparent 75%);box-shadow:0 0 0 1px rgba(185,215,250,.55),0 0 30px rgba(31,119,233,.35)}}
-.tv-hot:focus-visible{outline:none;box-shadow:0 0 0 2px #B9D7FA,0 0 30px rgba(31,119,233,.5)}
-@media (prefers-reduced-motion:reduce){.tv-halo,.tv-p{animation:none}.tv-p{display:none}}
-
-
-/* 3 bis. Qu'est-ce que Vision Plus ? */
-#vision-plus-simple{background:linear-gradient(180deg,#01050D,var(--night) 30%)}
-.simple-intro{display:grid;gap:18px;justify-items:center;text-align:center;max-width:820px;margin:0 auto clamp(44px,6vw,72px)}
-.simple-intro .lead{max-width:56ch}
-.simple-p{color:var(--soft);max-width:60ch}
-.simple-p.strong{color:#fff;font-weight:600}
-.svc3{display:grid;gap:22px;align-items:stretch}
-@media (min-width:960px){.svc3{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.svc{position:relative;display:flex;flex-direction:column;gap:14px;padding:30px 28px;border-radius:20px;min-width:0;
-  background:linear-gradient(160deg,rgba(170,183,199,.10),rgba(10,40,70,.18) 45%,rgba(2,8,16,.55));border:1px solid rgba(170,183,199,.35);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  box-shadow:inset 0 1px 0 rgba(188,217,251,.25),inset 0 0 30px rgba(31,119,233,.06),0 0 26px rgba(31,119,233,.14),0 30px 60px -30px rgba(0,0,0,.95);
-  transform:translateY(0);transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s}
-.svc::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,transparent 35%,rgba(185,215,250,.10) 50%,transparent 65%);opacity:0;transition:opacity .5s;pointer-events:none}
-@media (hover:hover){.svc:hover{transform:translateY(-8px);border-color:rgba(185,215,250,.9);box-shadow:inset 0 1px 0 rgba(188,217,251,.35),0 0 0 1px rgba(185,215,250,.5),0 0 34px rgba(31,119,233,.45),0 0 80px rgba(30,106,233,.2),0 40px 70px -30px rgba(0,0,0,.95)}.svc:hover::before{opacity:1}}
-.svc:focus-within{border-color:rgba(185,215,250,.8)}
-.svc-ic .ico{box-sizing:content-box;width:28px;height:28px;padding:15px;border-radius:18px;color:#B9D7FA;border:1px solid rgba(170,183,199,.6);
-  background:radial-gradient(120% 90% at 30% 0%,rgba(255,255,255,.22),transparent 45%),linear-gradient(160deg,rgba(46,58,76,.95),rgba(17,21,28,.95));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -6px 12px rgba(0,0,0,.5),0 0 22px rgba(31,119,233,.45)}
-.svc h3{display:grid;gap:6px;font-size:1.3rem;font-weight:500}
-.svc h3 span{font:400 .66rem/1 var(--f-hud,var(--f-display));letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);text-shadow:0 0 8px rgba(31,119,233,.6)}
-.svc p{color:var(--soft);font-size:.97rem}
-.svc .svc-gain{color:#fff;font-weight:600;padding-left:14px;border-left:2px solid var(--cyan);box-shadow:-6px 0 12px -8px rgba(31,119,233,.8)}
-.svc .btn{margin-top:auto;align-self:flex-start}
-.svc-social{display:block;width:100%;max-width:360px;height:auto;border-radius:12px;margin:4px 0 6px;filter:drop-shadow(0 0 14px rgba(31,119,233,.35));-webkit-mask-image:radial-gradient(95% 90% at 50% 50%,#000 75%,transparent 100%);mask-image:radial-gradient(95% 90% at 50% 50%,#000 75%,transparent 100%)}
-.how{margin-top:clamp(56px,8vw,96px);text-align:center}
-.how-t{font-size:clamp(1.4rem,2.6vw,1.9rem);margin-bottom:clamp(28px,4vw,44px)}
-.how3{list-style:none;margin:0;padding:0;display:grid;gap:30px;counter-reset:h}
-@media (min-width:860px){.how3{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.how3 li{counter-increment:h;display:grid;justify-items:center;gap:10px}
-.how-ic{position:relative}
-.how-ic .ico{box-sizing:content-box;width:26px;height:26px;padding:16px;border-radius:50%;color:#B9D7FA;border:1px solid rgba(170,183,199,.6);background:radial-gradient(100% 80% at 30% 0%,rgba(255,255,255,.2),transparent 50%),linear-gradient(160deg,#2A3546,#12171E);box-shadow:inset 0 -5px 10px rgba(0,0,0,.45),0 0 20px rgba(31,119,233,.45)}
-.how-ic::after{content:counter(h);position:absolute;right:-6px;top:-6px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font:600 .78rem/1 var(--f-display);color:#FFFFFF;background:linear-gradient(180deg,#85BAF7,#1F77E9 55%,#1666DF);box-shadow:0 0 12px rgba(31,119,233,.7)}
-.how3 b{font:500 1.08rem/1.25 var(--f-display)}
-.how3 span:not(.how-ic){color:var(--mut);font-size:.93rem;max-width:30ch}
-.simple-cta{margin-top:clamp(56px,8vw,96px);display:grid;gap:14px;justify-items:center;text-align:center}
-.cta-q{font:300 clamp(1.5rem,3vw,2.2rem)/1.2 var(--f-display);letter-spacing:-.02em;color:#fff;text-wrap:balance}
-.simple-cta .actions{margin-top:10px}
-
-
-/* Avantages : compositions illustrées (maquette) */
-.av-grid{display:grid;gap:18px}
-@media (min-width:900px){.av-grid{grid-template-columns:repeat(12,minmax(0,1fr))}.av-card{grid-column:span 5}.av-card.w{grid-column:span 7}}
-.av-card{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:stretch;min-height:300px;border-radius:22px;overflow:hidden;
-  border:1px solid rgba(170,183,199,.28);background:linear-gradient(160deg,#1E2631,#141A21 60%,#101419);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 60px -34px rgba(0,0,0,.9);transition:transform .5s var(--ease),box-shadow .5s,border-color .4s}
-@media (hover:hover){.av-card:hover{transform:translateY(-5px);border-color:rgba(120,180,245,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(120,180,245,.35),0 0 30px rgba(40,120,232,.25),0 36px 70px -34px rgba(0,0,0,.95)}.av-card:hover .av-art img{transform:scale(1.04)}}
-.av-txt{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:26px 0 26px 26px}
-.av-txt .ico{box-sizing:content-box;width:24px;height:24px;padding:13px;border-radius:14px;color:#78B4F5;border:1px solid rgba(120,180,245,.55);background:linear-gradient(160deg,#22303F,#151B23);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 16px rgba(40,120,232,.3)}
-.av-txt h3{font-size:clamp(1.3rem,2vw,1.65rem);line-height:1.12;margin-top:6px}
-.av-txt p{color:var(--mut);font-size:.96rem;max-width:22ch}
-.av-txt .btn{margin-top:auto}
-.av-txt .btn .ico{box-sizing:border-box;width:1em;height:1em;padding:0;border:0;background:none;box-shadow:none;border-radius:0;color:inherit}
-.av-art{margin:0;position:relative;min-width:0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%)}
-.av-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;transition:transform .9s var(--ease);animation:avf 9s ease-in-out infinite}
-.av-card:nth-child(2) .av-art img{animation-delay:-2s}.av-card:nth-child(3) .av-art img{animation-delay:-4s}.av-card:nth-child(4) .av-art img{animation-delay:-6s}
-@keyframes avf{50%{transform:translateY(-4px)}}
-@media (max-width:640px){.av-art img{object-position:center bottom!important}.av-grid{gap:12px}.av-card{grid-template-columns:1fr;min-height:0;border-radius:18px}.av-txt>.ico{display:none}.av-txt{gap:6px!important;padding:0 16px 16px!important}.av-txt h3{font-size:1.12rem!important;margin-top:0!important}.av-txt p{font-size:.88rem!important;max-width:none!important}.av-txt .btn{margin-top:6px!important}.av-art{order:-1;aspect-ratio:16/8;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}.av-txt{padding:0 20px 22px}}
-@media (prefers-reduced-motion:reduce){.av-art img{animation:none}}
-
-/* 4. Rejoindre Vision Plus */
-.join{position:relative;overflow:hidden;text-align:center}
-.join::before{content:"";position:absolute;left:50%;top:50%;width:min(1000px,130%);height:480px;translate:-50% -50%;background:radial-gradient(50% 50% at 50% 50%,rgba(31,119,233,.16),transparent 70%);pointer-events:none}
-.join .wrap{position:relative;display:grid;gap:24px;justify-items:center}
-@media (prefers-reduced-motion:reduce){.ai-core .pulse{display:none}}
-</style>
+<link rel="stylesheet" href="assets/pages/accueil.css">
+<link rel="preload" as="image" href="assets/equipe/accueil-decor-1536.webp" fetchpriority="high">
+<!-- Accueil « Une équipe d’agents IA » (2026-11-23), d’après la maquette de l’utilisateur (outils/equipe-agents/maquette-utilisateur.jpg).
+     Cartes des modules et fiches des agents écrites par outils/equipe-agents/generer_accueil.py à partir de outils/equipe-agents/equipe.json
+     (entre les repères eq:…). L’ancien accueil est sauvegardé dans backups/avant-equipe-agents/ ; ses démonstrations restent sur decouvrir.html. -->
 <div data-vp="header"></div>
 
-<main id="contenu">
-  <!-- 1. À quoi sert Vision Plus -->
-  <section class="hero" aria-labelledby="t-hero">
-    <div class="wrap hero-grid">
-      <div class="hero-text">
-        <span class="eyebrow">Web apps &amp; agents IA</span>
-        <h1 id="t-hero" class="h-xl">Votre entreprise entre dans une <span class="t-blue">nouvelle dimension.</span></h1>
-        <p class="lead">La plateforme d'intelligence artificielle qui travaille pour votre entreprise.</p>
+<main id="contenu" class="eq-home">
+  <!-- 1. Premier écran : ce que fait Vision Plus, et l’équipe -->
+  <section class="vh" aria-labelledby="t-hero">
+    <div class="vh-bg" aria-hidden="true"><img src="assets/equipe/accueil-decor-1536.webp" srcset="assets/equipe/accueil-decor-960.webp 960w, assets/equipe/accueil-decor-1536.webp 1536w" sizes="100vw" alt="" width="1536" height="1024" decoding="async" fetchpriority="high"></div>
+    <div class="wrap vh-grid">
+      <div class="vh-txt">
+        <span class="eyebrow">Votre équipe d’agents IA</span>
+        <p class="vh-brand" aria-hidden="true">Vision Plus</p>
+        <h1 id="t-hero" class="vh-title">Une équipe d’agents IA pour faire grandir votre entreprise</h1>
+        <p class="vh-lead">Accueil téléphonique, secrétariat, marketing, site internet, publicité, gestion du bâtiment&#8239;: chaque agent prend en charge des tâches concrètes. Vous choisissez ses missions, vous validez ce qui compte.</p>
+        <div class="actions vh-actions">
+          <a class="btn btn-cyan" href="#agents">Découvrir nos agents <i data-ico="arrow" data-cls="arrow"></i></a>
+          <a class="btn btn-line" href="demo.html">Demander une démo</a>
+        </div>
+        <p class="vh-sign" aria-hidden="true">Bonjour, je suis Tyna, votre assistante&nbsp;IA.</p>
+      </div>
+<!-- eq:equipe -->
+      <div class="vh-team" role="img" aria-label="L’équipe des agents principaux de Vision Plus, menée par Tyna, chef d’équipe : Milo (Marketing IA), Naya (Agent téléphonique IA), Tyna (Assistante IA), Iris (Secrétariat IA), Noa (Site internet et gestion web).">
+        <figure class="vh-m vh-milo is-front" style="--i:0"><img class="vh-m-img" src="assets/equipe/milo-400.webp" srcset="assets/equipe/milo-400.webp 400w, assets/equipe/milo-800.webp 800w" sizes="(max-width:760px) 34vw, 22vw" alt="" width="400" height="600" decoding="async"><figcaption class="vh-tag"><b>Milo</b>Marketing IA</figcaption></figure>
+        <figure class="vh-m vh-naya is-front" style="--i:1"><img class="vh-m-img" src="assets/equipe/naya-400.webp" srcset="assets/equipe/naya-400.webp 400w, assets/equipe/naya-800.webp 800w" sizes="(max-width:760px) 34vw, 22vw" alt="" width="400" height="600" decoding="async"><figcaption class="vh-tag"><b>Naya</b>Agent téléphonique IA</figcaption></figure>
+        <figure class="vh-m vh-tyna is-front" style="--i:2"><img class="vh-m-img" src="assets/equipe/tyna-400.webp" srcset="assets/equipe/tyna-400.webp 400w, assets/equipe/tyna-800.webp 800w" sizes="(max-width:760px) 34vw, 22vw" alt="" width="400" height="600" decoding="async"><figcaption class="vh-tag"><b>Tyna</b>Chef d’équipe</figcaption></figure>
+        <figure class="vh-m vh-iris is-front" style="--i:3"><img class="vh-m-img" src="assets/equipe/iris-400.webp" srcset="assets/equipe/iris-400.webp 400w, assets/equipe/iris-800.webp 800w" sizes="(max-width:760px) 34vw, 22vw" alt="" width="400" height="600" decoding="async"><figcaption class="vh-tag"><b>Iris</b>Secrétariat IA</figcaption></figure>
+        <figure class="vh-m vh-noa is-front" style="--i:4"><img class="vh-m-img" src="assets/equipe/noa-400.webp" srcset="assets/equipe/noa-400.webp 400w, assets/equipe/noa-800.webp 800w" sizes="(max-width:760px) 34vw, 22vw" alt="" width="400" height="600" decoding="async"><figcaption class="vh-tag"><b>Noa</b>Site internet et gestion web</figcaption></figure>
+      </div>
+<!-- /eq:equipe -->
+    </div>
+  </section>
+
+  <!-- 2. Les modules, chacun incarné par son agent principal -->
+  <section class="section eq-sec" id="agents" aria-labelledby="t-agents">
+    <div class="wrap">
+      <div class="section-head eq-head">
+        <span class="eyebrow">Nos agents</span>
+        <h2 id="t-agents" class="h-l">Un agent principal par module, un spécialiste par tâche.</h2>
+        <p class="lead">Ouvrez une fiche pour rencontrer les spécialistes de chaque module et voir ce qu’ils font concrètement pour vous.</p>
+      </div>
+<!-- eq:cartes -->
+      <ul class="eq-cards is-main">
+        <li class="eq-card" data-mod="accueil">
+          <div class="eq-card-top">
+            <div class="eq-card-pic" aria-hidden="true"><img class="eq-card-img" src="assets/equipe/tyna-400.webp" srcset="assets/equipe/tyna-400.webp 400w, assets/equipe/tyna-800.webp 800w" sizes="(max-width:760px) 40vw, 180px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+            <div class="eq-card-id"><p class="eq-badge">Chef d’équipe</p><h3 class="eq-card-name" id="carte-nom-tyna">Tyna</h3>
+              <p class="eq-card-role"><i data-ico="chat"></i>Assistante IA</p>
+              <p class="eq-card-txt">Je vous accueille et vous guide vers le bon agent.</p><button class="eq-voice" type="button" data-agent="tyna" data-voix="assets/equipe/voix/tyna.m4a" data-genre="f" data-dit="phrase-tyna" aria-describedby="carte-nom-tyna" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button></div>
+          </div>
+          <ul class="eq-card-l"><li>Questions et réponses</li><li>Assistance et suivi des demandes</li><li>Simulation et conseiller</li><li>Coordination des agents</li><li>Métiers et secteurs</li></ul>
+          <button class="eq-more" type="button" data-fiche="fiche-accueil" aria-haspopup="dialog">En savoir plus <i data-ico="arrow" data-cls="arrow"></i><span class="sr"> sur Assistante IA</span></button>
+        </li>
+        <li class="eq-card" data-mod="telephone">
+          <div class="eq-card-top">
+            <div class="eq-card-pic" aria-hidden="true"><img class="eq-card-img" src="assets/equipe/naya-400.webp" srcset="assets/equipe/naya-400.webp 400w, assets/equipe/naya-800.webp 800w" sizes="(max-width:760px) 40vw, 180px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+            <div class="eq-card-id"><h3 class="eq-card-name" id="carte-nom-naya">Naya</h3>
+              <p class="eq-card-role"><i data-ico="phone"></i>Agent téléphonique IA</p>
+              <p class="eq-card-txt">Je réponds à vos appels et je qualifie vos demandes.</p><button class="eq-voice" type="button" data-agent="naya" data-voix="assets/equipe/voix/naya.mp3" data-genre="f" data-dit="phrase-naya" aria-describedby="carte-nom-naya" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button></div>
+          </div>
+          <ul class="eq-card-l"><li>Qualification et orientation des appels</li><li>Messages et rappels</li><li>Fiches clients</li></ul>
+          <button class="eq-more" type="button" data-fiche="fiche-telephone" aria-haspopup="dialog">En savoir plus <i data-ico="arrow" data-cls="arrow"></i><span class="sr"> sur Agent téléphonique IA</span></button>
+        </li>
+        <li class="eq-card" data-mod="secretariat">
+          <div class="eq-card-top">
+            <div class="eq-card-pic" aria-hidden="true"><img class="eq-card-img" src="assets/equipe/iris-400.webp" srcset="assets/equipe/iris-400.webp 400w, assets/equipe/iris-800.webp 800w" sizes="(max-width:760px) 40vw, 180px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+            <div class="eq-card-id"><h3 class="eq-card-name" id="carte-nom-iris">Iris</h3>
+              <p class="eq-card-role"><i data-ico="file"></i>Secrétariat IA</p>
+              <p class="eq-card-txt">Je gère votre administratif, vos rendez-vous et vos devis.</p><button class="eq-voice" type="button" data-agent="iris" data-voix="assets/equipe/voix/iris.mp3" data-genre="f" data-dit="phrase-iris" aria-describedby="carte-nom-iris" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button></div>
+          </div>
+          <ul class="eq-card-l"><li>Agenda et rendez-vous</li><li>Devis et relances</li><li>E-mails et documents</li><li>Commandes et colis</li></ul>
+          <button class="eq-more" type="button" data-fiche="fiche-secretariat" aria-haspopup="dialog">En savoir plus <i data-ico="arrow" data-cls="arrow"></i><span class="sr"> sur Secrétariat IA</span></button>
+        </li>
+        <li class="eq-card" data-mod="marketing">
+          <div class="eq-card-top">
+            <div class="eq-card-pic" aria-hidden="true"><img class="eq-card-img" src="assets/equipe/milo-400.webp" srcset="assets/equipe/milo-400.webp 400w, assets/equipe/milo-800.webp 800w" sizes="(max-width:760px) 40vw, 180px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+            <div class="eq-card-id"><h3 class="eq-card-name" id="carte-nom-milo">Milo</h3>
+              <p class="eq-card-role"><i data-ico="mega"></i>Marketing IA</p>
+              <p class="eq-card-txt">Je prépare et programme vos publications pour développer votre visibilité.</p><button class="eq-voice" type="button" data-agent="milo" data-voix="assets/equipe/voix/milo.mp3" data-genre="m" data-dit="phrase-milo" aria-describedby="carte-nom-milo" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button></div>
+          </div>
+          <ul class="eq-card-l"><li>Création de contenu</li><li>Publication et calendrier</li><li>Analyse des performances</li></ul>
+          <button class="eq-more" type="button" data-fiche="fiche-marketing" aria-haspopup="dialog">En savoir plus <i data-ico="arrow" data-cls="arrow"></i><span class="sr"> sur Marketing IA</span></button>
+        </li>
+        <li class="eq-card" data-mod="web">
+          <div class="eq-card-top">
+            <div class="eq-card-pic" aria-hidden="true"><img class="eq-card-img" src="assets/equipe/noa-400.webp" srcset="assets/equipe/noa-400.webp 400w, assets/equipe/noa-800.webp 800w" sizes="(max-width:760px) 40vw, 180px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+            <div class="eq-card-id"><h3 class="eq-card-name" id="carte-nom-noa">Noa</h3>
+              <p class="eq-card-role"><i data-ico="layers"></i>Site internet et gestion web</p>
+              <p class="eq-card-txt">Je crée, modifie et gère votre site web en toute simplicité.</p><button class="eq-voice" type="button" data-agent="noa" data-voix="assets/equipe/voix/noa.mp3" data-genre="m" data-dit="phrase-noa" aria-describedby="carte-nom-noa" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button></div>
+          </div>
+          <ul class="eq-card-l"><li>Contenus et actualités</li><li>Photos et mise en page</li><li>Horaires et informations pratiques</li></ul>
+          <button class="eq-more" type="button" data-fiche="fiche-web" aria-haspopup="dialog">En savoir plus <i data-ico="arrow" data-cls="arrow"></i><span class="sr"> sur Site internet et gestion web</span></button>
+        </li>
+      </ul>
+      <h3 class="eq-sub" id="t-secteurs">Des agents pour votre secteur et vos campagnes</h3>
+      <ul class="eq-cards is-sect" aria-labelledby="t-secteurs">
+        <li class="eq-card" data-mod="medical">
+          <div class="eq-card-top">
+            <div class="eq-card-pic" aria-hidden="true"><img class="eq-card-img" src="assets/equipe/alma-400.webp" srcset="assets/equipe/alma-400.webp 400w, assets/equipe/alma-800.webp 800w" sizes="(max-width:760px) 40vw, 180px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+            <div class="eq-card-id"><h3 class="eq-card-name" id="carte-nom-alma">Alma</h3>
+              <p class="eq-card-role"><i data-ico="shield"></i>Secrétariat médical IA</p>
+              <p class="eq-card-txt">J’assure l’accueil administratif de votre cabinet ou de votre centre.</p><button class="eq-voice" type="button" data-agent="alma" data-voix="assets/equipe/voix/alma.mp3" data-genre="f" data-dit="phrase-alma" aria-describedby="carte-nom-alma" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button></div>
+          </div>
+          <ul class="eq-card-l"><li>Accueil et demandes des patients</li><li>Rendez-vous et agendas</li><li>Dossier patient administratif</li><li>Coordination avec l’équipe</li></ul>
+          <button class="eq-more" type="button" data-fiche="fiche-medical" aria-haspopup="dialog">En savoir plus <i data-ico="arrow" data-cls="arrow"></i><span class="sr"> sur Secrétariat médical IA</span></button>
+        </li>
+        <li class="eq-card" data-mod="ads">
+          <div class="eq-card-top">
+            <div class="eq-card-pic" aria-hidden="true"><img class="eq-card-img" src="assets/equipe/jade-400.webp" srcset="assets/equipe/jade-400.webp 400w, assets/equipe/jade-800.webp 800w" sizes="(max-width:760px) 40vw, 180px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+            <div class="eq-card-id"><h3 class="eq-card-name" id="carte-nom-jade">Jade</h3>
+              <p class="eq-card-role"><i data-ico="chart"></i>Campagne ADS</p>
+              <p class="eq-card-txt">Je fais rayonner votre marque sur tous vos canaux publicitaires.</p><button class="eq-voice" type="button" data-agent="jade" data-voix="assets/equipe/voix/jade.m4a" data-genre="f" data-dit="phrase-jade" aria-describedby="carte-nom-jade" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button></div>
+          </div>
+          <ul class="eq-card-l"><li>Vidéos publicitaires</li><li>Visuels produits</li><li>Formats et plateformes</li></ul>
+          <button class="eq-more" type="button" data-fiche="fiche-ads" aria-haspopup="dialog">En savoir plus <i data-ico="arrow" data-cls="arrow"></i><span class="sr"> sur Campagne ADS</span></button>
+        </li>
+        <li class="eq-card" data-mod="artisan">
+          <div class="eq-card-top">
+            <div class="eq-card-pic" aria-hidden="true"><img class="eq-card-img" src="assets/equipe/arlo-400.webp" srcset="assets/equipe/arlo-400.webp 400w, assets/equipe/arlo-800.webp 800w" sizes="(max-width:760px) 40vw, 180px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+            <div class="eq-card-id"><h3 class="eq-card-name" id="carte-nom-arlo">Arlo</h3>
+              <p class="eq-card-role"><i data-ico="helmet"></i>Artisan OS</p>
+              <p class="eq-card-txt">Je réunis devis, factures, documents et clients de votre entreprise du bâtiment.</p><button class="eq-voice" type="button" data-agent="arlo" data-voix="assets/equipe/voix/arlo.mp3" data-genre="m" data-dit="phrase-arlo" aria-describedby="carte-nom-arlo" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button></div>
+          </div>
+          <ul class="eq-card-l"><li>Devis</li><li>Facturation et règlements</li><li>Gestion commerciale</li><li>Documents</li><li>Suivi client</li><li>Back-office</li></ul>
+          <button class="eq-more" type="button" data-fiche="fiche-artisan" aria-haspopup="dialog">En savoir plus <i data-ico="arrow" data-cls="arrow"></i><span class="sr"> sur Artisan OS</span></button>
+        </li>
+      </ul>
+<!-- /eq:cartes -->
+    </div>
+  </section>
+
+  <!-- 3. Ce que l’entreprise y gagne -->
+  <section class="section eq-gain" id="avantages" aria-labelledby="t-gain">
+    <div class="wrap eq-gain-in">
+      <h2 id="t-gain" class="eq-gain-t">Une solution complète <span>pour votre entreprise</span></h2>
+      <ul class="eq-gain-l">
+        <li><i data-ico="spark"></i><b>Du temps pour votre métier</b><span>Appels, agenda, devis et publications avancent sans vous accaparer.</span></li>
+        <li><i data-ico="phone"></i><b>Aucun appel manqué</b><span>Chaque appel reçoit une réponse et chaque demande est notée.</span></li>
+        <li><i data-ico="chart"></i><b>Une présence active</b><span>Vos publications sont prêtes et votre site reste à jour.</span></li>
+        <li><i data-ico="lock"></i><b>Vous gardez le contrôle</b><span>Vous choisissez les missions&#8239;; rien d’engageant ne part sans votre accord.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Appel final -->
+  <section class="section eq-cta" id="demo" aria-labelledby="t-cta">
+    <div class="wrap eq-cta-in">
+      <div class="eq-cta-txt">
+        <span class="eyebrow">Plus qu’un outil, un véritable partenaire IA</span>
+        <h2 id="t-cta" class="h-l">Faites connaissance avec votre future équipe.</h2>
+        <p class="lead">Décrivez votre activité&#8239;: nous vous montrons les agents utiles à votre entreprise et ce qu’ils feraient pour vous.</p>
         <div class="actions">
-          <a class="btn btn-cyan" href="decouvrir.html">Découvrir Vision Plus <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn-line" href="demo.html">Demander une simulation</a>
+          <a class="btn btn-cyan" href="demo.html">Demander une démo <i data-ico="arrow" data-cls="arrow"></i></a>
+          <a class="btn btn-line" href="offre-sur-mesure.html#rappel">Être rappelé par un conseiller</a>
         </div>
+        <p class="eq-cta-more"><a href="faq.html">Une question&#8239;? Consultez la FAQ</a><a href="sav.html">SAV et assistance</a></p>
       </div>
-      <figure class="scene">
-        <div class="stack">
-          <img src="assets/hero-scene-vp.webp" width="1048" height="618" fetchpriority="high" alt="La plateforme Vision Plus : une web app de restaurant reliée par des câbles lumineux aux modules Marketing IA, secrétaire IA (module téléphonique) et Gestion web app.">
-          <svg class="fx" viewBox="0 0 1048 618" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <filter id="blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
-              <filter id="blur2" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.5"/></filter>
-              <radialGradient id="baseglow"><stop offset="0" stop-color="#6FAEF6" stop-opacity=".5"/><stop offset="1" stop-color="#6FAEF6" stop-opacity="0"/></radialGradient>
-            </defs>
-            <ellipse class="base" cx="268" cy="520" rx="150" ry="26"/>
-            <path class="cable c1" d="M545 178 C585 178 585 122 634 120"/><path class="cable core c1" d="M545 178 C585 178 585 122 634 120"/>
-            <path class="cable c2" d="M548 300 C585 300 590 292 625 292"/><path class="cable core c2" d="M548 300 C585 300 590 292 625 292"/>
-            <path class="cable c3" d="M430 545 C520 535 560 470 613 467"/><path class="cable core c3" d="M430 545 C520 535 560 470 613 467"/>
-            <rect class="panel p1" x="634" y="16" width="380" height="182" rx="16"/>
-            <rect class="panel p2" x="624" y="214" width="392" height="168" rx="16"/>
-            <rect class="panel p3" x="613" y="405" width="405" height="170" rx="16"/>
-          </svg>
-        </div>
-        <figcaption>Démonstration illustrative</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- 2. Pourquoi Vision Plus -->
-  <section class="section alt" id="pourquoi" aria-labelledby="t-why">
-    <div class="wrap">
-      <div class="section-head reveal"><span class="eyebrow">Avantages</span><h2 id="t-why" class="h-l">Moins de tâches. Plus de clients.</h2></div>
-      <div class="av-grid">
-        <article class="av-card reveal w">
-          <div class="av-txt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><h3>Aucun appel manqué</h3><p>Votre secrétaire IA répond, planifie et confirme.</p><a class="btn btn-line btn-sm" href="telephone-ia.html">Découvrir <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></div>
-          <figure class="av-art"><img src="assets/3d/av-appels-vp.webp" width="1090" height="720" alt="" loading="lazy"></figure>
-        </article>
-        <article class="av-card reveal">
-          <div class="av-txt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v3a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M10 6c4 0 7-2 9-3v18c-2-1-5-3-9-3"/></svg><h3>Une présence active</h3><p>Vos publications sont prêtes, vous validez.</p><a class="btn btn-line btn-sm" href="decouvrir.html#marketing">Découvrir <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></div>
-          <figure class="av-art"><img src="assets/3d/av-publications.webp" width="780" height="730" alt="" loading="lazy"></figure>
-        </article>
-        <article class="av-card reveal">
-          <div class="av-txt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></svg><h3>Un site toujours à jour</h3><p>Une phrase suffit pour modifier votre web app.</p><a class="btn btn-line btn-sm" href="decouvrir.html#gestion">Découvrir <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></div>
-          <figure class="av-art"><img src="assets/3d/av-site.webp" width="752" height="716" alt="" loading="lazy"></figure>
-        </article>
-        <article class="av-card reveal w">
-          <div class="av-txt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><h3>Tout au même endroit</h3><p>Un seul espace pour piloter votre activité.</p><a class="btn btn-line btn-sm" href="decouvrir.html#fonctionnement">Découvrir <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></div>
-          <figure class="av-art"><img src="assets/3d/av-tableau-vp.webp" width="974" height="670" alt="" loading="lazy"></figure>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Le service : agents et réseaux sociaux -->
-  <section class="section" id="service" aria-labelledby="t-agents">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Le service</span>
-        <h2 id="t-agents" class="h-l">Trois agents IA autour de votre web app.</h2>
-        <p class="lead">Essayez-les : Le Contemporain, un restaurant fictif, prépare une soirée jazz.</p>
-      </div>
-      <div class="tabs agents-tabs" role="tablist" aria-label="Les trois agents Vision Plus">
-        <button class="tab" type="button" role="tab" id="tab-marketing" aria-controls="marketing" aria-selected="true"><i data-ico="mega"></i>Marketing IA</button>
-        <button class="tab" type="button" role="tab" id="tab-telephone" aria-controls="telephone" aria-selected="false" tabindex="-1"><i data-ico="phone"></i>Votre secrétaire IA</button>
-        <button class="tab" type="button" role="tab" id="tab-gestion" aria-controls="gestion" aria-selected="false" tabindex="-1"><i data-ico="layers"></i>Gestion web app</button>
-      </div>
-      <div class="pane" role="tabpanel" id="marketing" aria-labelledby="tab-marketing" tabindex="0">
-        <div class="pane-txt">
-          <h3>Une phrase, trois publications prêtes.</h3>
-          <p>Vous décrivez l'événement. L'agent rédige un texte adapté à chaque réseau. Rien ne part sans votre validation. Vous fixez le rythme de publication, l'agent choisit les horaires.</p>
-          <div class="field"><label for="m-brief">Ce que nos clients ont demandé</label><textarea class="input brief-in" id="m-brief">Présenter nos panneaux décoratifs Kartezzi, la réglette LED industrielle EcoLED Europe et la domotique HeyZack pilotée par l’IA.</textarea></div>
-          <p class="fict">Exemples de publications : Kartezzi, EcoLED Europe et HeyZack.</p>
-        </div>
-        <div class="device">
-          <div class="posts" id="m-posts" aria-live="polite"></div>
-          <div class="dev-f"><span class="state" id="m-status" role="status">3 publications prêtes à valider</span><button class="btn btn-cyan btn-sm" id="m-gen" type="button">Générer une autre version</button></div>
-        </div>
-        <div class="mk-sched">
-          <div class="mk-head"><span class="eyebrow">Programmation</span><h4 class="h-m">Vous choisissez le rythme. <span>L'IA choisit le bon moment.</span></h4>
-            <p>Décrivez ce que vous souhaitez communiquer et indiquez combien de fois vous voulez publier par jour ou par semaine. Votre agent IA prépare vos textes, visuels et vidéos, puis sélectionne les horaires les plus favorables pour chaque réseau, selon les données disponibles sur votre audience. Vous gardez la maîtrise des contenus et pouvez suspendre la programmation à tout moment.</p></div>
-          <div class="mk-cols">
-            <div class="mk-col you"><p class="mk-t"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Vous choisissez</p><ul><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg><div><b>Les plateformes</b><span>Une, plusieurs ou toutes : Instagram, Facebook, LinkedIn, TikTok, YouTube, X, Pinterest, Snapchat, WhatsApp, Telegram. D'autres applications peuvent être étudiées selon les intégrations disponibles.</span></div></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg><div><b>Les contenus</b><span>À créer : textes, images ou vidéos.</span></div></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><div><b>La fréquence</b><span>Le nombre de publications par jour ou par semaine.</span></div></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><div><b>La période</b><span>Les dates de début et de fin de la campagne.</span></div></li></ul></div>
-            <div class="mk-col ai"><p class="mk-t"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>Votre agent IA s'occupe</p><ul><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg><div><b>Répartit les publications</b><span>Sur toute la période, plateforme par plateforme.</span></div></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Choisit les horaires</b><span>Pour chaque réseau, selon l'activité de l'audience du compte, les statistiques accessibles et les performances des publications précédentes.</span></div></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><div><b>Ajuste au fil des résultats</b><span>Si les statistiques sont insuffisantes, elle part d'estimations adaptées à la plateforme, puis affine à mesure que des résultats arrivent.</span></div></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><div><b>Respecte vos réglages</b><span>Programmation dans le fuseau horaire de votre compte, avec les règles de validation de votre entreprise.</span></div></li></ul></div>
-          </div>
-          <div class="mk-apps"><h5>Votre agent IA, sur les applications que vous choisissez.</h5><p>Une seule application ou toutes : vous sélectionnez les réseaux où publier, votre agent IA prépare et programme les contenus adaptés à chacun. Vous pilotez le tout depuis votre espace Vision Plus, sur ordinateur comme sur mobile.</p></div>
-          <div class="mk-plan" aria-hidden="true">
-            <p class="mk-plan-h"><span>Exemple : vos réseaux, votre rythme</span><span class="mk-h"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Horaires choisis par l'IA pour chaque réseau</span></p>
-            <div class="mk-rows"><div class="mk-row"><span class="mk-net ig">IG</span><b>Instagram</b><span class="mk-f">3 par semaine</span></div><div class="mk-row"><span class="mk-net fb">f</span><b>Facebook</b><span class="mk-f">2 par semaine</span></div><div class="mk-row"><span class="mk-net li">in</span><b>LinkedIn</b><span class="mk-f">2 par semaine</span></div><div class="mk-row"><span class="mk-net tt">♪</span><b>TikTok</b><span class="mk-f">1 par jour</span></div><div class="mk-row"><span class="mk-net yt">▶</span><b>YouTube</b><span class="mk-f">1 par semaine</span></div><div class="mk-row"><span class="mk-net x">X</span><b>X</b><span class="mk-f">1 par jour</span></div><div class="mk-row"><span class="mk-net pi">P</span><b>Pinterest</b><span class="mk-f">3 par semaine</span></div><div class="mk-row"><span class="mk-net sc">SC</span><b>Snapchat</b><span class="mk-f">2 par semaine</span></div><div class="mk-row"><span class="mk-net wa">WA</span><b>WhatsApp</b><span class="mk-f">1 par semaine</span></div><div class="mk-row"><span class="mk-net tg">✈</span><b>Telegram</b><span class="mk-f">1 par semaine</span></div></div>
-            <div class="mk-row mk-sub"><span>Du 1er au 30 · fuseau horaire du compte</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Validation avant publication</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>Suspendable à tout moment</span></div>
-          </div>
-          <figure class="mk-ex"><figcaption>Exemple de demande</figcaption><blockquote>« Crée des vidéos et des publications pour présenter nos prestations. Publie trois fois par semaine sur Instagram et deux fois par semaine sur LinkedIn pendant un mois. Choisis les horaires les plus favorables pour chaque plateforme et soumets les contenus à ma validation. »</blockquote></figure>
-          <p class="mk-note">L'objectif est de privilégier les moments susceptibles d'offrir le plus de visibilité, sans garantie d'un nombre de vues. L'agent ne connaît pas en temps réel l'activité de tous les utilisateurs d'un réseau : il s'appuie sur les données accessibles de votre compte et sur des estimations propres à chaque plateforme.</p>
-        </div>
-      </div>
-      <div class="pane" role="tabpanel" id="telephone" aria-labelledby="tab-telephone" tabindex="0" hidden>
-        <div class="pane-txt">
-          <h3>Votre secrétariat, géré par l'IA.</h3>
-          <p>Appels, rendez-vous, plannings, devis, factures, e-mails, courriers, dossiers : l'agent fait tout le travail d'une secrétaire. Vous validez l'essentiel.</p>
-          <ul class="ticks"><li>Répond 7 jours sur 7, même quand personne n'est disponible</li><li>Établit vos devis pendant l'appel et les envoie au client après votre validation</li><li>Travaille avec les données de votre web app</li><li>Vous laisse la décision sur les devis et les cas sensibles</li></ul>
-          <p class="fict">Démonstration illustrative, restaurant fictif.</p>
-        </div>
-        <div class="device" id="t-call">
-          <div class="call-h"><b>Appel entrant · 06 •• •• •• 18</b><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
-          <ol class="convo" id="t-convo" aria-live="polite" aria-label="Transcription de l'appel"></ol>
-          <div class="dev-f"><span class="state" id="t-status" role="status">Réservation confirmée</span><button class="btn btn-cyan btn-sm" id="t-play" type="button">Rejouer l'appel</button></div>
-        </div>
-      
-        <div class="sec-all" aria-label="Tout ce que fait votre secrétaire IA">
-          <p class="sec-all-t">Tout ce que fait votre secrétaire IA</p>
-          <div class="sec-grid"><div class="sec-g"><b>Accueil téléphonique</b><ul class="ticks"><li>Répond à chaque appel, sans attente</li><li>Accueille vos clients avec votre message</li><li>Filtre et oriente vers la bonne personne</li><li>Prend les messages et vous les résume</li><li>Transmet immédiatement les urgences</li><li>Rappelle les clients au moment convenu</li></ul></div><div class="sec-g"><b>Agenda et plannings</b><ul class="ticks"><li>Prend, déplace et annule les rendez-vous</li><li>Tient le planning de l'équipe à jour</li><li>Organise réunions et rendez-vous internes</li><li>Note congés et absences dans le planning</li><li>Envoie confirmations et rappels par SMS ou e-mail</li><li>Gère les listes d'attente et les créneaux libérés</li></ul></div><div class="sec-g"><b>Devis et facturation</b><ul class="ticks"><li>Recueille le besoin du client au téléphone</li><li>Prépare le devis à partir de vos tarifs</li><li>L'envoie après votre validation</li><li>Prépare les factures</li><li>Relance devis en attente et factures impayées</li><li>Suit les paiements reçus</li></ul></div><div class="sec-g"><b>E-mails et courrier</b><ul class="ticks"><li>Trie la boîte mail et signale l'important</li><li>Rédige les réponses à votre place</li><li>Rédige courriers, attestations et comptes rendus</li><li>Prépare vos modèles de lettres et d'e-mails</li><li>Classe les pièces jointes au bon dossier</li><li>Répond aux questions fréquentes</li></ul></div><div class="sec-g"><b>Suivi client</b><ul class="ticks"><li>Met à jour les fiches clients dans la web app</li><li>Garde l'historique de chaque échange</li><li>Relance les prospects et les clients inactifs</li><li>Envoie les enquêtes de satisfaction</li><li>Enregistre les réclamations et vous les transmet</li></ul></div><div class="sec-g"><b>Gestion administrative</b><ul class="ticks"><li>Classe et archive les documents</li><li>Prépare dossiers et formulaires</li><li>Suit contrats, échéances et renouvellements</li><li>Prépare les commandes de fournitures</li><li>Tient la liste des tâches et des rappels</li></ul></div><div class="sec-g"><b>Coordination de l'équipe</b><ul class="ticks"><li>Transmet consignes et messages à chacun</li><li>Prépare l'ordre du jour des réunions</li><li>Rédige et diffuse les comptes rendus</li><li>Prépare les déplacements : transport et hôtel</li></ul></div><div class="sec-g"><b>Suivi d'activité</b><ul class="ticks"><li>Vous envoie le récapitulatif de la journée</li><li>Synthèse de la semaine : appels, rendez-vous, devis</li><li>Signale les points à traiter en priorité</li></ul></div></div>
-        </div>
-      </div>
-      <div class="pane" role="tabpanel" id="gestion" aria-labelledby="tab-gestion" tabindex="0" hidden>
-        <div class="pane-txt">
-          <h3>Votre site se modifie en une phrase.</h3>
-          <p>Choisissez une demande. L'agent prépare la modification, vous validez, elle est en ligne.</p>
-          <div class="reqs" role="group" aria-label="Demandes à l'agent">
-            <button class="req" type="button" data-req="jazz" aria-pressed="false">« Ajoute la soirée jazz de vendredi »</button>
-            <button class="req" type="button" data-req="photo" aria-pressed="false">« Mets la terrasse en couverture »</button>
-            <button class="req" type="button" data-req="hours" aria-pressed="false">« Ouvre aussi le dimanche midi »</button>
-          </div>
-          <div class="flow3" aria-live="polite"><span id="g1">Préparé</span><span id="g2">Validé</span><span id="g3">En ligne</span></div>
-          <p class="fict">Démonstration illustrative, restaurant fictif.</p>
-        </div>
-        <div class="device mini" role="img" aria-label="Aperçu du site du restaurant fictif Le Contemporain">
-          <div class="mini-nav"><b>Le Contemporain</b><span>Carte</span><span>Le restaurant</span><span>Réserver</span></div>
-          <div class="mini-hero" id="g-hero"><h4>Cuisine de saison &amp; produits locaux</h4><p id="g-sub">Salle intérieure · 42 couverts</p></div>
-          <div class="mini-b"><h5>À venir</h5><div id="g-events"><div class="ev"><span><b>Menu du marché</b>Du mardi au vendredi midi</span><span>24 €</span></div></div><h5>Horaires</h5><div class="hours" id="g-hours"><span>Mardi – samedi</span><span>12h–14h · 19h–22h30</span></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. Notre technologie -->
-  <section class="section alt" id="technologie" aria-labelledby="t-tech">
-    <div class="wrap">
-      <div class="tech-head reveal">
-        <span class="eyebrow">Notre technologie</span>
-        <h2 id="t-tech" class="h-l">Une IA connectée à toute votre activité.</h2>
-        <a class="btn btn-line" href="decouvrir.html">Explorer la technologie <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <figure class="tech-visual reveal">
-        <img src="assets/tech-plateforme-vp.webp" width="1623" height="1602" loading="lazy" alt="Le noyau Vision Plus relié à trois agents IA : votre secrétaire IA, qui répond et planifie ; Marketing IA, qui crée et publie sur Instagram, Facebook, LinkedIn, TikTok, YouTube, X, WhatsApp, Snapchat, Pinterest et Telegram ; Gestion web app, qui modifie et met en ligne votre site sur ordinateur et mobile.">
-        <svg class="tv-fx" viewBox="0 0 1082 1068" preserveAspectRatio="none" aria-hidden="true">
-          <defs><radialGradient id="tvg"><stop offset="0" stop-color="#87BBF7" stop-opacity=".55"/><stop offset="1" stop-color="#87BBF7" stop-opacity="0"/></radialGradient></defs>
-          <circle class="tv-halo" cx="548" cy="415" r="230" fill="url(#tvg)"/>
-          <path class="tv-p a" pathLength="100" d="M548 322 L548 198"/>
-          <path class="tv-p b" pathLength="100" d="M470 492 L285 588"/>
-          <path class="tv-p c" pathLength="100" d="M626 492 L800 593"/>
-        </svg>
-        <button class="tv-hot h1" type="button" data-tab="tab-telephone" aria-label="Voir votre secrétaire IA en action"></button>
-        <button class="tv-hot h2" type="button" data-tab="tab-marketing" aria-label="Voir l'agent Marketing IA en action"></button>
-        <button class="tv-hot h3" type="button" data-tab="tab-gestion" aria-label="Voir l'agent Gestion web app en action"></button>
-      </figure>
-    </div>
-  </section>
-
-  <!-- 3 bis. Qu'est-ce que Vision Plus ? -->
-  <section class="section" id="vision-plus-simple" aria-labelledby="t-simple">
-    <div class="wrap">
-      <div class="simple-intro reveal">
-        <span class="eyebrow">Qu'est-ce que Vision Plus ?</span>
-        <h2 id="t-simple" class="h-l">Vision Plus, votre entreprise avance. L'IA s'occupe du reste.</h2>
-        <p class="lead">Vision Plus est une plateforme d'intelligence artificielle qui aide les entreprises à gagner du temps, trouver des clients et automatiser leur quotidien.</p>
-        <p class="simple-p">Imaginez une équipe d'assistants intelligents qui travaillent pour vous : ils répondent à vos appels, vous aident à communiquer sur les réseaux sociaux et simplifient la gestion de votre site internet.</p>
-        <p class="simple-p strong">Tout cela depuis une seule plateforme, simple à utiliser.</p>
-      </div>
-      <div class="svc3">
-        <article class="svc reveal">
-          <span class="svc-ic"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
-          <h3><span>Votre secrétaire IA</span>Ne manquez plus aucun appel</h3>
-          <p>Votre secrétaire IA répond à vos clients, prend leurs demandes, organise vos rendez-vous, prépare vos devis et vos e-mails : vous choisissez les missions que vous lui confiez.</p>
-          <p class="svc-gain">Moins d'appels manqués, plus de temps pour votre activité.</p>
-          <a class="btn btn-line btn-sm" href="telephone-ia.html">En savoir plus <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </article>
-        <article class="svc reveal">
-          <span class="svc-ic"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v3a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M10 6c4 0 7-2 9-3v18c-2-1-5-3-9-3"/></svg></span>
-          <h3><span>Marketing IA</span>Communiquez plus facilement</h3>
-          <p>Vision Plus vous aide à créer du contenu pour vos réseaux sociaux et à préparer vos publications sur Instagram, Facebook, LinkedIn, TikTok et les autres plateformes compatibles.</p>
-          <p>Vous gardez le contrôle et validez vos publications avant leur diffusion.</p>
-          <p class="svc-gain">Moins de temps passé à communiquer, plus de visibilité pour votre entreprise.</p>
-          <img class="svc-social" src="assets/reseaux-sociaux.webp" width="664" height="256" loading="lazy" alt="Réseaux sociaux compatibles : Instagram, Facebook, LinkedIn, TikTok, YouTube, X, WhatsApp, Snapchat, Pinterest et Telegram.">
-          <a class="btn btn-line btn-sm" href="decouvrir.html#marketing">En savoir plus <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </article>
-        <article class="svc reveal">
-          <span class="svc-ic"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></svg></span>
-          <h3><span>Gestion web app</span>Votre site évolue avec vous</h3>
-          <p>Vision Plus vous aide à gérer, modifier et actualiser votre site internet plus facilement.</p>
-          <p>Vous pouvez demander des changements, actualiser des informations et faire évoluer votre présence en ligne sans avoir besoin de connaissances techniques avancées.</p>
-          <p class="svc-gain">Un site toujours à jour, sans complications.</p>
-          <a class="btn btn-line btn-sm" href="decouvrir.html#gestion">En savoir plus <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </article>
-      </div>
-      <div class="how reveal">
-        <h3 class="how-t">Comment fonctionne Vision Plus ?</h3>
-        <ol class="how3">
-          <li><span class="how-ic"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><b>Créez votre compte</b><span>Accédez à votre espace Vision Plus.</span></li>
-          <li><span class="how-ic"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></span><b>Choisissez vos services</b><span>Sélectionnez les outils d'intelligence artificielle adaptés à votre entreprise.</span></li>
-          <li><span class="how-ic"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></span><b>Laissez Vision Plus vous accompagner</b><span>Pilotez vos outils, automatisez vos tâches et gardez le contrôle depuis votre espace personnel.</span></li>
-        </ol>
-      </div>
-      <div class="simple-cta reveal">
-        <p class="cta-q">Et si l'intelligence artificielle travaillait pour votre entreprise ?</p>
-        <p class="lead">Découvrez comment Vision Plus peut simplifier votre quotidien.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. Rejoindre Vision Plus -->
-  <section class="section join" id="rejoindre" aria-labelledby="t-join">
-    <div class="wrap">
-      <span class="eyebrow reveal">Rejoindre Vision Plus</span>
-      <h2 id="t-join" class="h-l reveal">Prêt à passer à la nouvelle dimension ?</h2>
-      <div class="actions center reveal">
-        <a class="btn btn-cyan" href="inscription.html" data-auth="signup">Créer un compte</a>
-        <a class="btn btn-line" href="offre-sur-mesure.html">Votre offre sur mesure</a>
-      </div>
+<!-- eq:cta -->
+      <ul class="eq-mosaic"><li class="eq-mos-i"><img class="eq-mos-img" src="assets/equipe/tyna-400.webp" srcset="assets/equipe/tyna-400.webp 400w, assets/equipe/tyna-800.webp 800w" sizes="96px" alt="" width="400" height="600" loading="lazy" decoding="async"><p class="eq-mos-n">Tyna</p><p class="eq-mos-r">Chef d’équipe</p></li><li class="eq-mos-i"><img class="eq-mos-img" src="assets/equipe/naya-400.webp" srcset="assets/equipe/naya-400.webp 400w, assets/equipe/naya-800.webp 800w" sizes="96px" alt="" width="400" height="600" loading="lazy" decoding="async"><p class="eq-mos-n">Naya</p><p class="eq-mos-r">Agent téléphonique IA</p></li><li class="eq-mos-i"><img class="eq-mos-img" src="assets/equipe/iris-400.webp" srcset="assets/equipe/iris-400.webp 400w, assets/equipe/iris-800.webp 800w" sizes="96px" alt="" width="400" height="600" loading="lazy" decoding="async"><p class="eq-mos-n">Iris</p><p class="eq-mos-r">Secrétariat IA</p></li><li class="eq-mos-i"><img class="eq-mos-img" src="assets/equipe/milo-400.webp" srcset="assets/equipe/milo-400.webp 400w, assets/equipe/milo-800.webp 800w" sizes="96px" alt="" width="400" height="600" loading="lazy" decoding="async"><p class="eq-mos-n">Milo</p><p class="eq-mos-r">Marketing IA</p></li><li class="eq-mos-i"><img class="eq-mos-img" src="assets/equipe/noa-400.webp" srcset="assets/equipe/noa-400.webp 400w, assets/equipe/noa-800.webp 800w" sizes="96px" alt="" width="400" height="600" loading="lazy" decoding="async"><p class="eq-mos-n">Noa</p><p class="eq-mos-r">Site internet et gestion web</p></li><li class="eq-mos-i"><img class="eq-mos-img" src="assets/equipe/alma-400.webp" srcset="assets/equipe/alma-400.webp 400w, assets/equipe/alma-800.webp 800w" sizes="96px" alt="" width="400" height="600" loading="lazy" decoding="async"><p class="eq-mos-n">Alma</p><p class="eq-mos-r">Secrétariat médical IA</p></li><li class="eq-mos-i"><img class="eq-mos-img" src="assets/equipe/jade-400.webp" srcset="assets/equipe/jade-400.webp 400w, assets/equipe/jade-800.webp 800w" sizes="96px" alt="" width="400" height="600" loading="lazy" decoding="async"><p class="eq-mos-n">Jade</p><p class="eq-mos-r">Campagne ADS</p></li><li class="eq-mos-i"><img class="eq-mos-img" src="assets/equipe/arlo-400.webp" srcset="assets/equipe/arlo-400.webp 400w, assets/equipe/arlo-800.webp 800w" sizes="96px" alt="" width="400" height="600" loading="lazy" decoding="async"><p class="eq-mos-n">Arlo</p><p class="eq-mos-r">Artisan OS</p></li><li class="eq-mos-i"><img class="eq-mos-img" src="assets/equipe/cyra-400.webp" srcset="assets/equipe/cyra-400.webp 400w, assets/equipe/cyra-800.webp 800w" sizes="96px" alt="" width="400" height="600" loading="lazy" decoding="async"><p class="eq-mos-n">Cyra</p><p class="eq-mos-r">Questions et réponses</p></li><li class="eq-mos-i"><img class="eq-mos-img" src="assets/equipe/eden-400.webp" srcset="assets/equipe/eden-400.webp 400w, assets/equipe/eden-800.webp 800w" sizes="96px" alt="" width="400" height="600" loading="lazy" decoding="async"><p class="eq-mos-n">Eden</p><p class="eq-mos-r">Assistance et suivi des demandes</p></li></ul>
+<!-- /eq:cta -->
     </div>
   </section>
 </main>
 
+<!-- eq:fiches -->
+<dialog class="eq-dlg" id="fiche-accueil" aria-labelledby="fiche-accueil-t" data-mod="accueil">
+  <div class="eq-dlg-in">
+    <button class="eq-x" type="button" data-close aria-label="Fermer la fiche"><i data-ico="x"></i></button>
+    <header class="eq-dlg-h">
+      <div class="eq-dlg-pic"><img class="eq-dlg-img" src="assets/equipe/tyna-400.webp" srcset="assets/equipe/tyna-400.webp 400w, assets/equipe/tyna-800.webp 800w" sizes="(max-width:760px) 40vw, 240px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+      <div class="eq-dlg-id"><p class="eq-badge">Chef d’équipe</p><p class="eq-card-mod"><i data-ico="chat"></i>Assistante IA</p>
+        <h2 id="fiche-accueil-t" class="eq-dlg-name">Tyna</h2>
+        <p class="eq-dlg-txt" id="phrase-tyna">« Je dirige l’équipe des agents Vision Plus : je vous accueille, je comprends ce que vous souhaitez faire et je vous guide vers le bon agent. »</p><button class="eq-voice" type="button" data-agent="tyna" data-voix="assets/equipe/voix/tyna.m4a" data-genre="f" data-dit="phrase-tyna" aria-describedby="fiche-accueil-t" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button>
+        <p class="eq-ex"><b>Exemple</b>Vous parlez d’un devis à envoyer : je vous présente Iris et ses spécialistes.</p></div>
+    </header>
+    <h3 class="eq-dlg-sub">Ses spécialistes</h3>
+    <ul class="eq-spec">
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/cyra-400.webp" srcset="assets/equipe/cyra-400.webp 400w, assets/equipe/cyra-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-cyra">Cyra</b><span>Questions et réponses</span></h4><p id="phrase-cyra">« Je réponds à vos questions sur Vision Plus à partir de la FAQ, à tout moment. »</p><button class="eq-voice" type="button" data-agent="cyra" data-voix="assets/equipe/voix/cyra.m4a" data-genre="f" data-dit="phrase-cyra" aria-describedby="nom-cyra" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Expliquer comment fonctionne la simulation.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/eden-400.webp" srcset="assets/equipe/eden-400.webp 400w, assets/equipe/eden-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-eden">Eden</b><span>Assistance et suivi des demandes</span></h4><p id="phrase-eden">« Je vous aide à ouvrir une demande d’assistance et à suivre son avancement. »</p><button class="eq-voice" type="button" data-agent="eden" data-voix="assets/equipe/voix/eden.mp3" data-genre="m" data-dit="phrase-eden" aria-describedby="nom-eden" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Ouvrir une demande SAV et vous donner son numéro de suivi.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/soren-400.webp" srcset="assets/equipe/soren-400.webp 400w, assets/equipe/soren-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-soren">Soren</b><span>Simulation et conseiller</span></h4><p id="phrase-soren">« Je vous aide à demander une simulation de votre projet ou à être rappelé par un conseiller. »</p><button class="eq-voice" type="button" data-agent="soren" data-voix="assets/equipe/voix/soren.mp3" data-genre="m" data-dit="phrase-soren" aria-describedby="nom-soren" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Préparer votre demande de simulation à partir de votre activité.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/orion-400.webp" srcset="assets/equipe/orion-400.webp 400w, assets/equipe/orion-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-orion">Orion</b><span>Coordination des agents</span></h4><p id="phrase-orion">« Je relie vos agents entre eux : une information donnée une fois sert à toute l’équipe, sans ressaisie. »</p><button class="eq-voice" type="button" data-agent="orion" data-voix="assets/equipe/voix/orion.m4a" data-genre="m" data-dit="phrase-orion" aria-describedby="nom-orion" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Une réservation prise au téléphone met aussitôt à jour l’agenda, le site et les publications.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/vela-400.webp" srcset="assets/equipe/vela-400.webp 400w, assets/equipe/vela-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-vela">Vela</b><span>Métiers et secteurs</span></h4><p id="phrase-vela">« J’adapte vos agents IA à votre métier : restaurant, cabinet de santé, salon de beauté, artisan, hôtel ou commerce. »</p><button class="eq-voice" type="button" data-agent="vela" data-voix="assets/equipe/voix/vela.m4a" data-genre="f" data-dit="phrase-vela" aria-describedby="nom-vela" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Pour un salon de beauté : créneaux, prestations et rappels configurés selon votre organisation.</p></div></li>
+    </ul>
+    <div class="eq-dlg-f actions"><a class="btn btn-cyan" href="faq.html">Poser une question dans la FAQ <i data-ico="arrow" data-cls="arrow"></i></a><a class="btn btn-line" href="demo.html">Demander une démo</a></div>
+  </div>
+</dialog>
+<dialog class="eq-dlg" id="fiche-telephone" aria-labelledby="fiche-telephone-t" data-mod="telephone">
+  <div class="eq-dlg-in">
+    <button class="eq-x" type="button" data-close aria-label="Fermer la fiche"><i data-ico="x"></i></button>
+    <header class="eq-dlg-h">
+      <div class="eq-dlg-pic"><img class="eq-dlg-img" src="assets/equipe/naya-400.webp" srcset="assets/equipe/naya-400.webp 400w, assets/equipe/naya-800.webp 800w" sizes="(max-width:760px) 40vw, 240px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+      <div class="eq-dlg-id"><p class="eq-card-mod"><i data-ico="phone"></i>Agent téléphonique IA</p>
+        <h2 id="fiche-telephone-t" class="eq-dlg-name">Naya</h2>
+        <p class="eq-dlg-txt" id="phrase-naya">« Je réponds à vos appels au nom de votre entreprise, je comprends la demande et je m’assure qu’aucun client ne reste sans réponse. »</p><button class="eq-voice" type="button" data-agent="naya" data-voix="assets/equipe/voix/naya.mp3" data-genre="f" data-dit="phrase-naya" aria-describedby="fiche-telephone-t" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button>
+        <p class="eq-ex"><b>Exemple</b>Accueillir un client qui appelle pour une réservation et noter sa demande.</p></div>
+    </header>
+    <h3 class="eq-dlg-sub">Ses spécialistes</h3>
+    <ul class="eq-spec">
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/kai-400.webp" srcset="assets/equipe/kai-400.webp 400w, assets/equipe/kai-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-kai">Kaï</b><span>Qualification et orientation des appels</span></h4><p id="phrase-kai">« Je pose les bonnes questions, je repère les demandes prioritaires et j’oriente l’appel vers le bon service. »</p><button class="eq-voice" type="button" data-agent="kai" data-voix="assets/equipe/voix/kai.mp3" data-genre="m" data-dit="phrase-kai" aria-describedby="nom-kai" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Signaler un appel urgent et le transférer au bon collaborateur.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/mae-400.webp" srcset="assets/equipe/mae-400.webp 400w, assets/equipe/mae-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-mae">Maé</b><span>Messages et rappels</span></h4><p id="phrase-mae">« Je prends vos messages, je rédige un compte rendu clair et j’organise les rappels. »</p><button class="eq-voice" type="button" data-agent="mae" data-voix="assets/equipe/voix/mae.mp3" data-genre="f" data-dit="phrase-mae" aria-describedby="nom-mae" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Envoyer le résumé d’un appel manqué avec le créneau de rappel proposé.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/owen-400.webp" srcset="assets/equipe/owen-400.webp 400w, assets/equipe/owen-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-owen">Owen</b><span>Fiches clients</span></h4><p id="phrase-owen">« Je crée et je mets à jour les fiches de vos clients, prospects et partenaires après chaque échange. »</p><button class="eq-voice" type="button" data-agent="owen" data-voix="assets/equipe/voix/owen.mp3" data-genre="m" data-dit="phrase-owen" aria-describedby="nom-owen" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Ajouter une note à la fiche d’un client après son appel.</p></div></li>
+    </ul>
+    <div class="eq-dlg-f actions"><a class="btn btn-cyan" href="telephone-ia.html#missions">Découvrir votre secrétaire IA <i data-ico="arrow" data-cls="arrow"></i></a><a class="btn btn-line" href="demo.html">Demander une démo</a></div>
+  </div>
+</dialog>
+<dialog class="eq-dlg" id="fiche-secretariat" aria-labelledby="fiche-secretariat-t" data-mod="secretariat">
+  <div class="eq-dlg-in">
+    <button class="eq-x" type="button" data-close aria-label="Fermer la fiche"><i data-ico="x"></i></button>
+    <header class="eq-dlg-h">
+      <div class="eq-dlg-pic"><img class="eq-dlg-img" src="assets/equipe/iris-400.webp" srcset="assets/equipe/iris-400.webp 400w, assets/equipe/iris-800.webp 800w" sizes="(max-width:760px) 40vw, 240px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+      <div class="eq-dlg-id"><p class="eq-card-mod"><i data-ico="file"></i>Secrétariat IA</p>
+        <h2 id="fiche-secretariat-t" class="eq-dlg-name">Iris</h2>
+        <p class="eq-dlg-txt" id="phrase-iris">« Je m’occupe de votre administratif : agenda, devis, e-mails, documents et suivi des dossiers. »</p><button class="eq-voice" type="button" data-agent="iris" data-voix="assets/equipe/voix/iris.mp3" data-genre="f" data-dit="phrase-iris" aria-describedby="fiche-secretariat-t" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button>
+        <p class="eq-ex"><b>Exemple</b>Préparer la journée de demain : rendez-vous confirmés, devis à relancer, e-mails à valider.</p></div>
+    </header>
+    <h3 class="eq-dlg-sub">Ses spécialistes</h3>
+    <ul class="eq-spec">
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/hana-400.webp" srcset="assets/equipe/hana-400.webp 400w, assets/equipe/hana-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-hana">Hana</b><span>Agenda et rendez-vous</span></h4><p id="phrase-hana">« Je consulte vos disponibilités, je propose les créneaux libres et j’envoie confirmations et rappels. »</p><button class="eq-voice" type="button" data-agent="hana" data-voix="assets/equipe/voix/hana.mp3" data-genre="f" data-dit="phrase-hana" aria-describedby="nom-hana" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Proposer à un client le créneau libéré par une annulation.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/gael-400.webp" srcset="assets/equipe/gael-400.webp 400w, assets/equipe/gael-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-gael">Gaël</b><span>Devis et relances</span></h4><p id="phrase-gael">« Je prépare vos devis à partir de vos tarifs et modèles validés, puis je suis les réponses et les relances. »</p><button class="eq-voice" type="button" data-agent="gael" data-voix="assets/equipe/voix/gael.mp3" data-genre="m" data-dit="phrase-gael" aria-describedby="nom-gael" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Préparer un devis, le soumettre à votre validation, puis relancer le client.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/ezra-400.webp" srcset="assets/equipe/ezra-400.webp 400w, assets/equipe/ezra-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-ezra">Ezra</b><span>E-mails et documents</span></h4><p id="phrase-ezra">« Je trie vos e-mails, je prépare les réponses courantes et je classe chaque pièce dans le bon dossier. »</p><button class="eq-voice" type="button" data-agent="ezra" data-voix="assets/equipe/voix/ezra.mp3" data-genre="m" data-dit="phrase-ezra" aria-describedby="nom-ezra" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Répondre à une demande d’information et ranger la pièce jointe au dossier du client.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/tao-400.webp" srcset="assets/equipe/tao-400.webp 400w, assets/equipe/tao-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-tao">Tao</b><span>Commandes et colis</span></h4><p id="phrase-tao">« Je suis vos commandes et vos colis, je vérifie les délais annoncés et je signale les retards. »</p><button class="eq-voice" type="button" data-agent="tao" data-voix="assets/equipe/voix/tao.mp3" data-genre="m" data-dit="phrase-tao" aria-describedby="nom-tao" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Prévenir un client que son colis a pris du retard, avec la nouvelle date estimée.</p></div></li>
+    </ul>
+    <div class="eq-dlg-f actions"><a class="btn btn-cyan" href="telephone-ia.html#missions">Découvrir votre secrétaire IA <i data-ico="arrow" data-cls="arrow"></i></a><a class="btn btn-line" href="demo.html">Demander une démo</a></div>
+  </div>
+</dialog>
+<dialog class="eq-dlg" id="fiche-medical" aria-labelledby="fiche-medical-t" data-mod="medical">
+  <div class="eq-dlg-in">
+    <button class="eq-x" type="button" data-close aria-label="Fermer la fiche"><i data-ico="x"></i></button>
+    <header class="eq-dlg-h">
+      <div class="eq-dlg-pic"><img class="eq-dlg-img" src="assets/equipe/alma-400.webp" srcset="assets/equipe/alma-400.webp 400w, assets/equipe/alma-800.webp 800w" sizes="(max-width:760px) 40vw, 240px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+      <div class="eq-dlg-id"><p class="eq-card-mod"><i data-ico="shield"></i>Secrétariat médical IA</p>
+        <h2 id="fiche-medical-t" class="eq-dlg-name">Alma</h2>
+        <p class="eq-dlg-txt" id="phrase-alma">« J’assure l’accueil administratif de votre cabinet ou de votre centre, du premier appel au dossier classé, et je passe la main à l’équipe au bon moment. »</p><button class="eq-voice" type="button" data-agent="alma" data-voix="assets/equipe/voix/alma.mp3" data-genre="f" data-dit="phrase-alma" aria-describedby="fiche-medical-t" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button>
+        <p class="eq-ex"><b>Exemple</b>Traiter une demande de rendez-vous de l’appel jusqu’à la confirmation.</p></div>
+    </header>
+    <h3 class="eq-dlg-sub">Ses spécialistes</h3>
+    <ul class="eq-spec">
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/mira-400.webp" srcset="assets/equipe/mira-400.webp 400w, assets/equipe/mira-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-mira">Mira</b><span>Accueil et demandes des patients</span></h4><p id="phrase-mira">« Je réponds aux appels, aux messages et aux questions pratiques, après identification du patient. »</p><button class="eq-voice" type="button" data-agent="mira" data-voix="assets/equipe/voix/mira.mp3" data-genre="f" data-dit="phrase-mira" aria-describedby="nom-mira" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Donner les horaires d’ouverture et les consignes d’accès au cabinet.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/lou-400.webp" srcset="assets/equipe/lou-400.webp 400w, assets/equipe/lou-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-lou">Lou</b><span>Rendez-vous et agendas</span></h4><p id="phrase-lou">« Je gère les créneaux, les listes d’attente, les confirmations et les rappels. »</p><button class="eq-voice" type="button" data-agent="lou" data-voix="assets/equipe/voix/lou.mp3" data-genre="f" data-dit="phrase-lou" aria-describedby="nom-lou" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Proposer un créneau libéré à un patient inscrit sur liste d’attente.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/swann-400.webp" srcset="assets/equipe/swann-400.webp 400w, assets/equipe/swann-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-swann">Swann</b><span>Dossier patient administratif</span></h4><p id="phrase-swann">« Je prépare une fiche administrative complète, vérifiée et récapitulée avant votre validation. »</p><button class="eq-voice" type="button" data-agent="swann" data-voix="assets/equipe/voix/swann.mp3" data-genre="m" data-dit="phrase-swann" aria-describedby="nom-swann" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Signaler une pièce administrative manquante avant le rendez-vous.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/rayan-400.webp" srcset="assets/equipe/rayan-400.webp 400w, assets/equipe/rayan-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-rayan">Rayan</b><span>Coordination avec l’équipe</span></h4><p id="phrase-rayan">« J’organise une file de travail claire pour l’équipe et je prépare une synthèse quotidienne. »</p><button class="eq-voice" type="button" data-agent="rayan" data-voix="assets/equipe/voix/rayan.mp3" data-genre="m" data-dit="phrase-rayan" aria-describedby="nom-rayan" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Transmettre chaque matin la liste des demandes à traiter.</p></div></li>
+    </ul>
+    <div class="eq-dlg-f actions"><a class="btn btn-cyan" href="telephone-ia.html#secretariat-medical">Découvrir le secrétariat médical IA <i data-ico="arrow" data-cls="arrow"></i></a><a class="btn btn-line" href="demo.html">Demander une démo</a></div>
+  </div>
+</dialog>
+<dialog class="eq-dlg" id="fiche-marketing" aria-labelledby="fiche-marketing-t" data-mod="marketing">
+  <div class="eq-dlg-in">
+    <button class="eq-x" type="button" data-close aria-label="Fermer la fiche"><i data-ico="x"></i></button>
+    <header class="eq-dlg-h">
+      <div class="eq-dlg-pic"><img class="eq-dlg-img" src="assets/equipe/milo-400.webp" srcset="assets/equipe/milo-400.webp 400w, assets/equipe/milo-800.webp 800w" sizes="(max-width:760px) 40vw, 240px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+      <div class="eq-dlg-id"><p class="eq-card-mod"><i data-ico="mega"></i>Marketing IA</p>
+        <h2 id="fiche-marketing-t" class="eq-dlg-name">Milo</h2>
+        <p class="eq-dlg-txt" id="phrase-milo">« Je prépare vos publications pour les réseaux sociaux à partir d’une simple phrase, et rien ne part sans votre validation. »</p><button class="eq-voice" type="button" data-agent="milo" data-voix="assets/equipe/voix/milo.mp3" data-genre="m" data-dit="phrase-milo" aria-describedby="fiche-marketing-t" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button>
+        <p class="eq-ex"><b>Exemple</b>Transformer l’annonce d’un événement en trois publications prêtes à valider.</p></div>
+    </header>
+    <h3 class="eq-dlg-sub">Ses spécialistes</h3>
+    <ul class="eq-spec">
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/sacha-400.webp" srcset="assets/equipe/sacha-400.webp 400w, assets/equipe/sacha-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-sacha">Sacha</b><span>Création de contenu</span></h4><p id="phrase-sacha">« Je rédige vos textes et je prépare vos visuels et vidéos à partir de vos offres et de votre actualité. »</p><button class="eq-voice" type="button" data-agent="sacha" data-voix="assets/equipe/voix/sacha.mp3" data-genre="f" data-dit="phrase-sacha" aria-describedby="nom-sacha" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Écrire une publication adaptée à Instagram, une autre à LinkedIn.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/lya-400.webp" srcset="assets/equipe/lya-400.webp 400w, assets/equipe/lya-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-lya">Lya</b><span>Publication et calendrier</span></h4><p id="phrase-lya">« Je répartis vos publications selon le rythme que vous fixez et je choisis les horaires les plus favorables. »</p><button class="eq-voice" type="button" data-agent="lya" data-voix="assets/equipe/voix/lya.mp3" data-genre="f" data-dit="phrase-lya" aria-describedby="nom-lya" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Programmer trois publications par semaine sur vos réseaux.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/elio-400.webp" srcset="assets/equipe/elio-400.webp 400w, assets/equipe/elio-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-elio">Elio</b><span>Analyse des performances</span></h4><p id="phrase-elio">« J’observe les résultats de vos publications et j’ajuste les horaires et le rythme au fil du temps. »</p><button class="eq-voice" type="button" data-agent="elio" data-voix="assets/equipe/voix/elio.mp3" data-genre="m" data-dit="phrase-elio" aria-describedby="nom-elio" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Vous montrer quelles publications suscitent le plus d’interactions.</p></div></li>
+    </ul>
+    <div class="eq-dlg-f actions"><a class="btn btn-cyan" href="decouvrir.html#marketing">Découvrir le marketing IA <i data-ico="arrow" data-cls="arrow"></i></a><a class="btn btn-line" href="demo.html">Demander une démo</a></div>
+  </div>
+</dialog>
+<dialog class="eq-dlg" id="fiche-ads" aria-labelledby="fiche-ads-t" data-mod="ads">
+  <div class="eq-dlg-in">
+    <button class="eq-x" type="button" data-close aria-label="Fermer la fiche"><i data-ico="x"></i></button>
+    <header class="eq-dlg-h">
+      <div class="eq-dlg-pic"><img class="eq-dlg-img" src="assets/equipe/jade-400.webp" srcset="assets/equipe/jade-400.webp 400w, assets/equipe/jade-800.webp 800w" sizes="(max-width:760px) 40vw, 240px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+      <div class="eq-dlg-id"><p class="eq-card-mod"><i data-ico="chart"></i>Campagne ADS</p>
+        <h2 id="fiche-ads-t" class="eq-dlg-name">Jade<span>Campagne publicitaire</span></h2>
+        <p class="eq-dlg-txt" id="phrase-jade">« Je fais rayonner une seule image de marque sur tous vos canaux publicitaires. »</p><button class="eq-voice" type="button" data-agent="jade" data-voix="assets/equipe/voix/jade.m4a" data-genre="f" data-dit="phrase-jade" aria-describedby="fiche-ads-t" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button>
+        <p class="eq-ex"><b>Exemple</b>Décliner une même campagne pour Google, Instagram, TikTok, LinkedIn et Amazon.</p></div>
+    </header>
+    <h3 class="eq-dlg-sub">Ses spécialistes</h3>
+    <ul class="eq-spec">
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/kenzo-400.webp" srcset="assets/equipe/kenzo-400.webp 400w, assets/equipe/kenzo-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-kenzo">Kenzo</b><span>Vidéos publicitaires</span></h4><p id="phrase-kenzo">« Je conçois des vidéos publicitaires soignées pour présenter votre activité et vos produits. »</p><button class="eq-voice" type="button" data-agent="kenzo" data-voix="assets/equipe/voix/kenzo.mp3" data-genre="m" data-dit="phrase-kenzo" aria-describedby="nom-kenzo" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Préparer une courte vidéo de présentation d’un nouveau produit.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/aiko-400.webp" srcset="assets/equipe/aiko-400.webp 400w, assets/equipe/aiko-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-aiko">Aïko</b><span>Visuels produits</span></h4><p id="phrase-aiko">« Je mets vos produits en valeur avec des visuels à l’image de votre marque. »</p><button class="eq-voice" type="button" data-agent="aiko" data-voix="assets/equipe/voix/aiko.mp3" data-genre="f" data-dit="phrase-aiko" aria-describedby="nom-aiko" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Créer le visuel d’une collection pour une publicité en ligne.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/ilan-400.webp" srcset="assets/equipe/ilan-400.webp 400w, assets/equipe/ilan-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-ilan">Ilan</b><span>Formats et plateformes</span></h4><p id="phrase-ilan">« J’adapte chaque création au format de diffusion de chaque plateforme. »</p><button class="eq-voice" type="button" data-agent="ilan" data-voix="assets/equipe/voix/ilan.mp3" data-genre="m" data-dit="phrase-ilan" aria-describedby="nom-ilan" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Décliner un visuel en formats carré, vertical et bannière.</p></div></li>
+    </ul>
+    <div class="eq-dlg-f actions"><a class="btn btn-cyan" href="campagne-ads.html">Découvrir la campagne ADS <i data-ico="arrow" data-cls="arrow"></i></a><a class="btn btn-line" href="demo.html">Demander une démo</a></div>
+  </div>
+</dialog>
+<dialog class="eq-dlg" id="fiche-web" aria-labelledby="fiche-web-t" data-mod="web">
+  <div class="eq-dlg-in">
+    <button class="eq-x" type="button" data-close aria-label="Fermer la fiche"><i data-ico="x"></i></button>
+    <header class="eq-dlg-h">
+      <div class="eq-dlg-pic"><img class="eq-dlg-img" src="assets/equipe/noa-400.webp" srcset="assets/equipe/noa-400.webp 400w, assets/equipe/noa-800.webp 800w" sizes="(max-width:760px) 40vw, 240px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+      <div class="eq-dlg-id"><p class="eq-card-mod"><i data-ico="layers"></i>Site internet et gestion web</p>
+        <h2 id="fiche-web-t" class="eq-dlg-name">Noa</h2>
+        <p class="eq-dlg-txt" id="phrase-noa">« Je crée votre web app et je la tiens à jour : vous écrivez votre demande, je prépare la modification, vous validez, elle est en ligne. »</p><button class="eq-voice" type="button" data-agent="noa" data-voix="assets/equipe/voix/noa.mp3" data-genre="m" data-dit="phrase-noa" aria-describedby="fiche-web-t" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button>
+        <p class="eq-ex"><b>Exemple</b>Mettre en ligne un nouvel horaire d’ouverture après votre accord.</p></div>
+    </header>
+    <h3 class="eq-dlg-sub">Ses spécialistes</h3>
+    <ul class="eq-spec">
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/liam-400.webp" srcset="assets/equipe/liam-400.webp 400w, assets/equipe/liam-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-liam">Liam</b><span>Contenus et actualités</span></h4><p id="phrase-liam">« J’ajoute vos événements, vos nouveautés et vos actualités sur votre site. »</p><button class="eq-voice" type="button" data-agent="liam" data-voix="assets/equipe/voix/liam.mp3" data-genre="m" data-dit="phrase-liam" aria-describedby="nom-liam" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>« Ajoute la soirée jazz de vendredi ».</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/yuna-400.webp" srcset="assets/equipe/yuna-400.webp 400w, assets/equipe/yuna-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-yuna">Yuna</b><span>Photos et mise en page</span></h4><p id="phrase-yuna">« Je change vos photos de couverture et j’arrange vos pages pour qu’elles restent claires. »</p><button class="eq-voice" type="button" data-agent="yuna" data-voix="assets/equipe/voix/yuna.mp3" data-genre="f" data-dit="phrase-yuna" aria-describedby="nom-yuna" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>« Mets la terrasse en couverture ».</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/axel-400.webp" srcset="assets/equipe/axel-400.webp 400w, assets/equipe/axel-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-axel">Axel</b><span>Horaires et informations pratiques</span></h4><p id="phrase-axel">« Je mets à jour vos horaires, vos menus et vos informations pratiques. »</p><button class="eq-voice" type="button" data-agent="axel" data-voix="assets/equipe/voix/axel.mp3" data-genre="m" data-dit="phrase-axel" aria-describedby="nom-axel" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>« Ouvre aussi le dimanche midi ».</p></div></li>
+    </ul>
+    <div class="eq-dlg-f actions"><a class="btn btn-cyan" href="decouvrir.html#gestion">Découvrir la gestion de votre site <i data-ico="arrow" data-cls="arrow"></i></a><a class="btn btn-line" href="demo.html">Demander une démo</a></div>
+  </div>
+</dialog>
+<dialog class="eq-dlg" id="fiche-artisan" aria-labelledby="fiche-artisan-t" data-mod="artisan">
+  <div class="eq-dlg-in">
+    <button class="eq-x" type="button" data-close aria-label="Fermer la fiche"><i data-ico="x"></i></button>
+    <header class="eq-dlg-h">
+      <div class="eq-dlg-pic"><img class="eq-dlg-img" src="assets/equipe/arlo-400.webp" srcset="assets/equipe/arlo-400.webp 400w, assets/equipe/arlo-800.webp 800w" sizes="(max-width:760px) 40vw, 240px" alt="" width="400" height="600" loading="lazy" decoding="async"></div>
+      <div class="eq-dlg-id"><p class="eq-card-mod"><i data-ico="helmet"></i>Artisan OS</p>
+        <h2 id="fiche-artisan-t" class="eq-dlg-name">Arlo</h2>
+        <p class="eq-dlg-txt" id="phrase-arlo">« Je réunis la gestion de votre entreprise du bâtiment au même endroit : devis, factures, documents et clients. »</p><button class="eq-voice" type="button" data-agent="arlo" data-voix="assets/equipe/voix/arlo.mp3" data-genre="m" data-dit="phrase-arlo" aria-describedby="fiche-artisan-t" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button>
+        <p class="eq-ex"><b>Exemple</b>Retrouver en un instant tous les documents d’un chantier.</p></div>
+    </header>
+    <h3 class="eq-dlg-sub">Ses spécialistes</h3>
+    <ul class="eq-spec">
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/sami-400.webp" srcset="assets/equipe/sami-400.webp 400w, assets/equipe/sami-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-sami">Sami</b><span>Devis</span></h4><p id="phrase-sami">« Je prépare vos devis à la voix depuis le chantier ; vous les vérifiez, puis ils partent. »</p><button class="eq-voice" type="button" data-agent="sami" data-voix="assets/equipe/voix/sami.mp3" data-genre="m" data-dit="phrase-sami" aria-describedby="nom-sami" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Dicter un devis de rénovation de salle de bain et l’envoyer après relecture.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/romy-400.webp" srcset="assets/equipe/romy-400.webp 400w, assets/equipe/romy-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-romy">Romy</b><span>Facturation et règlements</span></h4><p id="phrase-romy">« J’établis vos factures et je suis les règlements. »</p><button class="eq-voice" type="button" data-agent="romy" data-voix="assets/equipe/voix/romy.mp3" data-genre="f" data-dit="phrase-romy" aria-describedby="nom-romy" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Repérer une facture arrivée à échéance.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/aden-400.webp" srcset="assets/equipe/aden-400.webp 400w, assets/equipe/aden-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-aden">Aden</b><span>Gestion commerciale</span></h4><p id="phrase-aden">« Je suis vos propositions commerciales et leurs relances. »</p><button class="eq-voice" type="button" data-agent="aden" data-voix="assets/equipe/voix/aden.mp3" data-genre="m" data-dit="phrase-aden" aria-describedby="nom-aden" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Relancer une proposition restée sans réponse.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/ambre-400.webp" srcset="assets/equipe/ambre-400.webp 400w, assets/equipe/ambre-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-ambre">Ambre</b><span>Documents</span></h4><p id="phrase-ambre">« Je réunis devis, factures et bons de livraison dans un même espace. »</p><button class="eq-voice" type="button" data-agent="ambre" data-voix="assets/equipe/voix/ambre.mp3" data-genre="f" data-dit="phrase-ambre" aria-describedby="nom-ambre" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Retrouver le bon de livraison d’un chantier.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/nils-400.webp" srcset="assets/equipe/nils-400.webp 400w, assets/equipe/nils-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-nils">Nils</b><span>Suivi client</span></h4><p id="phrase-nils">« Je tiens à jour les fiches clients et l’historique des échanges. »</p><button class="eq-voice" type="button" data-agent="nils" data-voix="assets/equipe/voix/nils.mp3" data-genre="m" data-dit="phrase-nils" aria-describedby="nom-nils" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Retrouver ce qui a été convenu avec un client lors du dernier appel.</p></div></li>
+      <li class="eq-spec-i"><img class="eq-spec-img" src="assets/equipe/zoe-400.webp" srcset="assets/equipe/zoe-400.webp 400w, assets/equipe/zoe-800.webp 800w" sizes="120px" alt="" width="400" height="600" loading="lazy" decoding="async"><div><h4><b id="nom-zoe">Zoé</b><span>Back-office</span></h4><p id="phrase-zoe">« Je centralise les échanges et les actions de votre secrétariat. »</p><button class="eq-voice" type="button" data-agent="zoe" data-voix="assets/equipe/voix/zoe.mp3" data-genre="f" data-dit="phrase-zoe" aria-describedby="nom-zoe" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Écouter</span></button><p class="eq-ex"><b>Exemple</b>Afficher les demandes traitées par le secrétariat dans la journée.</p></div></li>
+    </ul>
+    <div class="eq-dlg-f actions"><a class="btn btn-cyan" href="artisan-os.html#fonctionnalites">Découvrir Artisan OS <i data-ico="arrow" data-cls="arrow"></i></a><a class="btn btn-line" href="demo.html">Demander une démo</a></div>
+  </div>
+</dialog>
+<!-- /eq:fiches -->
+
 <div data-vp="footer"></div>
 <script src="assets/config.js"></script>
 <script src="assets/data.js"></script>
-<script src="assets/site.js"></script>
-<script src="assets/posts.js"></script>
+<script src="assets/site.js?v=tyna3"></script>
+<script src="assets/pages/accueil.js" defer></script>
 <script src="assets/assistant/mascot.js" defer></script>
-<script>
-(function(){
-"use strict";
-var A=window.VISIONPLUS,esc=A.esc,reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
-document.querySelectorAll("main [data-ico]").forEach(function(el){el.outerHTML=A.icon(el.dataset.ico,el.dataset.cls||"");});
-var tabs=[].slice.call(document.querySelectorAll('#service [role="tab"]')),played=false;
-function select(t,focus){tabs.forEach(function(x){var on=x===t;x.setAttribute("aria-selected",on?"true":"false");x.tabIndex=on?0:-1;document.getElementById(x.getAttribute("aria-controls")).hidden=!on;});
-  if(focus)t.focus();if(t.id==="tab-telephone"&&!played){played=true;playCall();}}
-tabs.forEach(function(t,i){t.addEventListener("click",function(){select(t);});
-  t.addEventListener("keydown",function(e){var n=null;if(e.key==="ArrowRight")n=tabs[(i+1)%tabs.length];else if(e.key==="ArrowLeft")n=tabs[(i-1+tabs.length)%tabs.length];else if(e.key==="Home")n=tabs[0];else if(e.key==="End")n=tabs[tabs.length-1];if(n){e.preventDefault();select(n,true);}});});
-var posts=document.getElementById("m-posts"),gen=document.getElementById("m-gen"),mst=document.getElementById("m-status");
-function renderPosts(anim){window.VISIONPLUS_POSTS.render(posts,anim);}
-renderPosts(false);
-if(gen)gen.addEventListener("click",function(){gen.disabled=true;mst.textContent="Rédaction en cours…";mst.classList.add("busy");
-  setTimeout(function(){renderPosts(true);mst.textContent="3 publications prêtes à valider";mst.classList.remove("busy");gen.disabled=false;},reduced?0:700);});
-var CALL=[["ai","Agent Vision Plus","Le Contemporain, bonsoir. Que puis-je faire pour vous ?"],["cl","Client","Bonsoir, je voudrais une table pour quatre vendredi, pour la soirée jazz."],["ai","Agent Vision Plus","Il reste des places à 20h et à 20h30. Laquelle vous convient ?"],["cl","Client","20h, au nom de Martin. Une personne est végétarienne."],["ai","Agent Vision Plus","C'est noté : quatre personnes vendredi à 20h, au nom de Martin, dont un menu végétarien. Je vous envoie la confirmation par SMS."],["sys","SMS envoyé","Le Contemporain : table pour 4 confirmée vendredi à 20h, soirée jazz. À vendredi !"]];
-var convo=document.getElementById("t-convo"),call=document.getElementById("t-call"),play=document.getElementById("t-play"),tst=document.getElementById("t-status"),timers=[];
-function li(m,anim){var el=document.createElement("li");el.className="msg "+m[0]+(anim?" new":"");el.innerHTML="<small>"+esc(m[1])+"</small>"+esc(m[2]);convo.appendChild(el);}
-CALL.forEach(function(m){li(m,false);});
-function playCall(){if(reduced)return;timers.forEach(clearTimeout);timers=[];convo.innerHTML="";tst.textContent="Appel en cours…";tst.classList.add("busy");call.classList.add("on");play.disabled=true;
-  CALL.forEach(function(m,i){timers.push(setTimeout(function(){li(m,true);if(i===CALL.length-1){call.classList.remove("on");tst.textContent="Réservation confirmée";tst.classList.remove("busy");play.disabled=false;}},400+i*1250));});}
-play.addEventListener("click",playCall);
-var hero=document.getElementById("g-hero"),sub=document.getElementById("g-sub"),evs=document.getElementById("g-events"),hours=document.getElementById("g-hours"),busy=false;
-var steps=["g1","g2","g3"].map(function(id){return document.getElementById(id);});
-var REQ={jazz:function(){var d=document.getElementById("ev-jazz");if(!d){d=document.createElement("div");d.className="ev";d.id="ev-jazz";d.innerHTML="<span><b>Soirée jazz · trio Blue Note</b>Vendredi à 20h</span><span>49 €</span>";evs.prepend(d);}return d;},
-  photo:function(){hero.classList.toggle("alt");sub.textContent=hero.classList.contains("alt")?"Terrasse sous l'olivier · 24 couverts":"Salle intérieure · 42 couverts";return hero;},
-  hours:function(){hours.innerHTML="<span>Mardi – dimanche</span><span>12h–14h · 19h–22h30 · dim. midi</span>";return hours;}};
-document.querySelectorAll(".req").forEach(function(b){b.addEventListener("click",function(){if(busy)return;busy=true;
-  document.querySelectorAll(".req").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});steps.forEach(function(s){s.classList.remove("on");});
-  steps.forEach(function(s,i){setTimeout(function(){s.classList.add("on");if(i===2){var el=REQ[b.dataset.req]();el.classList.remove("flash");void el.offsetWidth;el.classList.add("flash");busy=false;}},reduced?0:350+i*550);});});});
-})();
-</script>
-<script>
-document.querySelectorAll(".tv-hot").forEach(function(b){b.addEventListener("click",function(){var t=document.getElementById(b.dataset.tab);if(!t)return;t.click();document.getElementById("service").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});setTimeout(function(){t.focus({preventScroll:true});},400);});});
-</script>

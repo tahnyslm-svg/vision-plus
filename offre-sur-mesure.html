@@ -23,13 +23,14 @@
 <link rel="stylesheet" href="assets/pages/offre-video.css">
 <link rel="stylesheet" href="assets/pages/offre-dressing.css">
 <link rel="stylesheet" href="assets/palette.css">
+<link rel="stylesheet" href="assets/pages/scene-agent.css">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#101419">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Vision Plus">
 <link rel="apple-touch-icon" href="assets/brand/icon-180.png">
-<script src="assets/mobile.js" defer></script>
+<script src="assets/mobile.js?v=tyna3" defer></script>
 <style>
 .os-note{color:var(--mut);font-size:.92rem;max-width:64ch}
 .os-intro{display:grid;gap:12px;max-width:66ch}
@@ -82,17 +83,18 @@
     <div class="ov-in">
       <p class="ov-kick"><span>Votre offre sur mesure</span></p>
       <h1 class="ov-title" id="t-offre"><span>Une solution à votre image.</span> <span>Un tarif adapté à vos besoins.</span></h1>
+      <p class="ag-qui ov-qui"><img src="assets/equipe/tyna-400.webp" alt="" width="400" height="600" decoding="async"><b>Tyna</b><span>Chef d’équipe</span></p>
       <p class="ov-sub">Votre web app, vos agents IA et vos automatisations, conçus pour votre entreprise.</p>
 
       <figure class="vp" id="ov-player" data-config="assets/video/offre/video.json" data-admin="offre" aria-labelledby="ov-vt">
         <div class="vp-frame">
-          <video playsinline preload="none" poster="assets/video/offre/miniature-1280.webp" width="848" height="480">
-            <source src="assets/video/offre/offre-fr.mp4" type="video/mp4">
+          <video playsinline preload="none" poster="assets/video/offre/miniature-1280.webp?v=tyna2" width="848" height="480">
+            <source src="assets/video/offre/offre-fr.mp4?v=tyna3" type="video/mp4">
           </video>
           <audio preload="none"></audio>
           <p class="vp-cap" hidden><span></span></p>
           <button type="button" class="vp-big">
-            <img src="assets/video/offre/miniature-1280.webp" srcset="assets/video/offre/miniature-640.webp 640w, assets/video/offre/miniature-1280.webp 1280w" sizes="(min-width: 1000px) 44vw, 100vw" width="1280" height="720" alt="" decoding="async">
+            <img src="assets/video/offre/miniature-1280.webp?v=tyna2" srcset="assets/video/offre/miniature-640.webp?v=tyna2 640w, assets/video/offre/miniature-1280.webp?v=tyna2 1280w" sizes="(min-width: 1000px) 44vw, 100vw" width="1280" height="720" alt="" decoding="async">
             <span class="vp-big-t"><span class="vp-title" id="ov-vt">Vos commerces, une nouvelle dimension.</span><span class="vp-big-m"><span>Vidéo</span> · <span class="vp-big-dur">0:57</span></span></span>
             <span class="vp-big-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
             <span class="sr">Lire la vidéo</span>
@@ -177,7 +179,7 @@
   <section class="dr-final" aria-labelledby="t-final">
     <picture class="dr-final-pic">
       <source media="(max-width: 760px)" srcset="assets/offre/offre-mobile-800.webp 800w, assets/offre/offre-mobile-1202.webp 1202w" sizes="100vw" width="1202" height="867">
-      <img src="assets/offre/offre-propre-1672.webp" srcset="assets/offre/offre-propre-960.webp 960w, assets/offre/offre-propre-1672.webp 1672w, assets/offre/offre-propre-2560.webp 2560w" sizes="100vw" width="1672" height="867" loading="lazy" decoding="async" alt="Dans un grand showroom futuriste ouvert sur une ville de nuit, le robot Vision Plus présente l’hologramme d’une web app.">
+      <img src="assets/offre/offre-propre-1672.webp" srcset="assets/offre/offre-propre-960.webp 960w, assets/offre/offre-propre-1672.webp 1672w, assets/offre/offre-propre-2560.webp 2560w" sizes="100vw" width="1672" height="867" loading="lazy" decoding="async" alt="Dans un grand showroom futuriste ouvert sur une ville de nuit, Tyna, l’assistante IA et chef d’équipe de Vision Plus, présente l’hologramme d’une web app.">
     </picture>
     <div class="dr-final-copy">
       <p class="eyebrow">Votre offre sur mesure</p>
@@ -257,8 +259,8 @@
 
 </main>
 <div data-vp="footer"></div>
-<script src="assets/config.js"></script><script src="assets/data.js"></script><script src="assets/site.js"></script>
-<script src="assets/pages/lecteur-video.js"></script>
+<script src="assets/config.js"></script><script src="assets/data.js"></script><script src="assets/site.js?v=tyna3"></script>
+<script src="assets/pages/lecteur-video.js?v=tyna2"></script>
 <script>
 (function(){var A=window.VISIONPLUS,esc=A.esc;
 var $=function(id){return document.getElementById(id);};

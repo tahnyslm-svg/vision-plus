@@ -1,7 +1,8 @@
 /* Vision Plus — page « Offre sur mesure » : le dressing des métiers.
    Premier écran (titre + dressing + liste des 139 métiers), présentation du métier choisi, aperçus des modèles,
-   dernier appel sur le visuel du showroom. La scène garde le repère du visuel (1672 x 941) : niches, robot et tenue
-   qui s’avance y sont placés en pourcentage. Téléphone : scène recadrée autour du robot. Comportement : offre-dressing.js */
+   dernier appel sur le visuel du showroom. La scène garde le repère du visuel (1672 x 941) : niches, Tyna et tenue
+   qui s’avance y sont placés en pourcentage. Téléphone : scène recadrée autour de Tyna (calques de Tyna depuis le 2026-11-23,
+   à la place du robot ; les classes .dr-robot / .dr-r et les fichiers robots/robot-<famille> gardent leur nom). Comportement : offre-dressing.js */
 .dr-sprite{position:absolute;width:0;height:0;overflow:hidden}
 .dr-i{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
@@ -45,7 +46,7 @@
 .dr-niche:focus-visible .dr-tag,.dr-niche[aria-pressed="true"] .dr-tag{opacity:1;transform:translate(-50%,0)}
 @media (hover:hover){.dr-niche:hover .dr-tag{opacity:1;transform:translate(-50%,0)}}
 
-/* robot : deux calques pour passer d’une tenue à l’autre en fondu */
+/* Tyna : deux calques pour passer d’une tenue à l’autre en fondu (éclat lumineux du changement de tenue : ::after) */
 .dr-robot{position:absolute;z-index:3;left:46.29%;bottom:0;width:26.53%;aspect-ratio:1056/1528;pointer-events:none;
   filter:drop-shadow(1.6cqw 1.2cqw 1.6cqw rgba(0,0,0,.42))}
 .dr-r{position:absolute;inset:0;display:block;width:100%;height:100%;opacity:0;transition:opacity .5s ease,transform .5s ease;transform:scale(.985);transform-origin:50% 100%}
@@ -54,7 +55,7 @@
   background:radial-gradient(closest-side,rgba(170,220,255,.75),rgba(80,160,255,.25) 55%,rgba(80,160,255,0));mix-blend-mode:screen}
 .dr-robot.is-dressing::after{animation:dr-flash .8s ease-out}
 @keyframes dr-flash{0%{opacity:0;transform:scale(.7)}35%{opacity:.85}100%{opacity:0;transform:scale(1.15)}}
-/* la tenue choisie quitte sa niche et s’avance vers le robot */
+/* la tenue choisie quitte sa niche et s’avance vers Tyna */
 .dr-fly{position:absolute;z-index:4;display:block;opacity:0;pointer-events:none;will-change:transform,opacity;transform-origin:50% 50%}
 /* attente d’une tenue (connexion lente) */
 .dr-wait{position:absolute;z-index:5;left:55.4%;top:38%;width:5.4cqw;height:5.4cqw;margin:-2.7cqw 0 0 -2.7cqw;opacity:0;transition:opacity .2s;pointer-events:none}
@@ -127,7 +128,7 @@
 @media (max-width:1099px){
   .dr-list{max-height:min(56vh,440px)}
 }
-/* téléphone : scène recadrée autour du robot (x 620 → 1420, y 190 → 941 du visuel) */
+/* téléphone : scène recadrée autour de Tyna (x 620 → 1420, y 190 → 941 du visuel) */
 @media (max-width:760px){
   .dr-hero{padding-top:18px}
   .dr-head{gap:12px;padding-bottom:18px}

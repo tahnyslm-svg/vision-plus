@@ -20,6 +20,7 @@
 <script src="assets/i18n.js"></script>
 <link rel="stylesheet" href="assets/mobile.css">
 <link rel="stylesheet" href="assets/palette.css">
+<link rel="stylesheet" href="assets/pages/scene-agent.css">
 <link rel="stylesheet" href="assets/pages/sante.css">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#101419">
@@ -29,7 +30,7 @@
 <link rel="apple-touch-icon" href="assets/brand/icon-180.png">
 <link rel="stylesheet" href="assets/pages/lecteur-video.css">
 <link rel="stylesheet" href="assets/pages/robot-sections.css">
-<script src="assets/mobile.js" defer></script>
+<script src="assets/mobile.js?v=tyna3" defer></script>
 <style>
 /* Votre secrétaire IA. Graphite, argent, bleu. */
 /* premier écran : même mise en scène que le secrétariat médical (sante.css, .mh) : scène du bureau en pleine largeur
@@ -258,16 +259,17 @@
 <div data-vp="header"></div>
 <main id="contenu">
   <section class="ti-hero" aria-labelledby="t-ti">
-    <div class="ti-scene"><img class="ti-img" src="assets/3d/secretaire-ia-scene-1672.webp" srcset="assets/3d/secretaire-ia-scene-960.webp 960w, assets/3d/secretaire-ia-scene-1672.webp 1672w, assets/3d/secretaire-ia-scene-2560.webp 2560w" sizes="(max-width: 760px) 164vw, (max-width: 999px) 100vw, 112vw" width="1672" height="941" fetchpriority="high" decoding="async" alt="Le robot Vision Plus, casque audio sur la tête et t-shirt Vision Plus, répond à un appel à son bureau, la main sur le clavier de son ordinateur."></div>
-    <!-- robot de l’accueil (téléphone uniquement) : apparaît, salue et parle à l’arrivée sur la section ; un appui le fait parler (assets/pages/robot-sections.js) -->
-    <div class="sbot">
-      <button type="button" class="sbot-char" aria-label="Écouter l'assistant Vision Plus"><span class="sbot-glow"></span><span class="sbot-float"><span class="sbot-tilt"><span class="sbot-fig"><img src="assets/assistant/mascot-body.webp" alt="" width="316" height="379" decoding="async" loading="lazy"><span class="sbot-arm"></span><span class="sbot-face"><i class="sbot-eye l"></i><i class="sbot-eye r"></i><i class="sbot-smile"></i><i class="sbot-talk"></i></span></span></span></span></button>
-      <p class="sbot-bubble"><span class="sbot-say">Bonjour ! Je suis votre secrétaire IA.</span><span class="sbot-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>Touchez le robot pour l'écouter</span></p>
+    <div class="ti-scene"><img class="ti-img" src="assets/3d/secretaire-ia-scene-1672.webp" srcset="assets/3d/secretaire-ia-scene-960.webp 960w, assets/3d/secretaire-ia-scene-1672.webp 1672w, assets/3d/secretaire-ia-scene-2560.webp 2560w" sizes="(max-width: 760px) 164vw, (max-width: 999px) 100vw, 112vw" width="1672" height="941" fetchpriority="high" decoding="async" alt="Iris, la secrétaire IA de Vision Plus, micro-casque sur la tête et veste Vision Plus, répond à un appel à son bureau, la main sur le clavier de son ordinateur."></div>
+    <!-- agent de l’en-tête (téléphone uniquement) : portrait dans un cadre de verre, apparaît et parle à l’arrivée sur la section ; un appui le fait parler (assets/pages/robot-sections.js) -->
+    <div class="sbot" data-voix="assets/equipe/voix/iris-bulle.mp3">
+      <button type="button" class="sbot-char" aria-label="Écouter Iris, votre secrétaire IA"><span class="sbot-glow"></span><span class="sbot-float"><span class="sbot-tilt"><span class="sbot-fig"><img src="assets/equipe/iris-400.webp" alt="" width="400" height="600" decoding="async" loading="lazy"></span></span></span></button>
+      <p class="sbot-bubble"><span class="sbot-say">Bonjour ! Je suis votre secrétaire IA.</span><span class="sbot-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>Touchez Iris pour l’écouter</span></p>
     </div>
     <div class="wrap ti-grid">
       <div class="ti-txt">
         <span class="eyebrow">Votre secrétaire IA</span>
         <h1 id="t-ti" class="h-xl">Votre secrétaire IA, <span>configurée pour votre entreprise.</span></h1>
+        <p class="ag-qui"><img src="assets/equipe/iris-400.webp" alt="" width="400" height="600" decoding="async"><b>Iris</b><span>Secrétariat IA</span></p>
         <p class="lead">Accueillir vos clients, organiser vos rendez-vous, préparer vos devis, envoyer vos e-mails, suivre vos dossiers et vos expéditions : votre secrétaire IA vous accompagne dans les missions quotidiennes d'un secrétariat. Vous choisissez ses fonctions, ses outils et ses autorisations, selon votre activité et votre organisation.</p>
         <div class="actions"><a class="btn btn-cyan" href="demo.html#formulaire">Personnaliser ma secrétaire IA <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="#missions">Voir les missions <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
         <p class="ti-med"><a class="link" href="#secretariat-medical">Cabinets, centres de santé et d’esthétique : découvrir le secrétariat médical IA</a></p>
@@ -533,17 +535,18 @@
     <!-- En-tête : scène 3D de l'accueil médical (d'après la maquette de l'utilisateur, logo officiel sur la blouse) -->
     <div class="mh">
       <div class="mh-scene">
-        <img class="mh-img" src="assets/sante/assistante-medicale-1600.webp" srcset="assets/sante/assistante-medicale-960.webp 960w, assets/sante/assistante-medicale-1600.webp 1600w, assets/sante/assistante-medicale-3170.webp 3170w" sizes="(max-width: 999px) 150vw, 100vw" width="3170" height="1984" loading="lazy" decoding="async" alt="Illustration 3D : à l’accueil d’un cabinet médical haut de gamme, une petite assistante robot en blouse blanche brodée du logo Vision Plus, avec micro-casque, accueille le visiteur derrière un comptoir en marbre souligné de LED bleues, entourée des panneaux « Rendez-vous confirmé », « Dossier administratif prêt » et « Appel en cours ».">
+        <img class="mh-img" src="assets/sante/assistante-medicale-1600.webp" srcset="assets/sante/assistante-medicale-960.webp 960w, assets/sante/assistante-medicale-1600.webp 1600w, assets/sante/assistante-medicale-3170.webp 3170w" sizes="(max-width: 999px) 150vw, 100vw" width="3170" height="1984" loading="lazy" decoding="async" alt="Illustration 3D : à l’accueil d’un cabinet médical haut de gamme, Alma, l’assistante médicale IA de Vision Plus, en veste blanche à liserés bleus, accueille le visiteur derrière un comptoir en marbre souligné de LED bleues, entourée des panneaux « Rendez-vous confirmé », « Dossier administratif prêt » et « Appel en cours ».">
       </div>
-      <!-- robot de l’accueil (téléphone uniquement) : apparaît, salue et parle à l’arrivée sur la section ; un appui le fait parler (assets/pages/robot-sections.js) -->
-      <div class="sbot">
-        <button type="button" class="sbot-char" aria-label="Écouter l'assistant Vision Plus"><span class="sbot-glow"></span><span class="sbot-float"><span class="sbot-tilt"><span class="sbot-fig"><img src="assets/assistant/mascot-body.webp" alt="" width="316" height="379" decoding="async" loading="lazy"><span class="sbot-arm"></span><span class="sbot-face"><i class="sbot-eye l"></i><i class="sbot-eye r"></i><i class="sbot-smile"></i><i class="sbot-talk"></i></span></span></span></span></button>
-        <p class="sbot-bubble"><span class="sbot-say">Bonjour ! Je suis votre assistante médicale IA.</span><span class="sbot-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>Touchez le robot pour l'écouter</span></p>
+      <!-- agent de l’en-tête (téléphone uniquement) : portrait dans un cadre de verre, apparaît et parle à l’arrivée sur la section ; un appui le fait parler (assets/pages/robot-sections.js) -->
+      <div class="sbot" data-voix="assets/equipe/voix/alma-bulle.mp3">
+        <button type="button" class="sbot-char" aria-label="Écouter Alma, votre assistante médicale IA"><span class="sbot-glow"></span><span class="sbot-float"><span class="sbot-tilt"><span class="sbot-fig"><img src="assets/equipe/alma-400.webp" alt="" width="400" height="600" decoding="async" loading="lazy"></span></span></span></button>
+        <p class="sbot-bubble"><span class="sbot-say">Bonjour ! Je suis votre assistante médicale IA.</span><span class="sbot-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>Touchez Alma pour l’écouter</span></p>
       </div>
       <div class="wrap mh-in">
         <div class="mh-copy">
           <span class="eyebrow">Secrétariat médical IA</span>
           <h2 id="t-ms" class="mh-title"><span class="w">Un accueil attentionné.</span> <span class="b">Une nouvelle dimension.</span></h2>
+          <p class="ag-qui"><img src="assets/equipe/alma-400.webp" alt="" width="400" height="600" decoding="async"><b>Alma</b><span>Secrétariat médical IA</span></p>
           <p class="mh-lead">Votre assistante médicale IA vous accueille, organise vos rendez-vous et prépare vos dossiers administratifs.</p>
           <div class="mh-actions">
             <a class="btn btn-cyan" href="#tableau-de-bord">Découvrir mon assistante <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1141,7 +1144,7 @@
   </section>
 </main>
 <div data-vp="footer"></div>
-<script src="assets/config.js"></script><script src="assets/data.js"></script><script src="assets/site.js"></script>
+<script src="assets/config.js"></script><script src="assets/data.js"></script><script src="assets/site.js?v=tyna3"></script>
 <script src="assets/pages/lecteur-video.js" defer></script>
 <script src="assets/pages/robot-sections.js" defer></script>
 <script>

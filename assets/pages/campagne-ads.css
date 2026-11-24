@@ -385,3 +385,8 @@
   @keyframes ads-flow-m{to{background-position:120px 0,0 0}}
 }
 @media (max-width:760px) and (prefers-reduced-motion:reduce){.ads-swipe::after{animation:none}}
+
+/* 2026-11-23 : Jade présente maintenant la marque dans la grande scène en haut de la page (assets/pages/scene-agent.css) ;
+   le titre y est passé, la scène des cinq publicités occupe donc toute la largeur ici. */
+.ads-grid:not(:has(.ads-copy)){grid-template-columns:minmax(0,1fr)}
+@media (min-width:1100px){.ads-grid:not(:has(.ads-copy)) .ads-stage{max-width:1080px;margin-inline:auto}}

@@ -1,0 +1,102 @@
+/* Vision Plus — bannières d’agent en grande scène (2026-11-23, demande de l’utilisatrice) :
+   Noa (onglet « Gestion web app » de Découvrir) et Jade (Campagne ADS) ont, comme Iris, Alma et Arlo,
+   une grande scène photo où l’agent présente son travail.
+   - Jade : en-tête de la page, le titre posé à gauche sur la scène (comme Arlo) ; sa banderole (portrait, bulle, voix) suit juste dessous.
+   - Noa : depuis le 2026-11-24, sa scène sert de bandeau d’agent (.ag-hero.is-cadre, plus bas), comme toutes les rubriques.
+   La scène n’est jamais rognée en hauteur : sur grand écran elle s’aligne à droite et se fond dans le fond sombre (#050B17, la couleur de son bord).
+   Images : outils/equipe-agents/originaux/{noa,jade}-banniere.png → WebP 960 et 1536. */
+.ag-scene{position:relative;margin:0;overflow:hidden;isolation:isolate;background:#050B17}
+.ag-scene-img{display:block}
+
+/* ---------- Jade : en-tête de la Campagne ADS ---------- */
+.ag-scene-jade{display:grid;align-items:center;min-height:clamp(560px,58vw,960px);border-bottom:1px solid rgba(80,160,255,.18)}
+.ag-scene-jade .ag-scene-img{position:absolute;z-index:-1;top:0;right:0;height:100%;width:auto;max-width:none;aspect-ratio:1536/1024;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%);mask-image:linear-gradient(90deg,transparent 0,#000 16%)}
+.ag-scene-jade::after{content:"";position:absolute;z-index:-1;inset:auto 0 0;height:90px;pointer-events:none;background:linear-gradient(180deg,transparent,#050B17)}
+.ag-scene-txt{position:relative;z-index:2;width:100%;max-width:1460px}
+.ag-scene-jade .ads-copy{padding-block:clamp(24px,3vw,40px)}
+/* arabe, hébreu : la scène garde son sens (écrans lisibles), le texte se pose toujours dans la partie sombre à gauche */
+[dir="rtl"] .ag-scene-jade .ads-copy{margin-inline-start:auto}
+
+
+@media (prefers-reduced-motion:no-preference){
+  .ag-scene-img{animation:ag-scene-in 1.1s cubic-bezier(.2,.8,.25,1) both}
+}
+@keyframes ag-scene-in{from{opacity:0}to{opacity:1}}
+
+/* ---------- tablette et téléphone : la scène, puis le texte ou la banderole dessous ---------- */
+@media (max-width:1099px){
+  .ag-scene-jade{display:block;min-height:0}
+  .ag-scene-jade .ag-scene-img{position:relative;z-index:0;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:100% 30%;-webkit-mask-image:none;mask-image:none}
+  .ag-scene-jade::after{display:none}
+  .ag-scene-jade .ads-copy{padding-block:clamp(20px,4vw,32px) clamp(24px,5vw,40px)}
+  [dir="rtl"] .ag-scene-jade .ads-copy{margin-inline-start:0}
+}
+@media (max-width:760px){
+  .ag-scene-jade .ag-scene-img{aspect-ratio:1/1}
+}
+
+/* ===== Bandeau d’agent de chaque rubrique (2026-11-24) — même composition que « Votre secrétaire IA » :
+   à gauche le nom de la rubrique, le titre, l’agent (portrait, prénom, rôle), un court texte et les boutons ;
+   à droite l’agent en grand dans son décor. Juste dessous : sa banderole animée qui parle (assets/agent-accueil.js), puis la suite.
+   Ordinateur : scène calée à droite, fondue dans le sombre. Tablette et téléphone : la scène (cadrée sur le visage), puis le texte. ===== */
+.ag-hero{position:relative;margin:0;overflow:hidden;isolation:isolate;background:#050B17;display:grid;align-items:center;
+  min-height:clamp(560px,56vw,900px);border-bottom:1px solid rgba(80,160,255,.16)}
+.ag-hero-scene{position:absolute;z-index:-2;top:0;right:0;height:100%;aspect-ratio:1536/1024;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%);mask-image:linear-gradient(90deg,transparent 0,#000 18%)}
+.ag-hero-img{display:block;width:100%;height:100%;object-fit:cover}
+.ag-hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(5,11,23,.9) 0%,rgba(5,11,23,.62) 30%,rgba(5,11,23,0) 50%),
+             linear-gradient(180deg,rgba(5,11,23,.5) 0%,rgba(5,11,23,0) 14%,rgba(5,11,23,0) 84%,#050B17 100%)}
+.ag-hero-in{position:relative;z-index:1;width:100%}
+.ag-hero-txt{display:grid;gap:18px;justify-items:start;min-width:0;max-width:min(44%,560px);padding-block:clamp(44px,5vw,88px)}
+.ag-hero-txt .h-xl{font-size:clamp(2.1rem,3.5vw,3.5rem)}
+.ag-hero-txt .lead{margin:0}
+.ag-hero-txt .actions{margin-top:4px}
+.ag-hero-note{margin:0;color:var(--mut);font-size:.92rem}
+[dir="rtl"] .ag-hero-txt{margin-inline-start:auto}
+/* l’agent de la rubrique : portrait, prénom et rôle */
+.ag-qui{display:inline-flex;align-items:center;gap:10px;margin:0;padding:5px 16px 5px 5px;border-radius:999px;
+  border:1px solid rgba(120,180,245,.38);background:rgba(8,20,40,.66);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  box-shadow:0 0 18px rgba(40,130,255,.18);font-size:.95rem;line-height:1.2;color:#B9D7FA}
+[dir="rtl"] .ag-qui{padding:5px 5px 5px 16px}
+.ag-qui img{flex:none;width:38px;height:38px;border-radius:50%;object-fit:cover;object-position:50% 8%;transform:scale(1);background:#0C1A30;
+  box-shadow:0 0 0 1px rgba(140,200,255,.6),0 0 12px rgba(60,150,255,.45)}
+.ag-qui b{color:#fff;font-weight:600}
+.ag-qui b+span::before{content:"·";margin-inline:.45em;color:#78B4F5}
+/* dans les onglets de « Découvrir » : même bandeau, dans un cadre arrondi */
+.pane>.ag-hero{grid-column:1/-1}
+.ag-hero.is-cadre{border:0;border-radius:22px;min-height:clamp(480px,46vw,620px);
+  box-shadow:0 0 0 1px rgba(110,180,255,.24),0 24px 60px rgba(0,0,0,.45),0 0 44px rgba(40,130,255,.16)}
+.ag-hero.is-cadre .ag-hero-in{padding-inline:clamp(22px,3vw,48px)}
+.ag-hero.is-cadre .ag-hero-txt{max-width:min(46%,500px);padding-block:clamp(32px,4vw,56px)}
+.ag-hero.is-cadre .h-xl{font-size:clamp(1.8rem,2.8vw,2.6rem)}
+/* section qui commence par son bandeau : pas de marge au-dessus */
+.section:has(>.ag-hero:first-child){padding-top:0}
+.section>.ag-hero+.ag-band,.section>.ag-hero+.wrap{margin-top:clamp(28px,4vw,48px)}
+@media (prefers-reduced-motion:no-preference){ .ag-hero-scene{animation:ag-scene-in 1.1s cubic-bezier(.2,.8,.25,1) both} }
+@media (min-width:1100px) and (max-width:1279px){ .ag-hero-txt{max-width:40%} .ag-hero-txt .lead{font-size:1rem} }
+@media (max-width:1099px){
+  .ag-hero,.ag-hero.is-cadre{display:block;min-height:0}
+  .ag-hero-scene{position:relative;z-index:0;width:100%;height:auto;aspect-ratio:16/10;-webkit-mask-image:none;mask-image:none}
+  .ag-hero-img{object-position:100% 32%}
+  .ag-hero-scene::after{content:"";position:absolute;left:0;right:0;bottom:0;height:18%;pointer-events:none;background:linear-gradient(180deg,rgba(5,11,23,0),#050B17)}
+  .ag-hero::after{display:none}
+  .ag-hero-txt,.ag-hero.is-cadre .ag-hero-txt{max-width:680px;padding-block:clamp(18px,3vw,28px) clamp(30px,5vw,44px)}
+  [dir="rtl"] .ag-hero-txt{margin-inline-start:0}
+}
+@media (max-width:760px){
+  .ag-hero-scene{aspect-ratio:1/1}
+  .ag-hero-img{object-position:88% 30%}
+  .ag-hero.is-cadre{border-radius:18px}
+  .ag-hero-txt .h-xl,.ag-hero.is-cadre .h-xl{font-size:clamp(1.75rem,7.4vw,2.2rem)}
+  .ag-hero-txt .actions{width:100%}
+}
+.section.has-hero{padding-top:0}
+/* téléphone, « Découvrir » écran par écran : l’ancre #agents ouvre l’onglet « Votre secrétaire IA » (assets/mobile.js) ;
+   le bandeau de Tyna (Le service) et sa banderole s’effacent devant celui de l’onglet ouvert */
+:root.m-svc #agents>.ag-hero,:root.m-svc #agents>.ag-band{display:none!important}
+/* banderole de Tyna après le premier écran de « Découvrir » : seulement sur l’écran d’accueil des services du téléphone */
+:root:not(.m-svc) .dec-hero~.ag-band,:root.m-svc:not([data-svc="list"]) .dec-hero~.ag-band{display:none!important}
+/* Offre sur mesure : Tyna présente déjà la vidéo de l’offre en grand (en-tête centré) ; son prénom et son rôle sous le titre */
+.ov-qui{justify-self:center;align-self:center;margin-inline:auto}

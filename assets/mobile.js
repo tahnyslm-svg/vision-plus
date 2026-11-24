@@ -19,7 +19,7 @@ var SVC=[
   {id:"marketing",t:"Marketing IA",s:"Vos publications prêtes à valider.",i:"mega",tab:"tab-marketing",sec:"agents"},
   {id:"gestion",t:"Gestion web app",s:"Votre site modifié en une phrase.",i:"layers",tab:"tab-gestion",sec:"agents"},
   {href:"artisan-os.html",t:"Artisan OS",s:"La gestion intelligente des professionnels du bâtiment.",i:"helmet"},
-  {href:"campagne-ads",t:"Campagne ADS",s:"Une seule marque, sur tous les canaux publicitaires.",i:"mega"},
+  {href:"campagne-ads.html",t:"Campagne ADS",s:"Une seule marque, sur tous les canaux publicitaires.",i:"mega"},
   {g:"Comprendre Vision Plus"},
   {id:"vision-plus-simple",t:"Qu'est-ce que Vision Plus ?",s:"Vision Plus expliqué simplement.",i:"info"},
   {id:"technologie",t:"Notre technologie",s:"Une IA connectée à toute votre activité.",i:"spark"},
@@ -216,8 +216,9 @@ function touch3d(){
   if(st&&gr){var r=0;st.addEventListener("scroll",function(){if(!r)r=requestAnimationFrame(function(){r=0;gr.style.setProperty("--ads-x",Math.round(st.scrollLeft));});},{passive:true});}
 }
 
-/* Téléphone : les robots des en-têtes « Votre secrétaire IA » et « Secrétariat médical IA » s’allument et la caméra avance
-   vers eux à l’arrivée sur la section (une fois), puis ils flottent ; animations en pause hors écran (styles : sante.css). */
+/* Téléphone : les scènes des en-têtes « Votre secrétaire IA » (Iris) et « Secrétariat médical IA » (Alma) s’allument et la caméra
+   avance vers l’agent à l’arrivée sur la section (une fois), puis la scène flotte ; animations en pause hors écran (styles : sante.css).
+   Depuis le 2026-11-23 les scènes montrent des agents humains : plus de regard lumineux de robot. */
 function robots(){
   var sc=document.querySelectorAll(".ti-scene,.mh-scene");
   if(!sc.length||reduced||!("IntersectionObserver" in window))return;
@@ -228,8 +229,8 @@ function robots(){
   [].forEach.call(sc,function(n){io.observe(n);});
 }
 
-/* les robots passent avant l’application mobile (et quelle que soit la largeur au chargement, leurs styles ne s’appliquent
-   qu’à ≤ 760 px) : ils s’animent même si l’on passe en vue téléphone sans recharger, ou si la construction échoue */
+/* les scènes des agents passent avant l’application mobile (et quelle que soit la largeur au chargement, leurs styles ne s’appliquent
+   qu’à ≤ 760 px) : elles s’animent même si l’on passe en vue téléphone sans recharger, ou si la construction échoue */
 function start(){try{robots();}catch(e){}if(MQ.matches)build();touch3d();pwa();}
 if(window.VISIONPLUS&&document.querySelector(".top"))start();else document.addEventListener("vp:ready",start);
 })();

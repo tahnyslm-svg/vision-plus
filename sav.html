@@ -26,7 +26,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Vision Plus">
 <link rel="apple-touch-icon" href="assets/brand/icon-180.png">
-<script src="assets/mobile.js" defer></script>
+<script src="assets/mobile.js?v=tyna3" defer></script>
+<link rel="stylesheet" href="assets/pages/scene-agent.css">
 <style>
 .view-hero{padding-block:clamp(40px,6vw,80px) clamp(20px,3vw,32px)}
 .back{display:inline-flex;align-items:center;gap:8px;color:var(--mut);text-decoration:none;font-size:.92rem;justify-self:start}
@@ -139,6 +140,8 @@ legend{padding:0;margin-bottom:10px}
 .sav-quick a{display:inline-flex;align-items:center;gap:8px}
 .sav-quick .ico{width:18px;height:18px}
 @media (max-width:560px){.sav-body{grid-template-columns:1fr;gap:14px}.sav-ic{display:none}.sav-body>div{padding-left:0;border-left:0}}
+/* SAV (2026-11-24) : le bandeau d’Eden remplace le premier écran ; un peu d’air avant les deux parcours */
+.sav-suite{padding-top:clamp(28px,4vw,48px)}
 </style>
 </head>
 <body>
@@ -146,21 +149,26 @@ legend{padding:0;margin-bottom:10px}
 <main id="contenu">
   <!-- ============ Accueil ============ -->
   <div id="v-home" data-view="home">
-    <section class="page-hero" aria-labelledby="t-home">
-      <div class="wrap">
+    <!-- bandeau du SAV (2026-11-24) : Eden, comme Iris sur « Votre secrétaire IA » ; sa banderole animée suit
+         (assets/agent-accueil.js), puis « Ouvrir une demande » et « Suivre une demande » -->
+    <section class="ag-hero" data-agent="eden" aria-labelledby="t-home">
+      <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/eden-banniere-1536.webp" srcset="assets/equipe/eden-banniere-960.webp 960w, assets/equipe/eden-banniere-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 84vw" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Eden, l’agent Assistance et suivi des demandes de Vision Plus, présente les deux parcours du SAV : le formulaire « Ouvrir une demande » et « Suivre une demande » avec le numéro de dossier, de « Ouverte » à « Résolue »."></div>
+      <div class="wrap ag-hero-in"><div class="ag-hero-txt">
         <span class="eyebrow">Assistance</span>
         <h1 id="t-home" class="h-xl" tabindex="-1">SAV / Assistance</h1>
+        <p class="ag-qui"><img src="assets/equipe/eden-400.webp" alt="" width="400" height="600" decoding="async"><b>Eden</b><span>Assistance et suivi des demandes</span></p>
         <p class="lead">Un problème, une question ? Notre équipe prend le relais.</p>
-      </div>
+        <div class="actions"><a class="btn btn-cyan" href="#nouvelle">Ouvrir une demande <span data-i="arrow"></span></a><a class="btn btn-line" href="#suivi">Suivre une demande <span data-i="arrow"></span></a></div>
+      </div></div>
     </section>
-    <div class="wrap">
+    <div class="wrap sav-suite">
       <div class="sav2">
         <article class="sav-card">
-          <figure class="sav-art"><img src="assets/3d/sav-ouvrir-robot.webp" width="1326" height="554" alt="Le robot Vision Plus, casque de conseiller sur la tête, présente de la main un écran en verre lumineux avec un document et une coche bleue."></figure>
+          <figure class="sav-art"><img src="assets/3d/sav-ouvrir-robot.webp" width="1326" height="554" alt="Eden, de l’équipe Vision Plus, oreillette en place, présente de la main un écran en verre lumineux avec un document et une coche bleue."></figure>
           <div class="sav-body"><span class="sav-ic" data-i="file"></span><div><h2>Ouvrir une demande</h2><p>Décrivez votre problème, recevez un numéro de dossier.</p><a class="btn btn-cyan" href="#nouvelle" id="go-new">Ouvrir une demande <span data-i="arrow"></span></a></div></div>
         </article>
         <article class="sav-card">
-          <figure class="sav-art"><img src="assets/3d/sav-suivre-robot.webp" width="1326" height="554" alt="Le robot Vision Plus montre un dossier sur un écran en verre lumineux : demande reçue, en cours de traitement, échange avec l’équipe."></figure>
+          <figure class="sav-art"><img src="assets/3d/sav-suivre-robot.webp" width="1326" height="554" alt="Eden montre un dossier sur un écran en verre lumineux : demande reçue, en cours de traitement, échange avec l’équipe."></figure>
           <div class="sav-body"><span class="sav-ic" data-i="chat"></span><div><h2>Suivre une demande</h2><p>Consultez le statut et échangez avec l'équipe.</p><a class="btn btn-cyan" href="#suivi" id="go-track">Suivre une demande <span data-i="arrow"></span></a></div></div>
         </article>
       </div>
@@ -296,7 +304,7 @@ legend{padding:0;margin-bottom:10px}
   </div>
 </main>
 <div data-vp="footer"></div>
-<script src="assets/config.js"></script><script src="assets/data.js"></script><script src="assets/site.js"></script>
+<script src="assets/config.js"></script><script src="assets/data.js"></script><script src="assets/site.js?v=tyna3"></script>
 <script>
 (function(){
 "use strict";

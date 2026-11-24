@@ -27,9 +27,10 @@
 <meta name="apple-mobile-web-app-title" content="Vision Plus">
 <link rel="apple-touch-icon" href="assets/brand/icon-180.png">
 <link rel="stylesheet" href="assets/pages/campagne-ads.css">
+<link rel="stylesheet" href="assets/pages/scene-agent.css">
 <link rel="stylesheet" href="assets/pages/sante.css">
 <link rel="stylesheet" href="assets/pages/metiers.css">
-<script src="assets/mobile.js" defer></script>
+<script src="assets/mobile.js?v=tyna3" defer></script>
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
@@ -60,16 +61,23 @@
 <div data-vp="header"></div>
 <main id="contenu">
 
-  <!-- 1. Une seule marque, tous les regards -->
-  <section class="ads-hero" aria-labelledby="t-ads">
-    <div class="wrap ads-grid">
+  <!-- 1. Une seule marque, tous les regards : grande scène où Jade présente la marque sur ses cinq canaux, comme Iris, Alma et Arlo (assets/pages/scene-agent.css) -->
+  <section class="ag-scene ag-scene-jade" aria-labelledby="t-ads">
+    <img class="ag-scene-img" src="assets/ads/jade-banniere-1536.webp" srcset="assets/ads/jade-banniere-960.webp 960w, assets/ads/jade-banniere-1536.webp 1536w" sizes="100vw" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Jade, l’agente Campagne ADS de Vision Plus, présente de ses deux mains les publicités de la marque fictive Maison Élora sur Google, TikTok, Instagram, LinkedIn et Amazon.">
+    <div class="wrap ag-scene-txt">
       <div class="ads-copy">
         <span class="eyebrow">Campagne ADS</span>
         <h1 id="t-ads"><span class="w">Une seule marque.</span> <span class="b">Tous les regards.</span></h1>
+        <p class="ag-qui"><img src="assets/equipe/jade-400.webp" alt="" width="400" height="600" decoding="async"><b>Jade</b><span>Campagne ADS</span></p>
         <p class="lead">Du rendez-vous en salon à la vente de vos vernis, faites rayonner votre marque.</p>
         <a class="btn btn-cyan ads-cta" href="offre-sur-mesure.html#rappel">Créer ma campagne <svg class="ico arrow i-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
+    </div>
+  </section>
 
+  <!-- les cinq publicités en détail, reliées au noyau Vision Plus -->
+  <section class="ads-hero">
+    <div class="wrap ads-grid">
       <figure class="ads-stage" aria-label="Maquette : la même marque fictive, Maison Élora, présente sur Google, TikTok, Instagram, LinkedIn et Amazon, reliée au noyau Vision Plus.">
         <div class="ads-floor" aria-hidden="true"><i></i></div>
         <svg class="ads-flows" viewBox="0 0 1000 920" preserveAspectRatio="none" aria-hidden="true">
@@ -164,6 +172,7 @@
           </div>
         </div>
 
+        <!-- Jade, l’agente de la Campagne ADS, présente les cinq plateformes (2026-11-23) : devant le socle, à la place du noyau (ordinateur) -->
         <!-- noyau Vision Plus -->
         <div class="ads-core" aria-hidden="true">
           <div class="core-ring"><div class="core-glass"><img src="assets/brand/vp-logo.webp" width="1131" height="200" alt=""></div></div>
@@ -587,7 +596,7 @@
 <div data-vp="footer"></div>
 <script src="assets/config.js"></script>
 <script src="assets/data.js"></script>
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v=tyna3"></script>
 <script src="assets/pages/metiers.js" defer></script>
 </body>
 </html>

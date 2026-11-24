@@ -26,7 +26,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Vision Plus">
 <link rel="apple-touch-icon" href="assets/brand/icon-180.png">
-<script src="assets/mobile.js" defer></script>
+<script src="assets/mobile.js?v=tyna3" defer></script>
+<link rel="stylesheet" href="assets/pages/scene-agent.css">
 <style>
 .faq-hero{padding-block:clamp(48px,7vw,96px) clamp(28px,4vw,48px)}
 .faq-hero .wrap{justify-items:center;text-align:center}
@@ -170,17 +171,29 @@ mark{background:rgba(25,116,232,.1);color:inherit;border-radius:3px;padding:0 .0
 .more{padding-block:clamp(40px,6vw,72px)}
 .chat-fab.is-off{opacity:0;pointer-events:none;transform:scale(.8)!important}
 @media (prefers-reduced-motion:reduce){.qa-art img{animation:none}.m{animation:none}}
+/* FAQ (2026-11-24) : Cyra est dans le bandeau ; la question occupe seule la largeur */
+.qa.sans-art .wrap{grid-template-columns:minmax(0,1fr);max-width:960px}
+.qa.sans-art::before{display:none}
 </style>
 </head>
 <body>
 <div data-vp="header"></div>
 <main id="contenu">
-  <section class="qa" aria-labelledby="t-faq">
-    <div class="wrap">
-      <div class="qa-main">
+  <!-- bandeau de la FAQ (2026-11-24) : Cyra, comme Iris sur « Votre secrétaire IA » ; sa banderole animée suit
+       (assets/agent-accueil.js), puis la question et toutes les réponses. Son ancienne illustration est remplacée par cette scène. -->
+  <section class="ag-hero" data-agent="cyra" aria-labelledby="t-faq">
+    <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/cyra-banniere-1536.webp" srcset="assets/equipe/cyra-banniere-960.webp 960w, assets/equipe/cyra-banniere-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 84vw" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Cyra, l’agente Questions et réponses de Vision Plus, présente la FAQ : la réponse à « Qu’est-ce que Vision Plus ? », les questions fréquentes et la zone « Posez votre question… »."></div>
+    <div class="wrap ag-hero-in"><div class="ag-hero-txt">
         <span class="eyebrow">FAQ — Questions et réponses</span>
         <h1 id="t-faq" class="h-xl">Une question sur Vision Plus&nbsp;?</h1>
+        <p class="ag-qui"><img src="assets/equipe/cyra-400.webp" alt="" width="400" height="600" decoding="async"><b>Cyra</b><span>Questions et réponses</span></p>
         <p class="lead">Consultez les réponses fréquentes ou posez directement votre question.</p>
+        <div class="actions"><a class="btn btn-cyan" href="#question">Poser ma question <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="#t-all">Toutes les réponses <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div></div>
+  </section>
+  <section class="qa sans-art" aria-label="Votre question">
+    <div class="wrap">
+      <div class="qa-main">
         <form class="ask" id="question" novalidate>
           <div class="box">
             <label class="sr" for="faq-q">Votre question</label>
@@ -194,7 +207,6 @@ mark{background:rgba(25,116,232,.1);color:inherit;border-radius:3px;padding:0 .0
         <p class="sugg-t" id="sugg-t">Questions fréquentes</p>
         <div class="sugg2" id="as-sugg"></div>
       </div>
-      <figure class="qa-art" aria-hidden="true"><img src="assets/3d/faq-robot-1018.webp" srcset="assets/3d/faq-robot-560.webp 560w, assets/3d/faq-robot-1018.webp 1018w" sizes="(min-width: 960px) 34vw, 90vw" width="1018" height="1140" alt="" fetchpriority="high" decoding="async"></figure>
     </div>
   </section>
   <div class="wrap faq-layout">
@@ -221,7 +233,7 @@ mark{background:rgba(25,116,232,.1);color:inherit;border-radius:3px;padding:0 .0
   </section>
 </main>
 <div data-vp="footer"></div>
-<script src="assets/config.js"></script><script src="assets/data.js"></script><script src="assets/site.js"></script>
+<script src="assets/config.js"></script><script src="assets/data.js"></script><script src="assets/site.js?v=tyna3"></script>
 <script>
 (function(){
 "use strict";

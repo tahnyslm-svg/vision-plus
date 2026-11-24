@@ -1,6 +1,7 @@
 {
  "_aide": "Vidéo de la rubrique Artisan OS (artisan-os.html#video). Même format que assets/video/offre/video.json : remplacer la vidéo ou la miniature en déposant le fichier ici et en changeant son chemin. Pas de traduction à la demande de l’utilisateur : audio et sous-titres incrustés en français.",
  "titre": null,
+ "version": "tyna5",
  "source": {
   "langue_audio": "fr",
   "video": "assets/video/artisan/artisan-fr.mp4",

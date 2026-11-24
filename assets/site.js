@@ -228,6 +228,8 @@ var NAV_DISCOVER=[{href:"decouvrir.html#agents",label:"Le service",icon:"layers"
   {id:"demo",href:"demo.html",label:"Simulation",icon:"play"},{href:"decouvrir.html#avantages",label:"Avantages",icon:"spark"},
   {href:"decouvrir.html#fonctionnement",label:"Fonctionnement",icon:"chart"},{href:"decouvrir.html#secteurs",label:"Pour qui",icon:"user"},{href:"decouvrir.html#commencer",label:"Commencer",icon:"arrow"}];
 var NAV=[{id:"demo",href:"demo.html",label:"Simulation"},{id:"offre",href:"offre-sur-mesure.html",label:"Offre sur mesure"}];
+/* 2026-11-24 : « Artisan OS » et « Offre sur-mesure » ouvrent directement leur page en un clic (demande de l’utilisatrice) ;
+   plus de sous-entrée « Vidéo » : chaque vidéo reste dans sa page, où le visiteur la lance. */
 var HELP=[{id:"faq",href:"faq.html",label:"FAQ",sub:"Questions et réponses, posez la vôtre",icon:"help"},{id:"sav",href:"sav.html",label:"SAV / Assistance",sub:"Ouvrir et suivre une demande",icon:"life"}];
 var ACCOUNT=[{h:"espace-client.html#tableau",l:"Tableau de bord",i:"home"},{h:"espace-client.html#profil",l:"Mon profil",i:"user"},{h:"espace-client.html#projets",l:"Mes projets",i:"folder"},{h:"espace-client.html#demos",l:"Mes simulations",i:"play"},{h:"espace-client.html#abonnement",l:"Mon offre",i:"card"},{h:"espace-client.html#factures",l:"Mes factures",i:"file"},{h:"espace-client.html#assistance",l:"Mon assistance",i:"life"},{h:"espace-client.html#parametres",l:"Paramètres",i:"gear"}];
 function initials(n){return String(n||"A").trim().split(/\s+/).slice(0,2).map(function(w){return w[0];}).join("").toUpperCase();}
@@ -275,7 +277,7 @@ function header(){var page=pageId();var u=A.auth.current();
     '<div class="dd dd-col'+(/^(decouvrir|telephone-ia|demo)$/.test(page)?" current":"")+'"><button type="button" aria-expanded="false" aria-haspopup="true">'+A.icon("layers")+"<span>Découvrir</span>"+A.icon("chev","chev")+'</button><div class="dd-menu">'+
       NAV_DISCOVER.map(ddItem).join("")+"</div></div>"+
     nl("artisan-os.html","Artisan OS","helmet",page==="artisan")+
-    nl("campagne-ads","Campagne ADS","mega",page==="ads")+
+    nl("campagne-ads.html","Campagne ADS","mega",page==="ads")+
     nl("offre-sur-mesure.html","Offre sur-mesure","cube",page==="offre");
   var act;
   if(u){act='<div class="dd dd-left"><button type="button" class="user-btn" aria-expanded="false" aria-haspopup="true" aria-label="Mon espace client"><span class="avatar">'+A.esc(initials(u.name))+'</span><span class="user-n">'+A.esc(u.name.split(" ")[0])+"</span>"+A.icon("chev","chev")+'</button><div class="dd-menu">'+
@@ -289,7 +291,7 @@ function header(){var page=pageId();var u=A.auth.current();
   var dr=document.createElement("div");dr.className="drawer";dr.setAttribute("aria-hidden","true");
   dr.innerHTML='<div class="drawer-in" role="dialog" aria-modal="true" aria-label="Menu"><div class="drawer-h"><span class="sr">Vision Plus</span><span class="logo3d"><img class="logo3d-full" src="assets/brand/vp-logo.webp" alt="" width="1131" height="200"><img class="logo3d-mark" src="assets/brand/vp-mark.webp" alt="" width="207" height="240"></span><button class="x" type="button" data-close aria-label="Fermer le menu">'+A.icon("x")+"</button></div>"+
     '<a class="dl" href="index.html"'+(page==="home"?' aria-current="page"':"")+">Accueil"+A.icon("arrow")+"</a>"+group("Découvrir",NAV_DISCOVER)+
-    [["artisan-os.html","Artisan OS","artisan"],["campagne-ads","Campagne ADS","ads"],["offre-sur-mesure.html","Offre sur-mesure","offre"]].map(function(n){return '<a class="dl'+(n[3]?" sub dl-sub2":"")+'" href="'+n[0]+'"'+(n[2]&&n[2]===page?' aria-current="page"':"")+">"+n[1]+A.icon("arrow")+"</a>";}).join("")+
+    [["artisan-os.html","Artisan OS","artisan"],["campagne-ads.html","Campagne ADS","ads"],["offre-sur-mesure.html","Offre sur-mesure","offre"]].map(function(n){return '<a class="dl'+(n[3]?" sub dl-sub2":"")+'" href="'+n[0]+'"'+(n[2]&&n[2]===page?' aria-current="page"':"")+">"+n[1]+A.icon("arrow")+"</a>";}).join("")+
     (u?group("Mon espace",ACCOUNT.map(function(a){return {href:a.h,label:a.l};}))+'<div class="actions"><button class="btn btn-line" data-logout>Déconnexion</button></div>'
       :'<details class="dgroup dacct" open><summary><span class="dacct-s">'+ACCT_ICON+'Compte</span>'+A.icon("chev","chev")+'</summary><a class="dl sub" href="connexion.html" data-auth="login">Se connecter'+A.icon("arrow")+'</a><a class="dl sub" href="inscription.html" data-auth="signup">Créer un compte'+A.icon("arrow")+'</a></details>')+"</div>";
   var slot=document.querySelector('[data-vp="header"]');if(slot)slot.replaceWith(h);else document.body.prepend(h);document.body.appendChild(dr);
@@ -393,7 +395,7 @@ function legalMenuInit(f){
 A.renderAnswer=function(r){return A.esc(r.text)+(r.link?'\n<a href="'+A.esc(r.link)+'">'+A.esc(r.linkLabel||"En savoir plus")+" →</a>":"");};
 function chat(){if(document.querySelector('meta[name="vp-nochat"]'))return;
   /* bouton flottant : ouvre la zone de question de la FAQ unifiée */
-  var fab=document.createElement("a");fab.className="chat-fab";fab.href="faq.html#question";fab.setAttribute("aria-label","Poser une question (FAQ)");fab.innerHTML='<img class="chat-fab-head" src="assets/brand/vp-robot-tete.webp" width="168" height="117" alt="" decoding="async">';
+  var fab=document.createElement("a");fab.className="chat-fab";fab.href="faq.html#question";fab.setAttribute("aria-label","Poser une question (FAQ)");fab.innerHTML='<img class="chat-fab-head" src="assets/equipe/tyna-tete.webp" width="192" height="192" alt="" decoding="async">';
   fab.onclick=function(e){if(pageId()==="faq"&&window.VISIONPLUS_FAQ_ASK){e.preventDefault();window.VISIONPLUS_FAQ_ASK();}};
   document.body.appendChild(fab);}
 
@@ -402,7 +404,15 @@ function reveal(){var els=[].slice.call(document.querySelectorAll(".reveal"));if
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove("pre");io.unobserve(e.target);}});},{rootMargin:"0px 0px -8% 0px"});
   els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top>innerHeight){el.classList.add("pre");io.observe(el);}});}
 
+/* ---------- accueil par l’agent de la catégorie (pages des catégories ; voir assets/agent-accueil.js) ---------- */
+function agentAccueil(){var p=pageId();if(["decouvrir","telephone-ia","artisan","ads","offre","demo","faq","sav","compte","connexion","inscription","mot-de-passe","espace-client"].indexOf(p)<0)return;
+  var l=document.createElement("link");l.rel="stylesheet";l.href="assets/agent-accueil.css";document.head.appendChild(l);
+  var s=document.createElement("script");s.src="assets/agent-accueil.js";s.defer=true;document.body.appendChild(s);
+  /* bouton vocal de l’en-tête : même rond que sur l’accueil (styles de mascot.css), voix de l’agent de la page au clic */
+  if(!document.querySelector('link[href$="assistant/mascot.css"]')){var m=document.createElement("link");m.rel="stylesheet";m.href="assets/assistant/mascot.css";document.head.appendChild(m);}
+  var v=document.createElement("script");v.src="assets/bouton-vocal.js";v.defer=true;document.body.appendChild(v);}
+
 /* ---------- démarrage ---------- */
-function boot(){header();footer();chat();banner();reveal();document.dispatchEvent(new Event("vp:ready"));}
+function boot(){header();footer();chat();banner();reveal();agentAccueil();document.dispatchEvent(new Event("vp:ready"));}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);else boot();
 })();

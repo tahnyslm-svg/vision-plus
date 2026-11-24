@@ -20,13 +20,15 @@
 <script src="assets/i18n.js"></script>
 <link rel="stylesheet" href="assets/mobile.css">
 <link rel="stylesheet" href="assets/palette.css">
+<link rel="stylesheet" href="assets/pages/scene-agent.css">
+<link rel="stylesheet" href="assets/pages/avantages.css">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#101419">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Vision Plus">
 <link rel="apple-touch-icon" href="assets/brand/icon-180.png">
-<script src="assets/mobile.js" defer></script>
+<script src="assets/mobile.js?v=tyna3" defer></script>
 <style>
 /* Accueil : six temps clairs. Héros, le service (simulations), fonctionnement, avantages, pour qui, commencer. */
 .hero{position:relative;overflow:hidden;padding-block:clamp(40px,7vw,96px) clamp(64px,9vw,120px)}
@@ -307,22 +309,37 @@ html.theme-p1 #technologie,#technologie{background:radial-gradient(60% 50% at 50
   </section>
 
   <!-- 2. Ce que propose Vision Plus -->
-  <section class="section alt" id="agents" aria-labelledby="t-agents">
+  <section class="section alt has-hero" id="agents" aria-labelledby="t-agents">
+    <!-- bandeau de la rubrique « Le service » : Tyna, chef d’équipe, puis sa banderole (assets/pages/scene-agent.css, assets/agent-accueil.js) -->
+    <div class="ag-hero" data-agent="tyna">
+      <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/tyna-service-1536.webp" srcset="assets/equipe/tyna-service-960.webp 960w, assets/equipe/tyna-service-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 84vw" width="1536" height="1024" loading="lazy" decoding="async" alt="Tyna, chef d’équipe de Vision Plus, présente les trois agents IA autour de votre web app : Milo pour le Marketing IA, Naya pour votre secrétaire IA et Noa pour la Gestion web app."></div>
+      <div class="wrap ag-hero-in"><div class="ag-hero-txt">
+          <span class="eyebrow">Le service</span>
+          <h2 id="t-agents" class="h-xl">Trois agents IA autour de votre web app.</h2>
+          <p class="ag-qui"><img src="assets/equipe/tyna-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Tyna</b><span>Chef d’équipe</span></p>
+          <p class="lead">Tyna dirige l’équipe : Marketing IA, votre secrétaire IA et Gestion web app partagent les données de votre web app et travaillent ensemble.</p>
+          <p class="ag-hero-note">Essayez-les : Le Contemporain, un restaurant fictif, prépare une soirée jazz.</p>
+          <div class="actions"><a class="btn btn-cyan" href="#tab-marketing" data-defile>Explorer les agents <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="demo.html">Demander une simulation <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></div>
+    </div>
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Le service</span>
-        <h2 id="t-agents" class="h-l">Trois agents IA autour de votre web app.</h2>
-        <p class="lead">Essayez-les : Le Contemporain, un restaurant fictif, prépare une soirée jazz.</p>
-      </div>
       <div class="tabs agents-tabs" role="tablist" aria-label="Les trois agents Vision Plus">
         <button class="tab" type="button" role="tab" id="tab-marketing" aria-controls="marketing" aria-selected="true"><i data-ico="mega"></i>Marketing IA</button>
         <button class="tab" type="button" role="tab" id="tab-telephone" aria-controls="telephone" aria-selected="false" tabindex="-1"><i data-ico="phone"></i>Votre secrétaire IA</button>
         <button class="tab" type="button" role="tab" id="tab-gestion" aria-controls="gestion" aria-selected="false" tabindex="-1"><i data-ico="layers"></i>Gestion web app</button>
       </div>
       <div class="pane" role="tabpanel" id="marketing" aria-labelledby="tab-marketing" tabindex="0">
+        <div class="ag-hero is-cadre" data-agent="milo">
+      <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/milo-banniere-1536.webp" srcset="assets/equipe/milo-banniere-960.webp 960w, assets/equipe/milo-banniere-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 900px" width="1536" height="1024" loading="lazy" decoding="async" alt="Milo, l’agent Marketing IA de Vision Plus, présente dans son studio trois publications prêtes à valider : Instagram pour Kartezzi, Facebook pour EcoLED Europe et LinkedIn pour HeyZack."></div>
+      <div class="ag-hero-in"><div class="ag-hero-txt">
+          <span class="eyebrow">Marketing IA</span>
+          <h3 class="h-xl">Une phrase, trois publications prêtes.</h3>
+          <p class="ag-qui"><img src="assets/equipe/milo-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Milo</b><span>Marketing IA</span></p>
+          <p class="lead">Vous décrivez l'événement. L'agent rédige un texte adapté à chaque réseau. Rien ne part sans votre validation. Vous fixez le rythme de publication, l'agent choisit les horaires.</p>
+          <div class="actions"><a class="btn btn-cyan" href="#m-posts" data-defile>Voir les publications <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="demo.html">Demander une simulation <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></div>
+    </div>
         <div class="pane-txt">
-          <h3>Une phrase, trois publications prêtes.</h3>
-          <p>Vous décrivez l'événement. L'agent rédige un texte adapté à chaque réseau. Rien ne part sans votre validation. Vous fixez le rythme de publication, l'agent choisit les horaires.</p>
           <div class="field"><label for="m-brief">Ce que nos clients ont demandé</label><textarea class="input brief-in" id="m-brief">Présenter nos panneaux décoratifs Kartezzi, la réglette LED industrielle EcoLED Europe et la domotique HeyZack pilotée par l’IA.</textarea></div>
           <p class="fict">Exemples de publications : Kartezzi, EcoLED Europe et HeyZack.</p>
         </div>
@@ -348,11 +365,18 @@ html.theme-p1 #technologie,#technologie{background:radial-gradient(60% 50% at 50
         </div>
       </div>
       <div class="pane" role="tabpanel" id="telephone" aria-labelledby="tab-telephone" tabindex="0" hidden>
+        <div class="ag-hero is-cadre" data-agent="naya">
+      <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/naya-banniere-1536.webp" srcset="assets/equipe/naya-banniere-960.webp 960w, assets/equipe/naya-banniere-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 900px" width="1536" height="1024" loading="lazy" decoding="async" alt="Naya, l’agente téléphonique de Vision Plus, micro-casque sur la tête, prend l’appel d’un client du restaurant fictif Le Contemporain : la table est réservée et le SMS de confirmation est envoyé."></div>
+      <div class="ag-hero-in"><div class="ag-hero-txt">
+          <span class="eyebrow">Votre secrétaire IA</span>
+          <h3 class="h-xl">Votre secrétariat, géré par l'IA.</h3>
+          <p class="ag-qui"><img src="assets/equipe/naya-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Naya</b><span>Agent téléphonique IA</span></p>
+          <p class="lead">Appels, rendez-vous, plannings, devis, factures, e-mails, courriers, dossiers : l'agent fait tout le travail d'une secrétaire. Vous validez l'essentiel.</p>
+          <div class="actions"><a class="btn btn-cyan" href="telephone-ia.html">Tout ce que fait votre secrétaire IA <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="demo.html">Demander une simulation <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></div>
+    </div>
         <div class="pane-txt">
-          <h3>Votre secrétariat, géré par l'IA.</h3>
-          <p>Appels, rendez-vous, plannings, devis, factures, e-mails, courriers, dossiers : l'agent fait tout le travail d'une secrétaire. Vous validez l'essentiel.</p>
           <ul class="ticks"><li>Répond 7 jours sur 7, même quand personne n'est disponible</li><li>Établit vos devis pendant l'appel et les envoie au client après votre validation</li><li>Travaille avec les données de votre web app</li><li>Vous laisse la décision sur les devis et les cas sensibles</li></ul>
-          <a class="btn btn-line btn-sm" href="telephone-ia.html">Tout ce que fait votre secrétaire IA <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <p class="fict">Démonstration illustrative, restaurant fictif.</p>
         </div>
         <div class="device" id="t-call">
@@ -367,10 +391,19 @@ html.theme-p1 #technologie,#technologie{background:radial-gradient(60% 50% at 50
         </div>
       </div>
       <div class="pane" role="tabpanel" id="gestion" aria-labelledby="tab-gestion" tabindex="0" hidden>
+        <!-- bandeau de Noa (sa grande scène), texte à gauche comme les autres rubriques ; sa banderole juste dessous -->
+        <div class="ag-hero is-cadre" data-agent="noa">
+      <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/noa-banniere-1536.webp" srcset="assets/equipe/noa-banniere-960.webp 960w, assets/equipe/noa-banniere-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 900px" width="1536" height="1024" loading="lazy" decoding="async" alt="Noa, l’agent Gestion web app de Vision Plus, présente le site du restaurant fictif Le Contemporain : la demande « Ajoute la soirée jazz de vendredi » est préparée, validée puis mise en ligne."></div>
+      <div class="ag-hero-in"><div class="ag-hero-txt">
+          <span class="eyebrow">Gestion web app</span>
+          <h3 class="h-xl">Votre site se modifie en une phrase.</h3>
+          <p class="ag-qui"><img src="assets/equipe/noa-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Noa</b><span>Site internet et gestion web</span></p>
+          <p class="lead">Choisissez une demande. L'agent prépare la modification, vous validez, elle est en ligne.</p>
+          <div class="actions"><a class="btn btn-cyan" href="#g-reqs" data-defile>Essayer une demande <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="demo.html">Demander une simulation <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></div>
+    </div>
         <div class="pane-txt">
-          <h3>Votre site se modifie en une phrase.</h3>
-          <p>Choisissez une demande. L'agent prépare la modification, vous validez, elle est en ligne.</p>
-          <div class="reqs" role="group" aria-label="Demandes à l'agent">
+          <div class="reqs" id="g-reqs" role="group" aria-label="Demandes à l'agent">
             <button class="req" type="button" data-req="jazz" aria-pressed="false">« Ajoute la soirée jazz de vendredi »</button>
             <button class="req" type="button" data-req="photo" aria-pressed="false">« Mets la terrasse en couverture »</button>
             <button class="req" type="button" data-req="hours" aria-pressed="false">« Ouvre aussi le dimanche midi »</button>
@@ -388,14 +421,19 @@ html.theme-p1 #technologie,#technologie{background:radial-gradient(60% 50% at 50
   </section>
 
   <!-- 3. Comment ça fonctionne -->
-  <section class="section" id="fonctionnement" aria-labelledby="t-circ">
+  <section class="section has-hero" id="fonctionnement" aria-labelledby="t-circ">
+    <div class="ag-hero" data-agent="orion">
+      <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/orion-banniere-1536.webp" srcset="assets/equipe/orion-banniere-960.webp 960w, assets/equipe/orion-banniere-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 84vw" width="1536" height="1024" loading="lazy" decoding="async" alt="Orion, l’agent de coordination de Vision Plus, guide une information d’agent en agent : un client appelle, l’agent répond, la table est réservée, le SMS part, le site se met à jour et le marketing relance."></div>
+      <div class="wrap ag-hero-in"><div class="ag-hero-txt">
+          <span class="eyebrow">Fonctionnement</span>
+          <h2 id="t-circ" class="h-xl">Une information, aucune ressaisie.</h2>
+          <p class="ag-qui"><img src="assets/equipe/orion-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Orion</b><span>Coordination des agents</span></p>
+          <p class="lead">Les agents partagent les mêmes données. Ce que l'un apprend, les autres l'utilisent aussitôt.</p>
+          <div class="actions"><a class="btn btn-cyan" href="#circuit" data-defile>Suivre une réservation <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="demo.html">Demander une simulation <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></div>
+    </div>
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Fonctionnement</span>
-        <h2 id="t-circ" class="h-l">Une information, aucune ressaisie.</h2>
-        <p class="lead">Les agents partagent les mêmes données. Ce que l'un apprend, les autres l'utilisent aussitôt.</p>
-      </div>
-      <div class="circ reveal">
+      <div class="circ reveal" id="circuit">
         <span class="comet" aria-hidden="true"></span>
         <ol class="circuit">
           <li><div><span class="who">Client</span><h3>Un client appelle</h3><p>Une table pour quatre, vendredi soir.</p></div></li>
@@ -409,41 +447,116 @@ html.theme-p1 #technologie,#technologie{background:radial-gradient(60% 50% at 50
     </div>
   </section>
 
-  <!-- 4. Avantages -->
-  <section class="section alt" id="avantages" aria-labelledby="t-av">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Avantages</span>
-        <h2 id="t-av" class="h-l">Moins de tâches. Plus de clients.</h2>
+  <!-- 4. Avantages — refonte du 2026-11-24 d’après la maquette de l’utilisatrice (backups/ref-bandeaux/maquette-avantages.webp) :
+       Tina présente les avantages, « Voir l’équipe en action » (sa présentation sous-titrée, assets/pages/equipe-action.js),
+       les neuf agents au travail, un cas concret et l’invitation à essayer. Styles : assets/pages/avantages.css.
+       Sur cette rubrique, la cheffe d’équipe s’écrit « Tina » (demande de l’utilisatrice). -->
+  <section class="section alt has-hero av2" id="avantages" aria-labelledby="t-av">
+    <div class="ag-hero" data-agent="tyna">
+      <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/tina-avantages-1536.webp" srcset="assets/equipe/tina-avantages-960.webp 960w, assets/equipe/tina-avantages-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 84vw" width="1536" height="1024" loading="lazy" decoding="async" alt="Tina, chef d’équipe IA de Vision Plus, assise à son bureau, présente d’un geste les agents de son équipe."></div>
+      <div class="wrap ag-hero-in"><div class="ag-hero-txt">
+          <span class="eyebrow">Avantages</span>
+          <h2 id="t-av" class="h-xl">Du temps pour votre métier</h2>
+          <p class="ag-qui"><img src="assets/equipe/tyna-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Tina</b><span>Chef d’équipe IA</span></p>
+          <p class="lead">Vos appels, vos rendez-vous, vos publications et vos mises à jour web peuvent être pris en charge selon les modules que vous activez. Vous choisissez ce que vous déléguez et ce que vous souhaitez valider.</p>
+          <div class="actions"><a class="btn btn-cyan" href="demo.html">Demander une simulation <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="offre-sur-mesure.html">Votre offre sur mesure <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></div>
+    </div>
+    <div class="wrap av2-in">
+
+      <!-- Voir l’équipe en action : Tina présente l’équipe, ses paroles en sous-titres, chaque agent s’allume quand elle le nomme -->
+      <div class="eqa" id="equipe-en-action" data-audio="assets/equipe/voix/tina-avantages.m4a" data-fin="30.3" aria-label="Voir l’équipe en action">
+        <div class="eqa-scene" aria-hidden="true">
+          <div class="eqa-tina"><span class="eqa-tina-fig"><img src="assets/equipe/tyna-800.webp" alt="" width="800" height="1200" loading="lazy" decoding="async"></span><span class="eqa-onde"><i></i><i></i><i></i><i></i><i></i></span><b>Tina</b></div>
+          <ul class="eqa-equipe">
+            <li data-ag="naya"><img src="assets/equipe/naya-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Naya</b><span>Appels</span></li>
+            <li data-ag="iris"><img src="assets/equipe/iris-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Iris</b><span>Rendez-vous</span></li>
+            <li data-ag="eden"><img src="assets/equipe/eden-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Eden</b><span>Suivi des demandes</span></li>
+            <li data-ag="alma"><img src="assets/equipe/alma-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Alma</b><span>Cabinets</span></li>
+            <li data-ag="milo"><img src="assets/equipe/milo-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Milo</b><span>Contenus</span></li>
+            <li data-ag="jade"><img src="assets/equipe/jade-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Jade</b><span>Campagnes</span></li>
+            <li data-ag="noa"><img src="assets/equipe/noa-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Noa</b><span>Site et web app</span></li>
+            <li data-ag="arlo"><img src="assets/equipe/arlo-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Arlo</b><span>Artisans</span></li>
+            <li data-ag="cyra"><img src="assets/equipe/cyra-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Cyra</b><span>Questions</span></li>
+          </ul>
+        </div>
+        <p class="eqa-st" aria-live="polite">
+          <span class="eqa-c" data-ag="" data-t="0" hidden>Bonjour, je suis Tina, chef d’équipe chez Vision Plus.</span>
+          <span class="eqa-c" data-ag="naya" data-t="2.97" hidden>Quand vous êtes occupé, Naya peut répondre à vos appels,</span>
+          <span class="eqa-c" data-ag="iris" data-t="5.92" hidden>Iris vous aide à organiser vos rendez-vous</span>
+          <span class="eqa-c" data-ag="eden" data-t="7.92" hidden>et Eden suit les demandes en cours.</span>
+          <span class="eqa-c" data-ag="alma" data-t="9.88" hidden>Alma accompagne le secrétariat des cabinets.</span>
+          <span class="eqa-c" data-ag="milo" data-t="12.25" hidden>Milo prépare vos contenus,</span>
+          <span class="eqa-c" data-ag="jade" data-t="13.77" hidden>Jade s’occupe des campagnes publicitaires</span>
+          <span class="eqa-c" data-ag="noa" data-t="15.82" hidden>et Noa met à jour votre site ou votre web app.</span>
+          <span class="eqa-c" data-ag="arlo" data-t="18.51" hidden>Arlo accompagne les artisans dans le suivi de leur activité,</span>
+          <span class="eqa-c" data-ag="cyra" data-t="21.62" hidden>et Cyra répond aux questions fréquentes.</span>
+          <span class="eqa-c" data-ag="tous" data-t="23.59" hidden>Vous choisissez les agents dont vous avez besoin et les actions que vous voulez garder sous votre contrôle.</span>
+          <span class="eqa-c" data-ag="tous" data-t="28.3" hidden>Je vous montre comment ça se passe.</span>
+        </p>
+        <p class="eqa-suite" hidden><a class="btn btn-line btn-sm" href="#cas-concret" data-defile>Voir comment ça se passe <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+        <div class="eqa-bar">
+          <button type="button" class="eqa-play" aria-pressed="false"><span class="eqa-mini" aria-hidden="true"><img src="assets/equipe/tyna-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><img src="assets/equipe/naya-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><img src="assets/equipe/milo-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><img src="assets/equipe/noa-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"></span><span class="eqa-i" aria-hidden="true"><svg class="eqa-i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg><svg class="eqa-i-pause" viewBox="0 0 24 24"><path d="M8 5h3v14H8zM13 5h3v14h-3z"/></svg></span><span class="eqa-t">Voir l’équipe en action</span></button>
+          <span class="eqa-track" aria-hidden="true"><i></i></span>
+          <span class="eqa-time" aria-hidden="true">0:00 / 0:00</span>
+          <button type="button" class="eqa-son" aria-pressed="false" aria-label="Couper le son" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path class="eqa-son-on" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/><path class="eqa-son-off" d="m16 9 6 6M22 9l-6 6"/></svg></button>
+          <button type="button" class="eqa-plein" aria-label="Plein écran"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+        </div>
       </div>
-            <div class="av-grid">
-        <article class="av-card reveal w">
-          <div class="av-txt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><h3>Aucun appel manqué</h3><p>Votre secrétaire IA répond, planifie et confirme.</p><a class="btn btn-line btn-sm" href="telephone-ia.html">Découvrir <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></div>
-          <figure class="av-art"><img src="assets/3d/av-appels-vp.webp" width="1090" height="720" alt="" loading="lazy"></figure>
-        </article>
-        <article class="av-card reveal">
-          <div class="av-txt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v3a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M10 6c4 0 7-2 9-3v18c-2-1-5-3-9-3"/></svg><h3>Une présence active</h3><p>Vos publications sont prêtes, vous validez.</p><a class="btn btn-line btn-sm" href="#marketing">Découvrir <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></div>
-          <figure class="av-art"><img src="assets/3d/av-publications.webp" width="780" height="730" alt="" loading="lazy"></figure>
-        </article>
-        <article class="av-card reveal">
-          <div class="av-txt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></svg><h3>Un site toujours à jour</h3><p>Une phrase suffit pour modifier votre web app.</p><a class="btn btn-line btn-sm" href="#gestion">Découvrir <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></div>
-          <figure class="av-art"><img src="assets/3d/av-site.webp" width="752" height="716" alt="" loading="lazy"></figure>
-        </article>
-        <article class="av-card reveal w">
-          <div class="av-txt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><h3>Tout au même endroit</h3><p>Un seul espace pour piloter votre activité.</p><a class="btn btn-line btn-sm" href="#fonctionnement">Découvrir <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a></div>
-          <figure class="av-art"><img src="assets/3d/av-tableau-vp.webp" width="974" height="670" alt="" loading="lazy"></figure>
-        </article>
+
+      <!-- Une équipe IA à votre service : chaque agent au travail, son bénéfice, le lien vers son module -->
+      <div class="av2-head">
+        <h3 class="av2-h">Une équipe IA à votre service</h3>
+        <p class="av2-sub">Ce que l’équipe peut prendre en charge pour votre entreprise, selon les modules que vous activez.</p>
+      </div>
+      <ul class="av2-grid">
+        <li><a class="av2-carte" href="#telephone"><span class="av2-img"><img src="assets/equipe/carte-naya-800.webp" srcset="assets/equipe/carte-naya-480.webp 480w, assets/equipe/carte-naya-800.webp 800w" sizes="(min-width: 1000px) 380px, (min-width: 640px) 46vw, 92vw" width="800" height="500" loading="lazy" decoding="async" alt="Naya, au micro-casque, prend l’appel d’un client et note sa demande."></span><span class="av2-id"><i data-ico="phone"></i><b>Naya</b><span>Agent téléphonique IA</span></span><span class="av2-ben">Vos clients peuvent être accueillis même lorsque vous êtes occupé.</span><span class="av2-go">Découvrir <i data-ico="arrow" data-cls="arrow"></i></span></a></li>
+        <li><a class="av2-carte" href="telephone-ia.html"><span class="av2-img"><img src="assets/equipe/carte-iris-800.webp" srcset="assets/equipe/carte-iris-480.webp 480w, assets/equipe/carte-iris-800.webp 800w" sizes="(min-width: 1000px) 380px, (min-width: 640px) 46vw, 92vw" width="800" height="500" loading="lazy" decoding="async" alt="Iris organise un agenda de rendez-vous et classe un dossier."></span><span class="av2-id"><i data-ico="folder"></i><b>Iris</b><span>Secrétariat IA</span></span><span class="av2-ben">Moins d’allers-retours pour organiser les rendez-vous et retrouver les demandes.</span><span class="av2-go">Découvrir <i data-ico="arrow" data-cls="arrow"></i></span></a></li>
+        <li><a class="av2-carte" href="telephone-ia.html#secretariat-medical"><span class="av2-img"><img src="assets/equipe/carte-alma-800.webp" srcset="assets/equipe/carte-alma-480.webp 480w, assets/equipe/carte-alma-800.webp 800w" sizes="(min-width: 1000px) 380px, (min-width: 640px) 46vw, 92vw" width="800" height="500" loading="lazy" decoding="async" alt="Alma, au poste d’accueil d’un cabinet médical, gère un appel et les rendez-vous."></span><span class="av2-id"><i data-ico="shield"></i><b>Alma</b><span>Secrétariat médical IA</span></span><span class="av2-ben">L’équipe du cabinet peut déléguer une partie de l’organisation des rendez-vous.</span><span class="av2-go">Découvrir <i data-ico="arrow" data-cls="arrow"></i></span></a></li>
+        <li><a class="av2-carte" href="#marketing"><span class="av2-img"><img src="assets/equipe/carte-milo-800.webp" srcset="assets/equipe/carte-milo-480.webp 480w, assets/equipe/carte-milo-800.webp 800w" sizes="(min-width: 1000px) 380px, (min-width: 640px) 46vw, 92vw" width="800" height="500" loading="lazy" decoding="async" alt="Milo présente trois publications prêtes à valider pour Instagram, Facebook et LinkedIn."></span><span class="av2-id"><i data-ico="mega"></i><b>Milo</b><span>Marketing IA</span></span><span class="av2-ben">Vous disposez de contenus à relire et à valider plus facilement.</span><span class="av2-go">Découvrir <i data-ico="arrow" data-cls="arrow"></i></span></a></li>
+        <li><a class="av2-carte" href="campagne-ads.html"><span class="av2-img"><img src="assets/equipe/carte-jade-800.webp" srcset="assets/equipe/carte-jade-480.webp 480w, assets/equipe/carte-jade-800.webp 800w" sizes="(min-width: 1000px) 380px, (min-width: 640px) 46vw, 92vw" width="800" height="500" loading="lazy" decoding="async" alt="Jade présente les publicités d’une marque sur Google, TikTok, Instagram, LinkedIn et Amazon."></span><span class="av2-id"><i data-ico="play"></i><b>Jade</b><span>Campagne ADS</span></span><span class="av2-ben">Vous voyez ce qui est diffusé et comment la campagne évolue.</span><span class="av2-go">Découvrir <i data-ico="arrow" data-cls="arrow"></i></span></a></li>
+        <li><a class="av2-carte" href="#gestion"><span class="av2-img"><img src="assets/equipe/carte-noa-800.webp" srcset="assets/equipe/carte-noa-480.webp 480w, assets/equipe/carte-noa-800.webp 800w" sizes="(min-width: 1000px) 380px, (min-width: 640px) 46vw, 92vw" width="800" height="500" loading="lazy" decoding="async" alt="Noa met en ligne une modification du site d’un restaurant : préparée, validée, en ligne."></span><span class="av2-id"><i data-ico="layers"></i><b>Noa</b><span>Site internet et gestion web</span></span><span class="av2-ben">Les informations que vos clients consultent sont plus faciles à tenir à jour.</span><span class="av2-go">Découvrir <i data-ico="arrow" data-cls="arrow"></i></span></a></li>
+        <li><a class="av2-carte" href="artisan-os.html"><span class="av2-img"><img src="assets/equipe/carte-arlo-800.webp" srcset="assets/equipe/carte-arlo-480.webp 480w, assets/equipe/carte-arlo-800.webp 800w" sizes="(min-width: 1000px) 380px, (min-width: 640px) 46vw, 92vw" width="800" height="500" loading="lazy" decoding="async" alt="Arlo, sur un chantier, prépare un devis à partir d’un chiffrage vocal."></span><span class="av2-id"><i data-ico="helmet"></i><b>Arlo</b><span>Artisan OS</span></span><span class="av2-ben">Vous retrouvez plus facilement les informations utiles avant et après vos interventions.</span><span class="av2-go">Découvrir <i data-ico="arrow" data-cls="arrow"></i></span></a></li>
+        <li><a class="av2-carte" href="faq.html"><span class="av2-img"><img src="assets/equipe/carte-cyra-800.webp" srcset="assets/equipe/carte-cyra-480.webp 480w, assets/equipe/carte-cyra-800.webp 800w" sizes="(min-width: 1000px) 380px, (min-width: 640px) 46vw, 92vw" width="800" height="500" loading="lazy" decoding="async" alt="Cyra répond à une question fréquente sur Vision Plus."></span><span class="av2-id"><i data-ico="help"></i><b>Cyra</b><span>Questions et réponses</span></span><span class="av2-ben">Vos clients trouvent plus rapidement les informations qu’ils cherchent.</span><span class="av2-go">Découvrir <i data-ico="arrow" data-cls="arrow"></i></span></a></li>
+        <li><a class="av2-carte" href="sav.html"><span class="av2-img"><img src="assets/equipe/carte-eden-800.webp" srcset="assets/equipe/carte-eden-480.webp 480w, assets/equipe/carte-eden-800.webp 800w" sizes="(min-width: 1000px) 380px, (min-width: 640px) 46vw, 92vw" width="800" height="500" loading="lazy" decoding="async" alt="Eden suit une demande d’assistance, de son ouverture à sa résolution."></span><span class="av2-id"><i data-ico="life"></i><b>Eden</b><span>Assistance et suivi des demandes</span></span><span class="av2-ben">Vous voyez ce qui a été traité et ce qui attend encore une réponse.</span><span class="av2-go">Découvrir <i data-ico="arrow" data-cls="arrow"></i></span></a></li>
+      </ul>
+
+      <!-- Un cas concret raconté par Tina -->
+      <div class="av2-cas" id="cas-concret">
+        <div class="av2-head">
+          <h3 class="av2-h">Pendant que vous êtes chez un client</h3>
+          <p class="av2-tina"><img src="assets/equipe/tyna-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><span><b>Tina</b> « Vous êtes en intervention et votre téléphone sonne. Voici comment l’équipe prend le relais. »</span></p>
+        </div>
+        <ol class="av2-steps">
+          <li class="av2-step"><span class="av2-n">1</span><div><h4>Un prospect appelle</h4><p>Vous êtes en intervention. Naya répond au nom de votre entreprise et note sa demande.</p></div><span class="av2-vis av2-onde" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></li>
+          <li class="av2-step"><span class="av2-n">2</span><div><h4>La demande est suivie</h4><p>Eden ouvre son suivi : chaque étape de traitement y est indiquée.</p></div><span class="av2-vis av2-suivi" aria-hidden="true"><i></i><i></i><i></i></span></li>
+          <li class="av2-step"><span class="av2-n">3</span><div><h4>Vous décidez de la suite</h4><p>À votre retour, vous voyez la demande et son statut, puis vous choisissez la suite à donner.</p></div><span class="av2-vis av2-retour" aria-hidden="true"><span class="av2-fiche"><b>Demande de devis</b><span>En attente de votre réponse</span></span></span></li>
+        </ol>
+        <p class="av2-note">Le passage de la demande de Naya à Eden dépend de votre configuration : des modules activés et des règles de transmission que vous choisissez.</p>
+      </div>
+
+      <!-- Invitation à essayer -->
+      <div class="av2-cta">
+        <div><h3>Voyez ce que l’équipe peut faire pour votre entreprise</h3>
+          <p>La simulation part d’un besoin concret : mieux gérer vos appels, alléger votre secrétariat ou tenir votre site à jour.</p></div>
+        <div class="actions"><a class="btn btn-cyan" href="demo.html">Demander une simulation <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="offre-sur-mesure.html">Votre offre sur mesure <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
     </div>
   </section>
 
   <!-- 5. Pour qui -->
-  <section class="section" id="secteurs" aria-labelledby="t-sec">
+  <section class="section has-hero" id="secteurs" aria-labelledby="t-sec">
+    <div class="ag-hero" data-agent="vela">
+      <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/vela-banniere-1536.webp" srcset="assets/equipe/vela-banniere-960.webp 960w, assets/equipe/vela-banniere-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 84vw" width="1536" height="1024" loading="lazy" decoding="async" alt="Vela, la spécialiste des métiers de Vision Plus, présente les professionnels accompagnés : restaurants et bars, cabinets de santé, salons de beauté, artisans, hôtels et gîtes, commerces."></div>
+      <div class="wrap ag-hero-in"><div class="ag-hero-txt">
+          <span class="eyebrow">Pour qui</span>
+          <h2 id="t-sec" class="h-xl">Pensé pour les professionnels.</h2>
+          <p class="ag-qui"><img src="assets/equipe/vela-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Vela</b><span>Métiers et secteurs</span></p>
+          <p class="lead">Restaurants, cabinets de santé, salons de beauté, artisans, hôtels et commerces : vos agents IA sont configurés selon votre métier.</p>
+          <div class="actions"><a class="btn btn-cyan" href="demo.html">Demander une simulation <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="offre-sur-mesure.html">Votre offre sur mesure <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></div>
+    </div>
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Pour qui</span>
-        <h2 id="t-sec" class="h-l">Pensé pour les professionnels.</h2>
-      </div>
       <ul class="sectors">
         <li class="reveal"><i data-ico="home"></i><div><b>Restaurants et bars</b><span>Réservations pendant le service · menus du jour</span></div></li>
         <li class="reveal"><i data-ico="life"></i><div><b>Cabinets de santé</b><span>Prise et report de rendez-vous · infos pratiques</span></div></li>
@@ -533,12 +646,18 @@ html.theme-p1 #technologie,#technologie{background:radial-gradient(60% 50% at 50
     </div>
   </section>
 
-  <section class="section alt start" id="commencer" aria-labelledby="t-go">
+  <section class="section alt start has-hero" id="commencer" aria-labelledby="t-go">
+    <div class="ag-hero" data-agent="soren">
+      <div class="ag-hero-scene"><img class="ag-hero-img" src="assets/equipe/soren-commencer-1536.webp" srcset="assets/equipe/soren-commencer-960.webp 960w, assets/equipe/soren-commencer-1536.webp 1536w" sizes="(max-width: 1099px) 100vw, 84vw" width="1536" height="1024" loading="lazy" decoding="async" alt="Soren, le conseiller Vision Plus, invite à démarrer en trois étapes : créer votre compte, recevoir votre simulation, puis construire votre offre."></div>
+      <div class="wrap ag-hero-in"><div class="ag-hero-txt">
+          <span class="eyebrow">Commencer</span>
+          <h2 id="t-go" class="h-xl">Trois étapes pour démarrer.</h2>
+          <p class="ag-qui"><img src="assets/equipe/soren-400.webp" alt="" width="400" height="600" loading="lazy" decoding="async"><b>Soren</b><span>Simulation et conseiller</span></p>
+          <p class="lead">Créez votre compte, recevez votre simulation, puis construisez votre offre avec un conseiller.</p>
+          <div class="actions"><a class="btn btn-cyan" href="inscription.html" data-auth="signup">Créer mon compte <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="demo.html">Obtenir ma simulation <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></div>
+    </div>
     <div class="wrap">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Commencer</span>
-        <h2 id="t-go" class="h-l">Trois étapes pour démarrer.</h2>
-      </div>
       <ol class="steps3">
         <li class="reveal"><h3>Créez votre compte</h3><p>Avec Apple, Google, votre téléphone ou votre e-mail.</p><a class="btn btn-cyan btn-sm" href="inscription.html" data-auth="signup">Créer mon compte</a></li>
         <li class="reveal"><h3>Recevez votre simulation</h3><p>Décrivez votre projet, nous vous envoyons une vidéo personnalisée.</p><a class="btn btn-line btn-sm" href="demo.html">Obtenir ma simulation</a></li>
@@ -552,8 +671,9 @@ html.theme-p1 #technologie,#technologie{background:radial-gradient(60% 50% at 50
 <div data-vp="footer"></div>
 <script src="assets/config.js"></script>
 <script src="assets/data.js"></script>
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v=tyna3"></script>
 <script src="assets/posts.js"></script>
+<script src="assets/pages/equipe-action.js" defer></script>
 <script>
 (function(){
 "use strict";
@@ -587,8 +707,16 @@ document.querySelectorAll(".req").forEach(function(b){b.addEventListener("click"
 })();
 </script>
 <script>
-(function(){function go(){var h=location.hash.slice(1),t=document.getElementById("tab-"+h);if(!t)return;t.click();var a=document.getElementById("agents");if(a)setTimeout(function(){a.scrollIntoView({block:"start"});},60);}
-addEventListener("hashchange",go);if(document.readyState==="complete")go();else addEventListener("load",go);})();
+(function(){function go(){var h=location.hash.slice(1),t=document.getElementById("tab-"+h);if(!t)return;t.click();var a=document.getElementById("agents");
+  /* onglet avec son bandeau d’agent (Milo, Naya, Noa) : les onglets en haut de l’écran et le bandeau entier dessous ;
+     replacé une fois les banderoles posées (elles s’insèrent au-dessus), sauf si la personne a déjà fait défiler la page */
+  var p=document.getElementById(h),tl=document.querySelector(".agents-tabs"),hd=document.querySelector(".top"),y=-1;
+  function place(){if(p&&p.querySelector(".ag-hero,.ag-scene")&&tl&&innerWidth>760)scrollTo(0,Math.max(0,Math.round(tl.getBoundingClientRect().top+scrollY-(hd?hd.offsetHeight:0)-14)));else if(a)a.scrollIntoView({block:"start"});y=scrollY;}
+  setTimeout(place,60);setTimeout(function(){if(Math.abs(scrollY-y)<2)place();},1200);}
+addEventListener("hashchange",go);if(document.readyState==="complete")go();else addEventListener("load",go);
+/* boutons des bandeaux (« Explorer les agents », « Voir les publications »…) : défilement vers l’élément, sans changer l’adresse (l’ancre choisirait un autre agent) */
+document.addEventListener("click",function(e){var l=e.target.closest("a[data-defile]");if(!l)return;var c=document.querySelector(l.getAttribute("href"));if(!c)return;e.preventDefault();
+  c.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});});})();
 </script>
 </body>
 </html>

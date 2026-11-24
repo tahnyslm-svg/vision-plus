@@ -2,7 +2,7 @@
    Données : assets/metiers/metiers.json (archive AxIa-Vitrine-Metiers : 139 métiers, 9 familles, 18 modèles,
    politiques de paiement). La liste est déjà écrite dans la page (outils/dressing/generer_liste.py) ; ce script ajoute :
    recherche sans accents (nom, mots-clés de référencement, nom traduit), filtres par famille, niches du mur,
-   tenue du robot (la tenue quitte sa niche, s’avance et le robot l’enfile), présentation du métier choisi,
+   tenue de Tyna (la tenue quitte sa niche, s’avance et Tyna l’enfile ; calques robots/robot-<famille>, Tyna depuis le 2026-11-23), présentation du métier choisi,
    aperçus des modèles (maquettes de démonstration, commerces fictifs) et lien avec le formulaire de rappel. */
 (function(){
 "use strict";
@@ -34,7 +34,7 @@ var NICHE={
   pro:{x:40.5,y:122.5,w:199.5,h:284.5},bouche:{x:263,y:132,w:189.5,h:283},beaute:{x:482.5,y:159.5,w:178,h:257.5},
   sante:{x:674.5,y:171,w:200.5,h:254.5},auto:{x:1087,y:152,w:187,h:267},artisan:{x:25,y:454.5,w:221,h:275.5},
   boutique:{x:468,y:457.5,w:169,h:279},loisirs:{x:649,y:455,w:186,h:275.5},resto:{x:1240.5,y:196,w:354,h:675.5}};
-var TORSE={x:1000,y:650,h:330};   /* poitrine du robot dans le visuel */
+var TORSE={x:1010,y:640,h:300};   /* poitrine de Tyna dans le visuel (calques du 2026-11-23) */
 function rsrc(f,w){return "assets/dressing/robots/robot-"+f+"-"+w+".webp";}
 function rset(f){return rsrc(f,528)+" 528w, "+rsrc(f,1056)+" 1056w";}
 function tsrc(f){return "assets/dressing/tenues/tenue-"+f+".webp";}
@@ -63,7 +63,7 @@ function wear(f){
       if(!RM.matches){robot.classList.remove("is-dressing");void robot.offsetWidth;robot.classList.add("is-dressing");}};
     var ready=back.decode?back.decode().catch(function(){}):Promise.resolve();
     ready.then(function(){if(RM.matches||!NICHE[f])swap();else flight(f,swap);});
-  },function(){clearTimeout(slow);set.classList.remove("is-waiting");/* tenue indisponible : le robot garde la précédente */});
+  },function(){clearTimeout(slow);set.classList.remove("is-waiting");/* tenue indisponible : Tyna garde la précédente */});
 }
 function flight(f,done){
   var n=NICHE[f],k=set.clientWidth/1672;

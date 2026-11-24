@@ -116,3 +116,39 @@
 @keyframes ax-call{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.18)}}
 @keyframes ax-invite{0%,100%{box-shadow:0 0 0 0 rgba(63,168,255,0)}50%{box-shadow:0 0 0 5px rgba(63,168,255,.22),0 0 18px rgba(63,168,255,.85)}}
 @media (prefers-reduced-motion:reduce){.ax-dock.ax-invite{animation:none;box-shadow:0 0 0 2px rgba(63,168,255,.6)}}
+
+/* ---------- Iris (2026-11-23) : l’assistante de l’équipe d’agents remplace le robot ----------
+   Portrait détouré (assets/equipe/iris-400.webp) dans un cadre vitré ; quand elle parle, un halo et un petit
+   égaliseur suivent la voix (--m), et elle s’incline légèrement aux moments clés (is-wave, is-lean, is-nod). */
+.ax-iris .ax-face,.ax-iris .ax-arm{display:none}
+.axbot.ax-iris{--w:132px}
+.axbot.ax-iris .ax-char{height:calc(var(--w)*1.36)}
+.axbot.ax-iris .ax-fig{height:calc(var(--w)*1.36);border-radius:20px 20px 16px 16px;overflow:hidden;
+  border:1px solid rgba(120,185,255,.75);background:radial-gradient(70% 60% at 50% 75%,rgba(50,140,255,.5),rgba(10,30,70,0) 72%),linear-gradient(180deg,#0E2348,#071228);
+  box-shadow:0 0 0 1px rgba(40,130,255,.25),0 0 calc(12px + var(--m,0) * 22px) rgba(60,150,255,calc(.35 + var(--m,0) * .4)),0 18px 30px -12px rgba(0,0,0,.8);transition:box-shadow .12s linear}
+.axbot.ax-iris .ax-fig img{position:absolute;left:-6%;top:-2%;width:112%;height:auto}
+.ax-voice{position:absolute;right:8px;bottom:8px;display:flex;align-items:flex-end;gap:3px;height:16px;padding:4px 6px;border-radius:8px;background:rgba(5,14,34,.75);border:1px solid rgba(120,185,255,.5);opacity:0;transition:opacity .25s}
+.ax-voice i{display:block;width:3px;height:30%;border-radius:2px;background:#8EC6FF;box-shadow:0 0 6px rgba(80,160,255,.9)}
+.axbot.is-talking .ax-voice{opacity:1}
+.axbot.is-talking .ax-voice i{animation:ax-eq .5s ease-in-out infinite alternate}
+.axbot.is-talking .ax-voice i:nth-child(2){animation-delay:-.2s}.axbot.is-talking .ax-voice i:nth-child(3){animation-delay:-.35s}.axbot.is-talking .ax-voice i:nth-child(4){animation-delay:-.1s}
+@keyframes ax-eq{from{height:25%}to{height:100%}}
+.axbot.ax-iris .ax-glow{display:none}
+.axbot.ax-iris.is-wave .ax-tilt{transform:rotate(2.5deg) translateY(-2px)}
+.axbot.ax-iris.is-lean .ax-tilt{transform:rotate(-2deg) translateX(-3px)}
+.axbot.ax-iris.is-nod .ax-tilt{transform:translateY(2px) scale(.99)}
+.axbot.ax-iris .ax-tilt{transform-origin:50% 100%}
+/* pastille de l’en-tête : le visage d’Iris */
+.ax-dock.ax-iris{background:radial-gradient(circle at 50% 40%,#1A3A70,#081530 70%)}
+.ax-dock.ax-iris .ax-fig{--w:86px;left:calc(50% - 43px);top:-5px;height:calc(var(--w)*1.5)}
+.ax-dock.ax-iris .ax-fig img{height:auto}
+.ax-dock.ax-iris .ax-voice{display:none}
+@media (max-width:760px){
+  .axbot.ax-iris{--w:76px}
+  .axbot.ax-iris .ax-char{top:calc(var(--w)*-1.05)}
+  .axbot.ax-iris .ax-fig{border-radius:14px}
+  .ax-dock.ax-iris .ax-fig{--w:90px;left:calc(50% - 45px);top:-4px}
+}
+@media (prefers-reduced-motion:reduce){.axbot.is-talking .ax-voice i{animation:none;height:70%}}
+/* langues de droite à gauche (ordinateur) : le panneau passe à gauche (site.css), la bulle s’ouvre donc vers la droite */
+@media (min-width:761px){[dir="rtl"] .ax-bubble{right:auto;left:calc(var(--w)*.9);border-radius:18px 18px 18px 6px}}

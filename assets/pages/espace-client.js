@@ -308,7 +308,7 @@ function ticketModal(id){var t=A.records.get("tickets",id);if(!t)return;
 /* Conversations IA */
 /* Conversations IA : messagerie avec l’assistant (comme une conversation sur téléphone). Les réponses viennent de la base
    de connaissances validée (A.assistant.answer, qui enregistre aussi chaque échange). À l’ouverture : le message d’accueil de l’assistant, puis l’historique. Téléphone : plein écran, flèche de retour. */
-var CV_AV="assets/brand/vp-robot-tete.webp",cvPrev="tableau";
+var CV_AV="assets/equipe/tyna-tete.webp",cvPrev="tableau";
 function cvTime(ts){try{return new Date(ts).toLocaleTimeString(document.documentElement.lang||"fr",{hour:"2-digit",minute:"2-digit"});}catch(e){return "";}}
 function cvDay(ts){var d=new Date(ts),t=new Date(),y=new Date(t.getTime()-864e5);
   if(d.toDateString()===t.toDateString())return "Aujourd’hui";if(d.toDateString()===y.toDateString())return "Hier";return A.date(ts);}
@@ -321,7 +321,7 @@ V.conversations=function(){
   hist.forEach(function(c){day(c.createdAt);html+=cvMsg("moi",c.q,c.createdAt)+cvMsg("bot",c.a,c.createdAt);});
   view.innerHTML='<section class="cv" aria-labelledby="view-title">'+
     '<header class="cv-h"><button type="button" class="cv-back" id="cv-back" aria-label="Retour"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>'+
-      '<span class="cv-av"><img src="'+CV_AV+'" alt="" width="168" height="117" decoding="async"></span>'+
+      '<span class="cv-av"><img src="'+CV_AV+'" alt="" width="192" height="192" decoding="async"></span>'+
       '<div class="cv-who"><h1 id="view-title" tabindex="-1">Assistant Vision Plus</h1><p>Assistant IA</p></div></header>'+
     '<div class="cv-fil" id="cv-fil" role="log" aria-live="polite" aria-label="Conversation avec l’assistant Vision Plus">'+html+"</div>"+
     '<form class="cv-f" id="cv-f" novalidate><label class="sr" for="cv-in">Votre message</label>'+

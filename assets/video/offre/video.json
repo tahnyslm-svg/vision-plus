@@ -1,11 +1,12 @@
 {
  "_aide": "Vidéo du premier écran de offre-sur-mesure.html. Pour changer la vidéo, sa miniature, ses sous-titres ou ajouter un doublage : déposez les fichiers dans assets/video/offre/ et indiquez leur chemin ici (ou depuis le back-office, rubrique « Vidéo de l’offre », qui permet de télécharger ce fichier mis à jour). Aucun code à modifier. Par langue : « video » = vidéo entièrement localisée (son et textes incrustés), « doublage » = piste audio (m4a/mp3) synchronisée avec la vidéo source, « sous_titres » = fichier WebVTT, « miniature » = image d’aperçu localisée. Laisser null quand le fichier n’existe pas : le lecteur utilise alors la vidéo source et les sous-titres traduits.",
  "titre": "Vos commerces, une nouvelle dimension.",
+ "version": "tyna3",
  "source": {
   "langue_audio": "fr",
-  "video": "assets/video/offre/offre-fr.mp4",
+  "video": "assets/video/offre/offre-fr.mp4?v=tyna3",
   "type": "video/mp4",
-  "miniature": "assets/video/offre/miniature-1280.webp",
+  "miniature": "assets/video/offre/miniature-1280.webp?v=tyna2",
   "duree": 57,
   "largeur": 848,
   "hauteur": 480
